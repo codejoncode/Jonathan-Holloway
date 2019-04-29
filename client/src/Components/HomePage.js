@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Button, Jumbotron, Container } from "reactstrap";
+import { Button, Jumbotron, Container, Col, Row, } from "reactstrap";
 import styled from "styled-components";
+import NavBar from "./NavBar";
 
 const DivWithBackground = styled.div`
   background-color: black;
@@ -10,6 +11,7 @@ class HomePage extends Component {
   render() {
     return (
       <DivWithBackground>
+        <NavBar />
         <Jumbotron fluid>
           <Container fluid>
             <h1 className="display-3">Jonathan Holloway</h1>
@@ -22,6 +24,11 @@ class HomePage extends Component {
               projects, successfully meeting all deadlines.
             </p>
             <Button>View More</Button>
+            <Row>
+                <Col>Jonathan J. Holloway</Col>
+                <Col>Full Stack Enginneer</Col>
+            </Row>
+
           </Container>
         </Jumbotron>
         
