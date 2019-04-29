@@ -10,6 +10,9 @@ const ResponsiveImage = styled.img.attrs({
 })`
   width: 100%;
   height: 75%;
+  &:hover {
+    cursor : pointer;
+  }
 `;
 
 const ResponsiveButton = styled.button `
@@ -41,7 +44,7 @@ class LandingPage extends Component {
       <Container>
         <Row>
           <Col>
-          <ResponsiveImage />
+          <ResponsiveImage onClick = {this.continueToHomePage()}/>
             <ResponsiveButton className = "button button-block, button-secondary" onClick = {this.continueToHomePage()}>Continue</ResponsiveButton>
           </Col>
            

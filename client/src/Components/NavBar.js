@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import {
   Collapse,
   Navbar,
@@ -17,9 +17,9 @@ import styled from "styled-components";
 import icon from "../Images/Icon.PNG";
 
 const OptionSpan = styled.span`
-   &:hover {
-     background-color: #E9ECEF;
-   }
+  &:hover {
+    background-color: #e9ecef;
+  }
 `;
 
 class NavBar extends React.Component {
@@ -36,26 +36,43 @@ class NavBar extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/"> <img src ={icon} />  </NavbarBrand>
+          <NavbarBrand href="/">
+            {" "}
+            <img src={icon} />{" "}
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
                 <NavLink href="/projects">Projects</NavLink>
               </NavItem>
-              <NavItem>
-              </NavItem>
+              <NavItem />
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Contact
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem divider />
-                  <DropdownItem> <NavLink href = "">Email Me</NavLink></DropdownItem>
-                  <DropdownItem><NavLink href = "https://github.com/codejoncode" target= "_blank">GitHub Profile</NavLink></DropdownItem>
-                  <DropdownItem><NavLink href = "https://www.linkedin.com/in/jonathanjholloway" target = "_blank">LinkedIn Profile</NavLink></DropdownItem>
-
-                  {/* <DropdownItem>Reset</DropdownItem> */}
+                  <DropdownItem>
+                    {" "}
+                    <NavLink href="">Email Me</NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink
+                      href="https://github.com/codejoncode"
+                      target="_blank"
+                    >
+                      GitHub Profile
+                    </NavLink>
+                  </DropdownItem>
+                  <DropdownItem>
+                    <NavLink
+                      href="https://www.linkedin.com/in/jonathanjholloway"
+                      target="_blank"
+                    >
+                      LinkedIn Profile
+                    </NavLink>
+                  </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
