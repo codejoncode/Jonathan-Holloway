@@ -13,6 +13,14 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import styled from "styled-components";
+import icon from "../Images/Icon.PNG";
+
+const OptionSpan = styled.span`
+   &:hover {
+     background-color: #E9ECEF;
+   }
+`;
 
 class NavBar extends React.Component {
   state = {
@@ -28,27 +36,24 @@ class NavBar extends React.Component {
     return (
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand href="/"> <img src ={icon} />  </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink href="/projects">Projects</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
-                  GitHub
-                </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Contact
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem divider />
-                  <DropdownItem>Projects</DropdownItem>
-                  <DropdownItem>Experience</DropdownItem>
-                  <DropdownItem>Contact</DropdownItem>
+                  <DropdownItem> <NavLink href = "">Email Me</NavLink></DropdownItem>
+                  <DropdownItem><NavLink href = "https://github.com/codejoncode" target= "_blank">GitHub Profile</NavLink></DropdownItem>
+                  <DropdownItem><NavLink href = "https://www.linkedin.com/in/jonathanjholloway" target = "_blank">LinkedIn Profile</NavLink></DropdownItem>
 
                   {/* <DropdownItem>Reset</DropdownItem> */}
                 </DropdownMenu>

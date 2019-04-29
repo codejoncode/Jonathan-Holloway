@@ -23,11 +23,7 @@ class HomePage extends Component {
               Experienced project manager for two teams working on two different
               projects, successfully meeting all deadlines.
             </p>
-            <Button>View More</Button>
-            <Row>
-                <Col>Jonathan J. Holloway</Col>
-                <Col>Full Stack Enginneer</Col>
-            </Row>
+            
 
           </Container>
         </Jumbotron>
