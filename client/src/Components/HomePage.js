@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 // import { Button, Jumbotron, Container, Col, Row } from "reactstrap";
-import { Menu, Button, Container, Divider } from "semantic-ui-react";
+import { Menu, Button, Container, Divider, Grid } from "semantic-ui-react";
 import styled from "styled-components";
 import NavBar from "../Components/Header/NavBar";
 import HomePageHeader from "./Header/HomePageHeader";
+import IntroductionSkills from "./Skills/IntroductionSkills";
 
 const DivWithBackground = styled.div`
   width: 100%;
@@ -23,6 +24,7 @@ class HomePage extends Component {
         
 
           <HomePageHeader />
+          {/* <IntroductionSkills /> */}
 
         </Container>
         

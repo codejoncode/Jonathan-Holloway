@@ -1,25 +1,22 @@
-import React from 'react';
-import {Route, Switch } from "react-router-dom";
-import { Container } from 'reactstrap';
-import './App.css';
-import Test from './Components/Test';
-import LandingPage from './Components/LandingPage';
-import Example from './Components/Example';
-import HomePage from './Components/HomePage';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import { Container } from "semantic-ui-react";
+import "./App.css";
+import Test from "./Components/Test";
+import LandingPage from "./Components/LandingPage";
+import Example from "./Components/Example";
+import HomePage from "./Components/HomePage";
 
 function App() {
-
- 
-
   return (
-    <Container>
-      <div className="App">
+    <div>
+      <Container className="App main">
         <Switch>
-          <Route exact path = "/" component = {LandingPage} />
-          <Route path = "/home"  component = {HomePage} />
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/home" component={HomePage} />
         </Switch>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 }
 
