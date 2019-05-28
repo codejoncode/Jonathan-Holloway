@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Jumbotron, Container, Col, Row } from "reactstrap";
 import styled from "styled-components";
-import NavBar from "./NavBar";
+import NavBar from "../Components/Header/NavBar";
 
 const DivWithBackground = styled.div`
   width: 100%;
@@ -13,6 +13,8 @@ class HomePage extends Component {
   render() {
     return (
       <DivWithBackground>
+        
+
         <NavBar />
         <Jumbotron fluid>
           <Container fluid>
