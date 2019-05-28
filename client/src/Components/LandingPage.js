@@ -45,7 +45,7 @@ class LandingPage extends Component {
         <Row>
           <Col>
           <ResponsiveImage onClick = {this.continueToHomePage()}/>
-            <ResponsiveButton className = "button button-block, button-secondary" onClick = {this.continueToHomePage()}>Continue</ResponsiveButton>
+            <ResponsiveButton className = "button button-block, button-secondary" onClick = {this.continueToHomePage()}>Click To Continue</ResponsiveButton>
           </Col>
            
         </Row>
