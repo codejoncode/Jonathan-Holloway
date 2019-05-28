@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Button, Jumbotron, Container, Col, Row } from "reactstrap";
+// import { Button, Jumbotron, Container, Col, Row } from "reactstrap";
+import { Menu, Button, Container, Divider } from "semantic-ui-react";
 import styled from "styled-components";
 import NavBar from "../Components/Header/NavBar";
+import HomePageHeader from "./Header/HomePageHeader";
 
 const DivWithBackground = styled.div`
   width: 100%;
@@ -12,12 +14,23 @@ const Card = styled.div``;
 class HomePage extends Component {
   render() {
     return (
-      <DivWithBackground>
+      <div>
+        <NavBar />
+        <Divider />
+        <Divider />
+        <Divider />
+        <Container>
         
 
-        <NavBar />
-        <Jumbotron fluid>
+          <HomePageHeader />
+
+        </Container>
+        
+      </div>
+    )
+        {/* <Jumbotron fluid>
           <Container fluid>
+
             <h1 className="display-3">Jonathan Holloway</h1>
             <p className="lead">
               Team player software engineer with a can-do attitude, phenomenal
@@ -45,9 +58,8 @@ class HomePage extends Component {
               <IconBig className = ""/>
             </Card>
           </Col>
-        </Row>
-      </DivWithBackground>
-    );
+        </Row> */}
+    // );
   }
 }
 
