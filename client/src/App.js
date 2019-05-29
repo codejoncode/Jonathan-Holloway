@@ -8,6 +8,7 @@ import Example from "./Components/Example";
 import HomePage from "./Components/HomePage";
 import NavBar from "./Components/Header/NavBar";
 import Resume from "./Components/ResumePage/Resume";
+import Lectures from "./Components/Skills/Lectures";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={Resume} />
+          <Route path="/lectures" component={Lectures} />
         </Switch>
       </Container>
     </div>
