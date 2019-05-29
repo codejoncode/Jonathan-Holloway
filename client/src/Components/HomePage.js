@@ -16,7 +16,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+       
         <Divider />
         <Divider />
         <Divider />
