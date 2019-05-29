@@ -13,12 +13,14 @@ class Resume extends Component {
   render() {
     return (
       <Grid>
-        <Grid.Column width={8}>
+        <Grid.Column width={5}>
               <br/>
-            <Header as="h1">Jonathan J. Holloway</Header>
-            <Header as="h3">Full Stack Engineer</Header>
+            <Header as="h1" style={{ textAlign: "left" }}>Jonathan J. Holloway</Header>
+            <Header as="h2" style={{ textAlign: "left" }}>Full Stack Engineer</Header>
+            <Message style={{ textAlign: "left" }}>
+                <Message.Header>CONTACT</Message.Header>
 
-            <Header as="h2">CONTACT</Header>
+            {/* <Header as="h2">CONTACT</Header> */}
             <Item as={Link} to="www.linkedin.com/in/jonathanjholloway">
               www.linkedin.com/in/jonathanjholloway
             </Item>
@@ -29,6 +31,7 @@ class Resume extends Component {
             <Item>708-465-2230</Item>
             <Item>jonathanjamelholloway@gmail.com</Item>
             <Item>Crown Point, IN, USA</Item>
+            </Message>
             <Message>
               <Message.Header style={{ textAlign: "left" }}>
                 TECHNICAL SKILLS
@@ -55,7 +58,7 @@ class Resume extends Component {
 
             <Header as="h2" />
             <Message>
-              <Message.Header style={{ textAlign: "left" }}>
+              <Message.Header style={{ textAlign: "left", marginBottom: "10px" }}>
                 EDUCATION
               </Message.Header>
                   <Header as="h5" style={{ textAlign: "left" }}>
@@ -75,17 +78,20 @@ class Resume extends Component {
                 </Message.List>
             </Message>
         </Grid.Column>
-        <Grid.Column width={8}>
+        <Grid.Column width={6}>
               <br/>
-            <Header as="h2">Summary</Header>
+              <Message style={{ textAlign: "left" }}>
+                  <Message.Header >SUMMARY</Message.Header>
             <p>
               Team player software engineer with a can-do attitude, phenomenal
               time management skills and a strong user focus. An Experienced
               developer working with others on one part of an application and
               another team working on a different part of an application.{" "}
             </p>
-            <Header as="h2">PROJECTS</Header>
-            <Header as="h3">Symposium -</Header> <span />
+              </Message>
+            <Message style={{ textAlign: "left" }}>
+            <Message.Header>PROJECTS</Message.Header>
+            <Header as="h3">Symposium - <Link to="https://socialapp2.netlify.com/">https://socialapp2.netlify.com/</Link></Header>
             <p>
               Symposium is a reddit/slack like forum where likeminded users can
               share ideas.{" "}
@@ -101,23 +107,31 @@ class Resume extends Component {
             </p>
             <Header as="h3">Conway's Life</Header> <span />
             <p>Conway’s game of life – cellular automation.</p>
-            <Header>EXPERIENCE</Header>
-            <Header as="h3">Symposium- March 2019 - April 2019</Header>
-            <ul>
-              <li>
+
+            </Message>
+            <Message style={{ textAlign: "left" }}>
+            <Message.Header>EXPERIENCE</Message.Header>
+                <Message style={{border: "None"}}>
+                    <Message.Header>Symposium- March 2019 - April 2019</Message.Header>
+                    <Message.List>
+                    <Message.Item>
                 5-week project where I worked with 4 other developers on an
-                existing codebase to add functionality and features.{" "}
-              </li>
-              <li>
+                existing codebase to add functionaMessage.Itemty and features.
+              </Message.Item>
+              <Message.Item>
                 Continuous deployment, test driven development and git workflow
-              </li>
-              <li>React/Redux frontend and PostgreSQL on the backend. </li>
-              <li>
+              </Message.Item>
+              <Message.Item>React/Redux frontend and PostgreSQL on the backend. </Message.Item>
+              <Message.Item>
                 I implemented the backend and frontend for the follow a user
-                feature. I also implemented the functionality for editing a
+                feature. I also implemented the functionaMessage.Itemty for editing a
                 profile.{" "}
-              </li>
-            </ul>
+              </Message.Item>
+                    </Message.List>
+                </Message>
+            </Message>
+            <Header as="h3"></Header>
+            
             <Header as="h3">
               Lambda School of Computer Science January 2019 to March 2019 -
               Teaching Assistant
