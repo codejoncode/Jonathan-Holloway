@@ -13,7 +13,7 @@ import Lectures from "./Components/Skills/Lectures";
 function App() {
   return (
     <div>
-      <Container className="App main">
+      <Container className="App main" style= {{width: "100%"}}>
        <NavBar /> 
         <Switch>
           <Route exact path="/" component={LandingPage} />
