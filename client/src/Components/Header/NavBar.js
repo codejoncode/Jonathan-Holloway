@@ -5,8 +5,7 @@ import iconImage from "../../Images/Icon.PNG";
 class NavBar extends Component {
   render() {
     return (
-    //   <Container style= {{width: "100%"}}>
-        <Menu inverted fixed="top">
+        <Menu >
           <Menu.Item as={Link} to="/" header>
             <img src={iconImage} alt="logo" />
           </Menu.Item>
@@ -28,7 +27,7 @@ class NavBar extends Component {
             />
           </Menu.Item>
         </Menu>
-    //   </Container>
+
     );
   }
 }

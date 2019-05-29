@@ -28,8 +28,8 @@ class Resume extends Component {
             <Item as={Link} to="https://github.com/codejoncode">
               https://github.com/codejoncode
             </Item>
-            <Item>708-465-2230</Item>
             <Item>jonathanjamelholloway@gmail.com</Item>
+            <Item>708-465-2230</Item>
             <Item>Crown Point, IN, USA</Item>
             </Message>
             <Message>
@@ -78,7 +78,7 @@ class Resume extends Component {
                 </Message.List>
             </Message>
         </Grid.Column>
-        <Grid.Column width={6}>
+        <Grid.Column width={11}>
               <br/>
               <Message style={{ textAlign: "left" }}>
                   <Message.Header >SUMMARY</Message.Header>

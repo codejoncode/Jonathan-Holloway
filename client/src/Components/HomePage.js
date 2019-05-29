@@ -17,9 +17,6 @@ class HomePage extends Component {
     return (
       <div>
        
-        <Divider />
-        <Divider />
-        <Divider />
         <Container>
         
 
