@@ -15,7 +15,7 @@ const Card = styled.div``;
 class HomePage extends Component {
   render() {
     return (
-      <div>
+      <Grid>
        
         <Container>
         
@@ -25,7 +25,7 @@ class HomePage extends Component {
 
         </Container>
         
-      </div>
+      </Grid>
     )
         {/* <Jumbotron fluid>
           <Container fluid>

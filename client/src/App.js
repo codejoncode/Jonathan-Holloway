@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { Container } from "semantic-ui-react";
+import { Container, Grid } from "semantic-ui-react";
 import "./App.css";
 import Test from "./Components/Test";
 import LandingPage from "./Components/LandingPage";
@@ -12,7 +12,7 @@ import Lectures from "./Components/Skills/Lectures";
 
 function App() {
   return (
-    <div>
+    <Grid>
       <Container className="App main" style= {{width: "100%"}}>
        <NavBar /> 
         <Switch>
@@ -22,7 +22,7 @@ function App() {
           <Route path="/lectures" component={Lectures} />
         </Switch>
       </Container>
-    </div>
+    </Grid>
   );
 }
 
