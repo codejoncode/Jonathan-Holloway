@@ -12,50 +12,10 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-// import { NavLink, Link, withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { Menu, Button, Container, Grid, Image } from "semantic-ui-react";
 import iconImage from "../../Images/Icon.PNG";
-// class NavBar extends Component {
-//   render() {
-//     return (
 
-//         <Menu>
-//         <Container>
-//           <Menu.Item as={Link} to="/home" header>
-//             <img src={iconImage} alt="logo" />
-//           </Menu.Item>
-
-//           <Menu.Item as={Link} to="/resume">
-//             Resume
-//           </Menu.Item>
-
-//           <Menu.Item as={Link} to="/projects">
-//             Developer
-//           </Menu.Item>
-
-//           <Menu.Item as={Link} to="lectures">
-//             Teacher
-//           </Menu.Item>
-//           <Menu.Item as={Link} to="manager">
-//             Project Manager
-//           </Menu.Item>
-
-//           <Menu.Item>
-//             <Button
-//               as={Link}
-//               to={"/interview"}
-//             //   floated="right"
-//               positive
-//               inverted
-//               content="Interview"
-//             />
-//           </Menu.Item>
-//           </Container>
-//         </Menu>
-
-//     );
-//   }
-// }
 class NavBar extends Component {
   state = {
     isOpen: false
@@ -88,9 +48,9 @@ class NavBar extends Component {
                   Experience
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>Developer</DropdownItem>
-                  <DropdownItem>Project Manager</DropdownItem>
-                  <DropdownItem>Teacher</DropdownItem>
+                  <DropdownItem><Link to = "/projects">Developer</Link></DropdownItem>
+                  <DropdownItem><Link to = "/manager">Project Manager</Link></DropdownItem>
+                  <DropdownItem><Link to = "/lectures">Teacher</Link></DropdownItem>
                   <DropdownItem divider />
                 </DropdownMenu>
               </UncontrolledDropdown>

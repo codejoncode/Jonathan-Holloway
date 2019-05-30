@@ -82,3 +82,13 @@ width: 49%;
   height: 100px; 
 }
 
+.lectures {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 500px){
+  .lectures {
+    flex-direction: column; 
+  }
+}

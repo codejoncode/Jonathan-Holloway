@@ -1,23 +1,64 @@
-import React, { Component } from 'react'
-import { Grid, Header, Divider, Icon, Item, Segment, Container } from "semantic-ui-react";
+import React, { Component } from "react";
+import {
+  Grid,
+  Header,
+  Divider,
+  Icon,
+  Item,
+  Segment,
+  Container,
+  Label
+} from "semantic-ui-react";
+import ReactPlayer from "react-player";
+import { lectures } from "../../Helpers/skillsData";
 class Lectures extends Component {
-    render() {
-        return (
-            <Container>
-            <Grid width={16}>
-            <Segment.Group>
-                <Segment>
+  state = {
+    url: "https://www.youtube.com/embed/lxuyCxw_sg4",
+    title: "Web Server Guided Project I"
+  };
 
-                <p>Here is my last week of lectures from when I was a teachers assistant at Lambda School Academy of Computer Science</p>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/lxuyCxw_sg4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/KWKR4tXLqW8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/otxoIXgr6Tk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/UH6QHhxB3TQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </Segment>
-            </Segment.Group>
-            </Grid>
-            </Container>
-        )
-    }
+  changeURL = (url, title) => () => {
+    this.setState({ url, title });
+  };
+  render() {
+    const { url, title } = this.state;
+    return (
+      <Container>
+        <div className="lectures">
+          {/* first column */}
+          <div>
+            <p>
+              Here is my last week of lectures from when I was a teachers
+              assistant at Lambda School Academy of Computer Science. This
+              experience allowed me to dive deeper into the concepts.
+            </p>
+            <Label color="blue">Click a title below to go to video</Label>
+            <ul>
+              {lectures.map((lecture, index) => (
+                <li
+                  style={{ cursor: "pointer", marginBottom: "20px" }}
+                  onClick={this.changeURL(lecture.url, lecture.title)}
+                >
+                  <h3>{lecture.title}</h3>
+                </li>
+              ))}
+            </ul>
+            <h5>One of the most effective ways to learn how to code can come from teaching others how to code. </h5>
+            <ul>
+                <li><h3>Increases confidence</h3></li>
+                <li><h3>Practice soft skills</h3></li>
+                <li><h3>Key to mastery</h3></li>
+            </ul>
+          </div>
+          {/* second column */}
+         
+          <div>
+            <h2 style={{ textAlign: "center" }}>{title}</h2>
+            <ReactPlayer url={url} width="100%" />
+          </div>
+        </div>
+      </Container>
+    );
+  }
 }
 export default Lectures;
