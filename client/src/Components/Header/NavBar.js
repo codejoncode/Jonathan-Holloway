@@ -51,6 +51,7 @@ class NavBar extends Component {
                   <DropdownItem><Link to = "/projects">Developer</Link></DropdownItem>
                   <DropdownItem><Link to = "/manager">Project Manager</Link></DropdownItem>
                   <DropdownItem><Link to = "/lectures">Teacher</Link></DropdownItem>
+                  <DropdownItem><Link to = "/education">Education</Link></DropdownItem>
                   <DropdownItem divider />
                 </DropdownMenu>
               </UncontrolledDropdown>

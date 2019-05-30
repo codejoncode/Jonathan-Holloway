@@ -87,6 +87,16 @@ width: 49%;
   flex-direction: column;
 }
 
+.resume {
+  background: linear-gradient( 
+    to right bottom, 
+    #cee5e6 0%, 
+    #cee5e6 50%, 
+    #000000 50%, 
+    #000000 100%
+  );
+}
+
 @media (max-width: 500px){
   .lectures {
     flex-direction: column; 

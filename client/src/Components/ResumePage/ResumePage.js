@@ -42,7 +42,7 @@ class ResumePage extends Component {
       );
     }
     return (
-      <div>
+      <div className = "resume">
         <div className="pdfButtonDiv">
           <h1>Resume</h1>
         </div>
