@@ -32,3 +32,20 @@ export const aboutSkills = [
     {title: "Teacher", content: "", icon: "", },
     {title: "Project Manager", content: "", icon: "balance scale", },
 ]
+
+
+export const projects = [
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+]
