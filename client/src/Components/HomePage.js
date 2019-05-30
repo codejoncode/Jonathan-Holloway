@@ -19,9 +19,9 @@ class HomePage extends Component {
         // <Container>
         <div>
 
-          {/* <HomePageHeader /> */}
+          <HomePageHeader />
           {/* <IntroductionSkills /> */}
-          <ResumePage />
+          {/* <ResumePage /> */}
           </div>
         // </Container>
         

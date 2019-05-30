@@ -25,3 +25,10 @@ export const lectures = [
   { url: "https://www.youtube.com/embed/otxoIXgr6Tk", title: "Web Server Guided Project III" },
   { url: "https://www.youtube.com/embed/UH6QHhxB3TQ", title: "Web Server Guided Project IV" }, 
 ];
+
+export const aboutSkills = [
+    {title: "Web Development", content: "Front end to backend, I have experience creating a plan and following the plan to get your application from idea to ...", icon: "computer", },
+    {title: "Web Design", content: "", icon: "", },
+    {title: "Teacher", content: "", icon: "", },
+    {title: "Project Manager", content: "", icon: "balance scale", },
+]

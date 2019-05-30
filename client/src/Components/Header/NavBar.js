@@ -30,7 +30,7 @@ class NavBar extends Component {
     return (
       <div style={{ marginBottom: "40px" }}>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">
+          <NavbarBrand href="/home">
             <Image avatar src={iconImage} alt="logo" />
             Jonathan J. Holloway
           </NavbarBrand>
