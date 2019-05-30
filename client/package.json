@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@progress/kendo-drawing": "^1.5.12",
+    "@progress/kendo-react-pdf": "^3.1.0",
     "boostrap": "^2.0.0",
     "bootstrap": "^4.3.1",
     "material-design-icons": "^3.0.1",

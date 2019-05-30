@@ -6,3 +6,53 @@
   width: 10%;
   height: 10%;
 }
+.pdfDiv {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+}
+.pdfDiv h1{
+  margin-bottom: 0px;
+  margin-top: 0px; 
+  font-size: 18px;
+  font-weight: 900; 
+}
+
+.pdfDiv h2 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 18px;
+}
+
+.pdfDiv h3 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 14px;
+}
+.pdfDiv h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.pdfDiv h5 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.pdfDiv p {
+  margin-bottom: 5px; 
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.pdfDiv li {
+  font-size: 12px;
+}
+
+.column1 {
+
+}
+
+.column2 {
+
+}
+

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import NavBar from "../Components/Header/NavBar";
 import HomePageHeader from "./Header/HomePageHeader";
 import IntroductionSkills from "./Skills/IntroductionSkills";
+import ResumePage from "./ResumePage/ResumePage";
 
 const DivWithBackground = styled.div`
   width: 100%;
@@ -15,17 +16,14 @@ const Card = styled.div``;
 class HomePage extends Component {
   render() {
     return (
-      <Grid>
-       
         <Container>
         
 
           <HomePageHeader />
           {/* <IntroductionSkills /> */}
-
+          <ResumePage />
         </Container>
         
-      </Grid>
     )
         {/* <Jumbotron fluid>
           <Container fluid>

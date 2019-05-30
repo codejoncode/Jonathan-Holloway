@@ -9,11 +9,13 @@ import HomePage from "./Components/HomePage";
 import NavBar from "./Components/Header/NavBar";
 import Resume from "./Components/ResumePage/Resume";
 import Lectures from "./Components/Skills/Lectures";
+import ResumePage from "./Components/ResumePage/ResumePage";
 
 function App() {
   return (
     <Grid>
-      <Container className="App main" style= {{width: "100%"}}>
+      <ResumePage />
+      <Container className="App main">
        <NavBar /> 
         <Switch>
           <Route exact path="/" component={LandingPage} />
