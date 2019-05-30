@@ -4,12 +4,48 @@ import { PDFExport } from "@progress/kendo-react-pdf";
 import Resume from "./Resume";
 
 class ResumePage extends Component {
+  state = {
+    width: 0,
+    height: 0
+  };
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+
   exportPDF = () => {
     this.resume.save();
   };
+
   render() {
+    console.log(this.state);
+    if (this.state.width < 647) {
+      return (
+        <div className="pdfButtonDiv" style = {{flexDirection: "column"}}>
+          <div>
+            <h1>Resume</h1>
+          </div>
+          <br/>
+          <button className="pdfButton" style = {{width: "20%"}} onClick={this.exportPDF}>
+            download resume
+          </button>
+        </div>
+      );
+    }
     return (
       <div>
+        <div className="pdfButtonDiv">
+          <h1>Resume</h1>
+        </div>
         <div style={{ marginTop: "25px" }}>
           <PDFExport
             fileName="Jonathan-Holloway-Resume.pdf"
@@ -173,12 +209,11 @@ class ResumePage extends Component {
             </div>
           </PDFExport>
         </div>
-         <div className="pdfButtonDiv">
-         <button  className="pdfButton" onClick={this.exportPDF}>
+        <div className="pdfButtonDiv">
+          <button className="pdfButton" onClick={this.exportPDF}>
             download
           </button>
-         </div> 
-        
+        </div>
       </div>
     );
   }

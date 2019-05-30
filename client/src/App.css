@@ -82,9 +82,3 @@ width: 49%;
   height: 100px; 
 }
 
-
-@media (max-width: 450px){
-  .pdfdiv {
-    display: none;
-  }
-}
