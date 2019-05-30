@@ -16,13 +16,14 @@ const Card = styled.div``;
 class HomePage extends Component {
   render() {
     return (
-        <Container>
-        
+        // <Container>
+        <div>
 
-          <HomePageHeader />
+          {/* <HomePageHeader /> */}
           {/* <IntroductionSkills /> */}
           <ResumePage />
-        </Container>
+          </div>
+        // </Container>
         
     )
         {/* <Jumbotron fluid>

@@ -78,7 +78,7 @@ class NavBar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Resume</NavLink>
+                <NavLink href="/resume">Resume</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="https://github.com/reactstrap/reactstrap">Contact</NavLink>
