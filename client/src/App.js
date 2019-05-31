@@ -11,6 +11,7 @@ import NavBar from "./Components/Header/NavBar";
 import Resume from "./Components/ResumePage/Resume";
 import Lectures from "./Components/Skills/Lectures";
 import ResumePage from "./Components/ResumePage/ResumePage";
+import Projects from "./Components/Projects/Projects";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
           <Route path="/lectures" component={Lectures} />
+          <Route path="/projects" component = {Projects} />
+          
         </Switch>
       </div>
     

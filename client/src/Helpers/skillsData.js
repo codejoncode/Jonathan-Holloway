@@ -35,17 +35,15 @@ export const aboutSkills = [
 
 
 export const projects = [
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
-    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: []},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
+    {title: "", deployUrl: "", githubUrl: "", description: "", technologies: [], image: ""},
 ]
