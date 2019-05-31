@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Grid, Image, Tab } from 'semantic-ui-react';
-import { projects } from '../../Helpers/skillsData';
+import { projects } from '../../Helpers/projectData';
 
 /*panes will have all and a list of different technologies */
 const panes = [
@@ -12,6 +12,7 @@ const panes = [
 
 class Projects extends Component {
     render () {
+      console.log(projects)
         return (
           <div style = {{margin: "20px"}}>
             <Tab menu = {{pointing: true}} panes={panes} />
