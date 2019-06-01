@@ -7,21 +7,19 @@ class ProjectSection extends Component {
         const {projects} = this.props; 
         return (
             
-            <Grid.Row>
+            <Grid.Row stretched >
+                <br/>
                 {projects && 
                     projects.map((project, index) => <Grid.Column key = {index}>
-                        <Image src = {project.image} fluid style = {{height: "200px"}}/>
-                        <Message header ={project.title} content = {project.description}/>
-                        <Message>
+                        <Image src = {project.image} fluid style = {{height: "220px"}}/>
+                        {/* <Message header ={project.title} content = {project.description}/> */}
+                        {/* <Message>
                             <Message.Header>Features</Message.Header>
-                            
                             {project.features &&  
                                 <Message.List>
                                     <ProjectFeatureList features = {project.features} />
                                 </Message.List> }
-                            
-                            
-                        </Message>
+                        </Message> */}
                     </Grid.Column>)
                 }
             </Grid.Row>    

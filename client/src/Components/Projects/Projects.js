@@ -74,7 +74,7 @@ class Projects extends Component {
         <Menu pagination fluid stackable>
           {technologies.map((tech, index) => <Menu.Item name = {tech.toUpperCase()} active={activeItem === tech.toUpperCase()} onClick = {this.handleItemClick}></Menu.Item>)}
         </Menu>
-        <Grid columns={this.state.columnCount} divided>
+        <Grid columns={this.state.columnCount} divided stackable>
           {projectsDisplay.map((projects, index) => (
             <ProjectSection key={index} projects={projects} />
           ))}
