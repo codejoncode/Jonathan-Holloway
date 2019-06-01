@@ -1,28 +1,29 @@
 import _ from "lodash";
 import React, { Component } from "react";
-import { Button, Header, Icon, Image, Modal } from "semantic-ui-react";
+import { withRouter } from "react-router";
+import { Button, Header, Icon, Image, Menu } from "semantic-ui-react";
+import ProjectFeatureList from "./ProjectFeatureList";
 
 class ProjectDetails extends Component {
-  closeProjectModal = currentModal => {
-    this.props.handleClose(currentModal);
-  }
+  state = {};
+  //   closeProjectModal = currentModal => {
+  //     this.props.handleClose(currentModal);
+  //   }
+  //   openProjectModal = currentModal => {
+  //     this.props.handleOpen(currentModal);
+  //   };
   render() {
+    const { project, modalOpen, handleClose } = this.props;
+    console.log(this.props);
     return (
-      <div>
-        <Modal.Header>Profile Picture</Modal.Header>
-        <Modal.Content image scrolling>
-          <Image
-            size="medium"
-            src="https://react.semantic-ui.com/images/wireframe/image.png"
-            wrapped
-          />
+      <Menu>
+        <Menu.Header>Profile Picture</Menu.Header>
+        <Menu.Content image scrolling>
+          <Image size="medium" src={project.image} wrapped />
 
-          <Modal.Description>
-            <Header>Modal Header</Header>
-            <p>
-              This is an example of expanded content that will cause the modal's
-              dimmer to scroll
-            </p>
+          <Menu.Description>
+            <Header>{project.title}</Header>
+            <p>{project.description}</p>
 
             {_.times(8, i => (
               <Image
@@ -31,15 +32,16 @@ class ProjectDetails extends Component {
                 style={{ paddingBottom: 5 }}
               />
             ))}
-          </Modal.Description>
-        </Modal.Content>
-        <Modal.Actions>
-          <Button primary onClick = {() => this.closeProjectModal(null)}>
-            Close <Icon name="close right" />
-          </Button>
-        </Modal.Actions>
-        </div>
+            <ProjectFeatureList features={project.features} />
+          </Menu.Description>
+        </Menu.Content>
+        <Menu.Actions>
+          {/* <Button primary onClick = {() => this.closeProjectModal(null)}>
+            Close <Icon name="close" />
+          </Button> */}
+        </Menu.Actions>
+      </Menu>
     );
   }
 }
-export default ProjectDetails;
+export default withRouter(ProjectDetails);

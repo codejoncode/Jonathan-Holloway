@@ -4,9 +4,7 @@ import ProjectFeatureList from "./ProjectFeatureList";
 import ProjectDetails from "./ProjectDetails";
 
 class ProjectSection extends Component {
-  openProjectModal = currentModal => {
-    this.props.handleOpen(currentModal);
-  };
+  
 
   render() {
     const { projects, handleOpen, handleClose, modalOpen } = this.props;
@@ -16,35 +14,22 @@ class ProjectSection extends Component {
         {projects &&
           projects.map((project, index) => (
             <Grid.Column key={index}>
-              <Modal
-                dimmer = "inverted"
-                size = "small"
-                trigger={
-                  <Button onClick={() => this.openProjectModal("ProjectModal")}>
-                    <Image
-                      src={project.image}
-                      fluid
-                      style={{ height: "220px" }}
-                    />
-                  </Button>
-                }
-                open={modalOpen}
-                onClose={() => handleClose(null)}
-              >
-                <ProjectDetails
+              
+                {/* <ProjectDetails
                   handleClose={handleClose}
+                  handleOpen = {handleOpen}
                   modalOpen={modalOpen}
                   project={project}
-                />
-              </Modal>
-              {/* <Message header ={project.title} content = {project.description}/> */}
-              {/* <Message>
-                            <Message.Header>Features</Message.Header>
-                            {project.features &&  
-                                <Message.List>
-                                    <ProjectFeatureList features = {project.features} />
-                                </Message.List> }
-                        </Message> */}
+                /> */}
+                
+            <Button>
+            <Image
+               src={project.image}
+               fluid
+           style={{ height: "220px" }}
+            />
+           </Button>
+
             </Grid.Column>
           ))}
       </Grid.Row>
