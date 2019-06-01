@@ -1,11 +1,12 @@
 import React from 'react'
 import { Grid, Image, Message } from "semantic-ui-react";
 const ProjectFeatureList = ({features}) => {
-    return (
-        <div>
+    const featuresList = features.split(',')
+    if(featuresList){
+        return featuresList.map((feature, index) => <Message.Item key = {index}>{feature}</Message.Item>)
+    }
             
-        </div>
-    )
+    
 }
 
 export default ProjectFeatureList
