@@ -3,9 +3,12 @@ import React, { Component } from "react";
 import { Button, Header, Icon, Image, Modal } from "semantic-ui-react";
 
 class ProjectDetails extends Component {
+  closeProjectModal = currentModal => {
+    this.props.handleClose(currentModal);
+  }
   render() {
     return (
-      <Modal trigger={<Button>Scrolling Content Modal</Button>}>
+      <div>
         <Modal.Header>Profile Picture</Modal.Header>
         <Modal.Content image scrolling>
           <Image
@@ -31,11 +34,11 @@ class ProjectDetails extends Component {
           </Modal.Description>
         </Modal.Content>
         <Modal.Actions>
-          <Button primary>
-            Proceed <Icon name="chevron right" />
+          <Button primary onClick = {() => this.closeProjectModal(null)}>
+            Close <Icon name="close right" />
           </Button>
         </Modal.Actions>
-      </Modal>
+        </div>
     );
   }
 }
