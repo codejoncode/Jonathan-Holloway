@@ -7,7 +7,7 @@ class Projects extends Component {
 
   render() {
     const technologies = ["ALL", ...technologiesData];
-    const { handleOpen, handleClose, modalOpen, currentModal, projectsDisplay, activeItem, columnCount, handleItemClick, filterData } = this.props;
+    const { handleOpen, handleClose, modalOpen, currentModal, projectsDisplay, activeItem, columnCount, handleItemClick, filterData, goToProjectPage } = this.props;
     return (
       <div style={{ margin: "20px" }}>
         <Header style={{ margin: "20px", textAlign: "center" }}>
@@ -40,6 +40,7 @@ class Projects extends Component {
               handleClose={handleClose}
               modalOpen={modalOpen}
               currentModal={currentModal}
+              goToProjectPage = {goToProjectPage}
             />
           ))}
         </Grid>

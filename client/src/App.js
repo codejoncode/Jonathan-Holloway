@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import { withRouter } from "react-router";
 import { Grid } from "semantic-ui-react";
 import { Container } from "reactstrap";
 import "./App.css";
@@ -74,9 +75,12 @@ class App extends Component {
   handleClose = currentModal =>
     this.setState({ modalOpen: false, currentModal });
 
+  goToProjectPage = (id) => {
+    this.props.history.push(`/project/${id}`)
+  }
+
   render() {
-    console.log("This is the state");
-    console.log(this.state);
+    console.log(this.props)
     const {modalOpen, currentModal, columnCount, activeItem, projectsDisplay} = this.state;
     return (
       <div className="main">
@@ -99,15 +103,16 @@ class App extends Component {
                 projectsDisplay = {projectsDisplay}
                 filterData = {this.filterData}
                 handleItemClick = {this.handleItemClick}
+                goToProjectPage = {this.goToProjectPage}
 
               />
             )}
           />
-          <Route path = "/projects/:id" component = {ProjectDetails} />
+          <Route path = "/project/:id" component = {() => <ProjectDetails projectsDisplay = {projectData}/>} />
         </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

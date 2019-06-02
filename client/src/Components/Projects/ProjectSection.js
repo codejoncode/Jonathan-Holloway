@@ -5,9 +5,10 @@ import ProjectDetails from "./ProjectDetails";
 
 class ProjectSection extends Component {
   
+ 
 
   render() {
-    const { projects, handleOpen, handleClose, modalOpen } = this.props;
+    const { projects, handleOpen, handleClose, modalOpen, goToProjectPage } = this.props;
     return (
       <Grid.Row stretched>
         <br />
@@ -22,7 +23,7 @@ class ProjectSection extends Component {
                   project={project}
                 /> */}
                 
-            <Button>
+            <Button onClick = {() => goToProjectPage(project.id)}>
             <Image
                src={project.image}
                fluid

@@ -1,46 +1,70 @@
-import _ from "lodash";
 import React, { Component } from "react";
 import { withRouter } from "react-router";
-import { Button, Header, Icon, Image, Menu } from "semantic-ui-react";
+import {
+  Button,
+  Header,
+  Icon,
+  Image,
+  Message,
+  Item,
+  Segment,
+  Divider,
+  Grid
+} from "semantic-ui-react";
 import ProjectFeatureList from "./ProjectFeatureList";
+import GithubLinks from "./GithubLinks";
+import PlanLinks from "./PlanLinks";
+import DeploymentLinks from "./DeploymentLinks";
 
 class ProjectDetails extends Component {
-  state = {};
-  //   closeProjectModal = currentModal => {
-  //     this.props.handleClose(currentModal);
-  //   }
-  //   openProjectModal = currentModal => {
-  //     this.props.handleOpen(currentModal);
-  //   };
+  state = {
+    project: null
+  };
+  componentWillMount() {
+    const { id } = this.props.match.params;
+    const project = this.props.projectsDisplay.filter(
+      pj => pj.id === Number(id)
+    )[0];
+    this.setState({ project });
+  }
   render() {
-    const { project, modalOpen, handleClose } = this.props;
-    console.log(this.props);
+    const { project } = this.state;
     return (
-      <Menu>
-        <Menu.Header>Profile Picture</Menu.Header>
-        <Menu.Content image scrolling>
-          <Image size="medium" src={project.image} wrapped />
+    <div>
+    <Segment textAlign="center">
+      <Item>
+          <Header>{project.title}</Header>
+          <Item.Description>{project.description}</Item.Description>
+          <Image size="big" src={project.image} centered />
+      </Item>
+        </Segment>
 
-          <Menu.Description>
-            <Header>{project.title}</Header>
-            <p>{project.description}</p>
+          <Grid columns={2} stackable>
+            {/* <Divider vertical></Divider> */}
+            <Grid.Row>
+              <Grid.Column>
+        <Segment padded = 'very'>
+                <Header>Features Implemented</Header>
+                <ProjectFeatureList features={project.features} />
+        </Segment>
+              </Grid.Column>
+              <Grid.Column>
+        <Segment padded = 'very'>
+                  <Header>Repository</Header>
+                <GithubLinks links={project.githubUrl} />
 
-            {_.times(8, i => (
-              <Image
-                key={i}
-                src="https://react.semantic-ui.com/images/wireframe/paragraph.png"
-                style={{ paddingBottom: 5 }}
-              />
-            ))}
-            <ProjectFeatureList features={project.features} />
-          </Menu.Description>
-        </Menu.Content>
-        <Menu.Actions>
-          {/* <Button primary onClick = {() => this.closeProjectModal(null)}>
-            Close <Icon name="close" />
-          </Button> */}
-        </Menu.Actions>
-      </Menu>
+                <Header>Plan</Header>
+                <PlanLinks links={project.plan}/>
+
+                <Header>Deploy</Header>
+                <DeploymentLinks links = {project.deployUrl}/>
+
+        </Segment>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+
+        </div>
     );
   }
 }
