@@ -8,8 +8,8 @@ class IntroductionSkills extends Component {
             <Grid columns={7} divided>
               <Grid.Row>
               {skillsData.map((skill, index) => 
-                  <Grid.Column>
-                    <Icon name ={skill} key = {index} size='big'/>
+                  <Grid.Column key = {index}>
+                    <Icon name ={skill}  size='big'/>
                   </Grid.Column>
                   )}
               </Grid.Row>

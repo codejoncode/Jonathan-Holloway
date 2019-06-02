@@ -13,14 +13,10 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import styled from "styled-components";
+
 import icon from "../Images/Icon.PNG";
 
-const OptionSpan = styled.span`
-  &:hover {
-    background-color: #e9ecef;
-  }
-`;
+
 
 class NavBar extends React.Component {
   state = {

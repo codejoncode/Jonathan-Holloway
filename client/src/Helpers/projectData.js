@@ -33,22 +33,18 @@ export const projectData = [
     // {title: "", deployUrl: "", githubUrl: "", description: "", technologies: "", image: ""},
     //https://trello.com/b/50RLXiA4/events-app
 ]
-console.log(projectData)
 
-export const filterHelper = {}
+
 export const technologiesData = []
 for (let project of projectData){
   const tech = project.technologies.split(' ');
   for (let t of tech){
     if (technologiesData.includes(t) === false && t.length > 0){
       technologiesData.push(t)
-      filterHelper[t] = []
-      
     }
   }
 }
 
 technologiesData.sort(); 
-console.log(technologiesData)
 
 

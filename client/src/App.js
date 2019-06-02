@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import { withRouter } from "react-router";
-import { Grid } from "semantic-ui-react";
-import { Container } from "reactstrap";
+// import { Grid } from "semantic-ui-react";
+// import { Container } from "reactstrap";
 import "./App.css";
-import Test from "./Components/Test";
+
 import LandingPage from "./Components/LandingPage";
-import Example from "./Components/Example";
 import HomePage from "./Components/HomePage";
 import NavBar from "./Components/Header/NavBar";
-import Resume from "./Components/ResumePage/Resume";
 import Lectures from "./Components/Skills/Lectures";
 import ResumePage from "./Components/ResumePage/ResumePage";
 import Projects from "./Components/Projects/Projects";
 import ProjectDetails from "./Components/Projects/ProjectDetails";
-import { technologiesData, projectData } from "./Helpers/projectData";
-import ProjectSection from "./Components/Projects/ProjectSection";
+import { projectData } from "./Helpers/projectData";
+
 
 class App extends Component {
   state = {
@@ -60,7 +58,6 @@ class App extends Component {
         break;
       }
     }
-    console.log(projectsDisplay);
     this.setState({ projectsDisplay, activeItem: name });
   };
 
@@ -80,7 +77,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props)
     const {modalOpen, currentModal, columnCount, activeItem, projectsDisplay} = this.state;
     return (
       <div className="main">

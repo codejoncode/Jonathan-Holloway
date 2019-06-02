@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Grid, Menu, Header } from "semantic-ui-react";
-import { technologiesData, projectData } from "../../Helpers/projectData";
+import { technologiesData } from "../../Helpers/projectData";
 import ProjectSection from "./ProjectSection";
 
 class Projects extends Component {
 
   render() {
     const technologies = ["ALL", ...technologiesData];
-    const { handleOpen, handleClose, modalOpen, currentModal, projectsDisplay, activeItem, columnCount, handleItemClick, filterData, goToProjectPage } = this.props;
+    const { handleOpen, handleClose, modalOpen, currentModal, projectsDisplay, activeItem, columnCount, handleItemClick, goToProjectPage } = this.props;
     return (
       <div style={{ margin: "20px" }}>
         <Header style={{ margin: "20px", textAlign: "center" }}>

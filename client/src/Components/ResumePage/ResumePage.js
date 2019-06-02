@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PDFExport } from "@progress/kendo-react-pdf";
-import Resume from "./Resume";
 
 class ResumePage extends Component {
   state = {
@@ -27,7 +26,6 @@ class ResumePage extends Component {
   };
 
   render() {
-    console.log(this.state);
     if (this.state.width < 647) {
       return (
         <div className="pdfButtonDiv" style = {{flexDirection: "column"}}>
@@ -75,6 +73,7 @@ class ResumePage extends Component {
                 <a
                   href="https://www.linkedin.com/in/jonathanjholloway/"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   https://www.linkedin.com/in/jonathanjholloway/
                 </a>
@@ -179,7 +178,6 @@ class ResumePage extends Component {
                     profile.{" "}
                   </li>
                 </ul>
-                <h3 as="h3" />
                 <h3 as="h3">
                   Lambda School of Computer Science January 2019 to March 2019 -
                   Teaching Assistant
@@ -196,6 +194,7 @@ class ResumePage extends Component {
                     <a
                       href="https://codejoncode.github.io/hashtable-guided-project-app/"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       https://codejoncode.github.io/hashtable-guided-project-app/
                     </a>{" "}

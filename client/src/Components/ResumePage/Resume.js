@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import {
   Grid,
   Header,
-  Divider,
-  Icon,
   Item,
-  Segment,
   Message
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";

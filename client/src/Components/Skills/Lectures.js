@@ -1,11 +1,5 @@
 import React, { Component } from "react";
 import {
-  Grid,
-  Header,
-  Divider,
-  Icon,
-  Item,
-  Segment,
   Container,
   Label
 } from "semantic-ui-react";
@@ -38,6 +32,7 @@ class Lectures extends Component {
                 <li
                   style={{ cursor: "pointer", marginBottom: "20px" }}
                   onClick={this.changeURL(lecture.url, lecture.title)}
+                  key = {index}
                 >
                   <h3>{lecture.title}</h3>
                 </li>

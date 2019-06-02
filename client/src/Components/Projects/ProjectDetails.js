@@ -1,14 +1,10 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import {
-  Button,
   Header,
-  Icon,
   Image,
-  Message,
   Item,
   Segment,
-  Divider,
   Grid
 } from "semantic-ui-react";
 import ProjectFeatureList from "./ProjectFeatureList";
@@ -50,13 +46,9 @@ class ProjectDetails extends Component {
               </Grid.Column>
               <Grid.Column>
         <Segment padded = 'very'>
-                  <Header>Repository</Header>
+                  
                 <GithubLinks links={project.githubUrl} />
-
-                <Header>Plan</Header>
                 <PlanLinks links={project.plan}/>
-
-                <Header>Deploy</Header>
                 <DeploymentLinks links = {project.deployUrl}/>
 
         </Segment>

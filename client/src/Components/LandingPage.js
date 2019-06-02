@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Button, Jumbotron, Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import { withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
+
 import styled from "styled-components";
 import landingPage from "../Images/landing1.jpg";
 
@@ -39,7 +39,6 @@ class LandingPage extends Component {
       this.props.history.push("/home");
   }
   render() {
-    console.log(this.props);
     return (
       <Container>
         <Row>

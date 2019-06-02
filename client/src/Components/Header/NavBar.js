@@ -12,8 +12,8 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import { Link, withRouter } from "react-router-dom";
-import { Menu, Button, Container, Grid, Image } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Image } from "semantic-ui-react";
 import iconImage from "../../Images/Icon.PNG";
 
 class NavBar extends Component {

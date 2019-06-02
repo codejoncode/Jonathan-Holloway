@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Image, Message } from "semantic-ui-react";
+import {Message } from "semantic-ui-react";
 const ProjectFeatureList = ({features}) => {
     const featuresList = features ? features.split(',') : []
     if(featuresList){
