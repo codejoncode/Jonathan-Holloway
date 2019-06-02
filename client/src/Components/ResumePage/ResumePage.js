@@ -78,11 +78,17 @@ class ResumePage extends Component {
                   https://www.linkedin.com/in/jonathanjholloway/
                 </a>
                 <br />
-                <a href="https://github.com/codejoncode">
+                <a href="https://github.com/codejoncode"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
                   https://github.com/codejoncode
                 </a>
                 <br />
-                <a href="www.jonathanjholloway.com">
+                <a href="https://www.jonathanjholloway.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
                   www.jonathanjholloway.com
                 </a>
                 <br />
@@ -140,9 +146,12 @@ class ResumePage extends Component {
                 <h3>PROJECTS</h3>
                 <h4>
                   Symposium -{" "}
-                  <Link to="https://socialapp2.netlify.com/">
+                  <a href="https://socialapp2.netlify.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
                     https://socialapp2.netlify.com/
-                  </Link>
+                  </a>
                 </h4>
                 <p>
                   Symposium is a reddit/slack like forum where likeminded users
