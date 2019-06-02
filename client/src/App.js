@@ -35,7 +35,7 @@ class App extends Component {
 
     for (let i = 0; i < rowCount; i++) {
       let setOfColumns = [];
-      while (projectCount < projectData.length - 1) {
+      while (projectCount < projectData.length) {
         if (projectData[projectCount]) {
           const tech = projectData[projectCount].technologies.toUpperCase();
           if (

@@ -39,7 +39,7 @@ export const projectData = [
     githubUrl:
       "https://github.com/codejoncode/front-end-project-week, https://github.com/codejoncode/back-end-project-week",
     description: "Four-day frontend project designed to test the React and Redux skills learned at Lambda. The backend was later implemented after 4 weeks of studies with Lambda with another 4 days of work after assignment. This was my first full stack application.  Many features added on top of the original requirement. I had a lot of fun and perhaps realized this is the career I wanted during the creation of this project. ",
-    technologies: "JavaScript Express FullStack sql",
+    technologies: "JavaScript Express Redux FullStack sql",
     image: noteTakingApp
   },
   {
@@ -67,35 +67,39 @@ export const projectData = [
   },
   {
     id: 10,
+    features: "Ability to display team data, Ability to display each players data",
     title: "Hash History Basketball League",
     deployUrl: "https://codejoncode.github.io/HashHistoryBasketballLeague",
     githubUrl: "https://github.com/codejoncode/HashHistoryBasketballLeague",
     description:
-      "Application to go over React router and displaying components in React from a Tyler Mcginnis course.",
-    technologies: "React  JavaScript",
+      "Application to go over React router and displaying components in React.",
+    technologies: "React  JavaScript Algorithms",
     image: basketBallLeague
   },
   {
     id: 9,
+    features: "Backtracking algorithm, Puzzle solver,  Difficulty adjustment, Timer",
     title: "Sudoku",
     deployUrl: "https://codejoncode.github.io/Sudoku/",
     githubUrl: "https://github.com/codejoncode/Sudoku",
-    description: "",
-    technologies: "JavaScript React",
+    description: "an application of the classic game of Sudoku",
+    technologies: "JavaScript React Algorithms",
     image: sudoku
   },
   {
     id: 8,
+    features: "Sample cell configurations that users can load and run, Option that creates a random cell configuration that users can run, Additional cell properties, Functionality to manually step through the simulation, Allow the user to change the dimension of the grid displayed",
     plan: "https://trello.com/b/bRjoKRwO/gameoflife-jonathanjamelholloway",
     title: "Conway's Game of Life",
     deployUrl: "https://codejoncode.github.io/Conways-Life/",
     githubUrl: "https://github.com/codejoncode/Conways-Life",
-    description: "",
+    description: "application in which users will be able to run different 'Game of Life' scenarios",
     technologies: "React JavaScript algorithms",
     image: conwaysGame
   },
   {
     id: 7,
+    features: "Event listeners, Custom carousel built with vanilla JavaScript, Icon on hover, Multiple pages, Links perform animation",
     plan: "https://trello.com/b/kWyiFmtw/sj-architects-by-jonathan-holloway",
     title: "User Interface Project Week",
     deployUrl: "http://high-pitched-cloth.surge.sh/",
@@ -110,22 +114,24 @@ export const projectData = [
     title: "Forex Landing Page",
     deployUrl: "https://codejoncode.github.io/forex_page/",
     githubUrl: "https://github.com/codejoncode/forex_page",
-    description: "",
+    description: "An attempt to mimic design located at  https://dribbble.com/shots/3860958-Forex-Trading-Landing using nothing but my eyes and skills.",
     technologies: "Design React",
     image: forexLandingPage
   },
   {
     id: 5,
+    features: "Carousel Component,  Styled Components, Filter the cards using the tabs",
     title: "Lambda Times",
     deployUrl: "http://motionless-note.surge.sh/",
     githubUrl:
       "https://github.com/codejoncode/Sprint-Challenge-Lambda-Times-React",
-    description: "React JavaScript",
+    description: "Lambda School 3 hour Sprint challenge to convert vanilla Javascript into a React application and pass data through props.",
     technologies: "React JavaScript",
     image: lambdaTimes
   },
   {
     id: 4,
+    features: "Ability to navigate through different months, Ability to navigate through different years, Carousel",
     title: "Simple Calendar",
     deployUrl: "http://lethal-juice.surge.sh/",
     githubUrl: "https://github.com/codejoncode/Calendar",
@@ -147,6 +153,7 @@ export const projectData = [
   },
   {
     id: 2,
+    features: "Pagination system that allows loading the next page of data, Use of API to display data in react application, Hide data until a button is clicked",
     title: "React Wars",
     deployUrl: "http://ruddy-throne.surge.sh/",
     githubUrl: "https://github.com/codejoncode/Sprint-Challenge-React-Wars",
@@ -157,6 +164,7 @@ export const projectData = [
   },
   {
     id: 1,
+    features: "Ability, do simple math, Ability continue doing math on the previous answer",
     title: "Simple Calculator",
     deployUrl: "http://worried-snakes.surge.sh/",
     githubUrl: "https://github.com/codejoncode/React-UI-Components",
@@ -167,6 +175,7 @@ export const projectData = [
   },
   {
     id: 0,
+    features: "Features simulate activity on a social network",
     title: "Social Card",
     deployUrl: "http://upbeat-son.surge.sh/",
     githubUrl: "https://github.com/codejoncode/React-UI-Components",
@@ -183,8 +192,8 @@ export const technologiesData = [];
 for (let project of projectData) {
   const tech = project.technologies.split(" ");
   for (let t of tech) {
-    if (technologiesData.includes(t) === false && t.length > 0) {
-      technologiesData.push(t);
+    if (technologiesData.includes(t.toUpperCase()) === false && t.length > 0) {
+      technologiesData.push(t.toUpperCase());
     }
   }
 }
