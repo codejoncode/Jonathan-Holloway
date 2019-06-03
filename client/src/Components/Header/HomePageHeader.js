@@ -12,8 +12,8 @@ class HomePageHeader extends Component {
       <Grid.Column width={16} >
         <Segment style={{backgroundColor: darkBlack}} textAlign='center'>
           <Item.Group>
-            <Item>
               <Item.Image  src={profilePic} centered/>
+            <Item>
               <Item.Content verticalAlign="bottom">
                 <Header id = "lighterBlue" as="h1">Jonathan J. Holloway</Header>
                 <br />
