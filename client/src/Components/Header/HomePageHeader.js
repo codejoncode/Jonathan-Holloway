@@ -3,20 +3,23 @@ import { Link } from "react-router-dom";
 import { Grid, Header, Segment, Item, Icon} from "semantic-ui-react";
 import profilePic from ".././../Images/profile pic.PNG";
 import IntroductionSkills from "../Skills/IntroductionSkills";
+
+import {lighterBlue, darkBlack} from "../../Helpers/Colors/colors";
+
 class HomePageHeader extends Component {
   render() {
     return (
-      <Grid.Column width={16}>
-        <Segment>
+      <Grid.Column width={16} >
+        <Segment style={{backgroundColor: darkBlack}} textAlign='center'>
           <Item.Group>
             <Item>
-              <Item.Image avatar size="small" src={profilePic} />
+              <Item.Image  src={profilePic} centered/>
               <Item.Content verticalAlign="bottom">
-                <Header as="h1">Jonathan J. Holloway</Header>
+                <Header id = "lighterBlue" as="h1">Jonathan J. Holloway</Header>
                 <br />
-                <Header as = "h3">Software Engineer</Header>
+                <Header id = "lighterBlue" as = "h3">Software Engineer</Header>
                 <br/>
-                <Header as="h5">Crown Point, IN</Header>
+                <Header id = "lighterBlue" as="h5">Crown Point, IN</Header>
                 {/* <br/>
                 <Header as="h6">JonathanJamelHolloway@gmail.com</Header> */}
                 <br/>
