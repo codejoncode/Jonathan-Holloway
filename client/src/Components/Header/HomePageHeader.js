@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Grid, Header, Segment, Item } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+import { Grid, Header, Segment, Item, Icon} from "semantic-ui-react";
 import profilePic from ".././../Images/profile pic.PNG";
 import IntroductionSkills from "../Skills/IntroductionSkills";
 class HomePageHeader extends Component {
@@ -16,10 +17,28 @@ class HomePageHeader extends Component {
                 <Header as = "h3">Software Engineer</Header>
                 <br/>
                 <Header as="h5">Crown Point, IN</Header>
+                {/* <br/>
+                <Header as="h6">JonathanJamelHolloway@gmail.com</Header> */}
+                <br/>
+                <a href="https://github.com/codejoncode" target="_blank" rel ="noopener noreferrer">
+                <Icon   name="github" />
+                </a>
+
+                <a href="https://twitter.com/Jonathanjamelh1" target="_blank" rel ="noopener noreferrer">
+                <Icon   name="linkedin" />
+                </a>
+
+                <a href="https://www.linkedin.com/in/jonathanjholloway/" target="_blank" rel ="noopener noreferrer">
+                <Icon  name="twitter" />
+                </a>
+                
+                
+                
+
               </Item.Content>
             </Item>
           </Item.Group>
-          <IntroductionSkills />
+          {/* <IntroductionSkills /> */}
         </Segment>
       </Grid.Column>
     );
