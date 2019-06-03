@@ -80,6 +80,7 @@ class App extends Component {
     const {modalOpen, currentModal, columnCount, activeItem, projectsDisplay} = this.state;
     return (
       <div className="main">
+        <div>
         <NavBar />
         <Switch>
           <Route exact path="/" component={LandingPage} />
@@ -106,6 +107,7 @@ class App extends Component {
           />
           <Route path = "/project/:id" component = {() => <ProjectDetails projectsDisplay = {projectData}/>} />
         </Switch>
+      </div>
       </div>
     );
   }
