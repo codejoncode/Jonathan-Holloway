@@ -37,6 +37,7 @@ class HomePageHeader extends Component {
                 <Header id="lighterBlue" as="h5">
                   Crown Point, IN
                 </Header>
+                
                 {/* <br/>
                 <Header as="h6">JonathanJamelHolloway@gmail.com</Header> */}
                 <br />
@@ -63,7 +64,11 @@ class HomePageHeader extends Component {
                 >
                   <Icon name="twitter" />
                 </a>
+                <Item.Description style= {{color: "#66FCF1"}}>
+                I am a Software developer with a passion for getting results. I love seeing something grow and come alive or even expanding something that already exists. Coding is a life change for me but I come from a  background of customer service so I am prepared to not just code but communicate with professional detail. 
+                </Item.Description>
               </Item.Content>
+              
             </Item>
           </Item.Group>
           {/* <IntroductionSkills /> */}
