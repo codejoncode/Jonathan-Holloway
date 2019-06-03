@@ -9,6 +9,7 @@ import {
   Card,
   List, 
   Container, 
+  Image,
 } from "semantic-ui-react";
 import profilePic from ".././../Images/profile pic.PNG";
 import IntroductionSkills from "../Skills/IntroductionSkills";
@@ -20,10 +21,10 @@ class HomePageHeader extends Component {
     return (
       <Container>
       <Grid.Column width={16}>
-        <Segment style={{ backgroundColor: darkBlack }} textAlign="center">
+        <Segment style={{ backgroundColor: darkBlack }}  stacked>
           <Item.Group>
-            <Item.Image src={profilePic} centered />
-            <Item>
+            <Image src={profilePic} centered/>
+            <Item style={{textAlign: "center"}}>
               <Item.Content verticalAlign="bottom">
                 <Header id="lighterBlue" as="h1">
                   Jonathan J. Holloway
@@ -68,7 +69,7 @@ class HomePageHeader extends Component {
           {/* <IntroductionSkills /> */}
         </Segment>
         <Grid columns={3} stackable>
-          <Grid.Row style={{ margin: "40px" }}>
+          <Grid.Row style={{ margin: "10px" }}>
             <Grid.Column>
               <Card style = {{backgroundColor: "#C5C6C7"}}>
                 <div style={{ textAlign: "center" }}>
@@ -185,36 +186,40 @@ class HomePageHeader extends Component {
                       <List.Item>
                         <Icon name="check" style= {{color: "#66FCF1"}}/>
                         <List.Content>
-                          <List.Header>Unit Testing</List.Header>
+                        <List.Header>C programming</List.Header>
+                          
                         </List.Content>
                       </List.Item>
 
                       <List.Item>
                         <Icon name="check" style= {{color: "#66FCF1"}}/>
                         <List.Content>
-                          <List.Header>Project Management</List.Header>
+                        <List.Header>Unit Testing</List.Header>
+                          
                         </List.Content>
                       </List.Item>
 
                       <List.Item>
                         <Icon name="check" style= {{color: "#66FCF1"}}/>
                         <List.Content>
-                          <List.Header>Coding Teaching Assistance</List.Header>
+                        <List.Header>Project Management</List.Header>
+                          
                         </List.Content>
                       </List.Item>
 
                       <List.Item>
                         <Icon name="check" style= {{color: "#66FCF1"}}/>
                         <List.Content>
-                          <List.Header>Customer Service Professional</List.Header>
+                        <List.Header>Coding Teaching Assistance</List.Header>
+                          
                         </List.Content>
                       </List.Item>
 
                       <List.Item>
-                        {/* <Icon name="check" style= {{color: "#66FCF1"}}/>
+                        <Icon name="check" style= {{color: "#66FCF1"}}/>
                         <List.Content>
-                          <List.Header>Customer Service Professional</List.Header>
-                        </List.Content> */}
+                        <List.Header>Customer Service Professional</List.Header>
+                        </List.Content>
                       </List.Item>
 
                       
