@@ -10,7 +10,15 @@
   color: #66FCF1;
 }
 
+ #darkBlack {
+  background: "#0B0C10"
+}
+
 #lighterBlue {
+  color: #66FCF1;
+}
+
+#navTagsBlue  a  {
   color: #66FCF1;
 }
 

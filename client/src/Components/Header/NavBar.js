@@ -23,42 +23,11 @@ class NavBar extends Component {
   render() {
     const { activeItem } = this.state
     return (
-      // <div style={{ marginBottom: "40px" }}>
-      //   <Navbar color="light" light expand="md">
-      //     <NavbarBrand href="/home">
-      //       <Image avatar src={iconImage} alt="logo" />
-      //       Jonathan J. Holloway
-      //     </NavbarBrand>
-      //     <NavbarToggler onClick={this.toggle} />
-      //     <Collapse isOpen={this.state.isOpen} navbar>
-      //       <Nav className="ml-auto" navbar>
-      //         <NavItem>
-      //           <NavLink href="/resume">Resume</NavLink>
-      //         </NavItem>
-      //         <NavItem>
-      //           <NavLink href="https://github.com/reactstrap/reactstrap">Contact</NavLink>
-      //         </NavItem>
-      //         <UncontrolledDropdown nav inNavbar>
-      //           <DropdownToggle nav caret>
-      //             Experience
-      //           </DropdownToggle>
-      //           <DropdownMenu right>
-      //             <DropdownItem><Link to = "/projects">Developer</Link></DropdownItem>
-      //             <DropdownItem><Link to = "/manager">Project Manager</Link></DropdownItem>
-      //             <DropdownItem><Link to = "/lectures">Teacher</Link></DropdownItem>
-      //             <DropdownItem><Link to = "/education">Education</Link></DropdownItem>
-      //             <DropdownItem divider />
-      //           </DropdownMenu>
-      //         </UncontrolledDropdown>
-      //       </Nav>
-      //     </Collapse>
-      //   </Navbar>
-      // </div>
-      <Menu color = {darkBlack} fluid stackable inverted>
-        <Menu borderless fluid stackable inverted>
+      <Menu  fluid stackable  id ="navTagsBlue" style = {{background: "#0B0C10", marginBottom: "20px"}}>
+        <Menu borderless fluid stackable  style = {{background: "#0B0C10"}} >
         <Menu.Item as = {Link} to = "/" ><Image avatar src={iconImage} alt="logo" /></Menu.Item>
         
-       <Menu.Item>Jonathan J. Holloway</Menu.Item>
+       <Menu.Item id = "lighterBlue">Jonathan J. Holloway</Menu.Item>
 
         </Menu>
         <Menu.Item
