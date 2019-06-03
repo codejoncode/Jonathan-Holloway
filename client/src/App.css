@@ -14,6 +14,8 @@
   background: "#0B0C10"
 }
 
+
+
 #lighterBlue {
   color: #66FCF1;
 }
@@ -73,7 +75,7 @@
 }
 
 .pdfDiv a {
-  color: black;
+  color: #0B0C10;
   text-decoration: underline;
 }
 
@@ -87,8 +89,6 @@ width: 49%;
 
 .pdfButtonDiv {
    
-  
-   
   display: flex;
   align-content: center;
   justify-content: center;
@@ -98,8 +98,8 @@ width: 49%;
 .pdfButton {
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: black; 
-  color: white;
+  background-color: #0B0C10; 
+  color: #66FCF1;
   width: 10%;
   height: 100px; 
 }
@@ -112,10 +112,10 @@ width: 49%;
 .resume {
   background: linear-gradient( 
     to right bottom, 
-    #cee5e6 0%, 
-    #cee5e6 50%, 
-    #000000 50%, 
-    #000000 100%
+    #66FCF1 0%, 
+    #66FCF1 50%, 
+    #0B0C10 50%, 
+    #0B0C10 100%
   );
 }
 

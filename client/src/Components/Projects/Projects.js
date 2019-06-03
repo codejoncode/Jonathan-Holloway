@@ -13,7 +13,7 @@ class Projects extends Component {
         <Header style={{ margin: "20px", textAlign: "center" }}>
           Click a tab to filter the projects list.
         </Header>
-        <Menu pagination fluid stackable>
+        <Menu pagination fluid stackable id ="navTagsBlue" style = {{background: "#0B0C10"}}>
           {technologies.map((tech, index) => (
             <Menu.Item
               key={index}

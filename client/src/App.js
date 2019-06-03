@@ -13,6 +13,7 @@ import ResumePage from "./Components/ResumePage/ResumePage";
 import Projects from "./Components/Projects/Projects";
 import ProjectDetails from "./Components/Projects/ProjectDetails";
 import { projectData } from "./Helpers/projectData";
+import HomePageHeader from "./Components/Header/HomePageHeader";
 
 
 class App extends Component {
@@ -82,6 +83,7 @@ class App extends Component {
       <div className="main">
         <div>
         <NavBar />
+        <HomePageHeader />
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/home" component={HomePage} />
