@@ -1,17 +1,4 @@
 import React, { Component } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from "reactstrap";
 import { Link } from "react-router-dom";
 import { Image, Menu } from "semantic-ui-react";
 import iconImage from "../../Images/Icon.PNG";
@@ -69,24 +56,27 @@ class NavBar extends Component {
       // </div>
       <Menu color = {darkBlack} fluid stackable inverted>
         <Menu borderless fluid stackable inverted>
-        <Menu.Item><Image avatar src={iconImage} alt="logo" /></Menu.Item>
+        <Menu.Item as = {Link} to = "/" ><Image avatar src={iconImage} alt="logo" /></Menu.Item>
         
        <Menu.Item>Jonathan J. Holloway</Menu.Item>
 
         </Menu>
         <Menu.Item
+          as = {Link}
+          to = "/resume"
           name='Resume'
           active={activeItem === 'Resume'}
           onClick={this.handleItemClick}
         >
-          Editorials
+          Resume
         </Menu.Item>
 
-        <Menu.Item name='Projects' active={activeItem === 'Projects'} onClick={this.handleItemClick}>
-          Reviews
+        <Menu.Item as = {Link} to = "/projects" name='Projects' active={activeItem === 'Projects'} onClick={this.handleItemClick}>
+          Projects
         </Menu.Item>
 
         <Menu.Item
+          // as = {Link}
           name='upcomingEvents'
           active={activeItem === 'upcomingEvents'}
           onClick={this.handleItemClick}
