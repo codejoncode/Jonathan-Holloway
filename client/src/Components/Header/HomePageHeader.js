@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Grid, Header, Segment, Item, Icon} from "semantic-ui-react";
+import { Grid, Header, Segment, Item, Icon, Card} from "semantic-ui-react";
 import profilePic from ".././../Images/profile pic.PNG";
 import IntroductionSkills from "../Skills/IntroductionSkills";
 
@@ -43,6 +43,59 @@ class HomePageHeader extends Component {
           </Item.Group>
           {/* <IntroductionSkills /> */}
         </Segment>
+        <Grid columns={3} stackable>
+          <Grid.Row>
+            <Grid.Column>
+              <Card>
+              <div style = {{textAlign: "center"}}>
+                <Icon name = "desktop" size= "huge"/>
+              
+              </div>
+                <Card.Content>
+                <Card.Header>FRONTEND</Card.Header>
+                <Card.Description>
+
+                </Card.Description>
+
+                </Card.Content>
+
+              </Card>
+            </Grid.Column>
+
+            <Grid.Column>
+              <Card>
+              <div style = {{textAlign: "center"}}>
+              
+              <Icon name = "database" size= "huge"/>
+              </div>
+              <Card.Content>
+                <Card.Header>BACKEND</Card.Header>
+                <Card.Description>
+                  
+                </Card.Description>
+
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+
+            <Grid.Column>
+              <Card>
+                <div style = {{textAlign: "center"}}>
+              <Icon name = "bolt" size= "huge" />
+
+                </div>
+              <Card.Content>
+                <Card.Header>OTHERS</Card.Header>
+                <Card.Description>
+                  
+                </Card.Description>
+
+                </Card.Content>
+              </Card>
+            </Grid.Column>
+            
+          </Grid.Row>
+        </Grid>
       </Grid.Column>
     );
   }

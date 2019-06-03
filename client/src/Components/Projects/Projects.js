@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Grid, Menu, Header, Button, Popup } from "semantic-ui-react";
+import { Grid, Menu, Header, Button, Popup, Confirm } from "semantic-ui-react";
 import { technologiesData } from "../../Helpers/projectData";
 import ProjectSection from "./ProjectSection";
 
 const timeoutLength = 5000; 
 
 class Projects extends Component {
-  state = { isOpen : true}
+  state = { isOpen : true, open: true}
 
   handleOpen = () => {
     this.setState({ isOpen: true })
@@ -20,6 +20,8 @@ class Projects extends Component {
     this.setState({ isOpen: false })
     clearTimeout(this.timeout)
   }
+  handleConfirm = () => this.setState({ open: false })
+  handleCancel = () => this.setState({ open: false })
 
   render() {
     const technologies = ["ALL", ...technologiesData];
@@ -37,20 +39,26 @@ class Projects extends Component {
           ))}
         </Menu>
         
-        <Header style={{ margin: "20px", textAlign: "center" }}>
-          Click a tab to filter the projects list.
+        {/* <Header style={{ margin: "20px", textAlign: "center" }}>
+          Click a tab to filter the projects list. */}
           <Popup 
         content = "Click a tab to filter the projects list, or click a project for more information."
         open = {this.state.isOpen}
         onClose = {this.handleClose}
         onOpen= {this.handleOpen}
         position = 'top center'
-        trigger={<Button content= "Already Open"/>}
+        trigger={<div></div>}
         />
-        </Header>
-        <Header style={{ textAlign: "center", margin: "20px" }}>
+        {/* <Confirm
+          open={this.state.open}
+          content='This is a custom message'
+          onCancel={this.handleCancel}
+          onConfirm={this.handleConfirm}
+        /> */}
+        {/* </Header> */}
+        {/* <Header style={{ textAlign: "center", margin: "20px" }}>
           Click a project for more information.
-        </Header>
+        </Header> */}
         <Grid
           style={{ margin: "20px" }}
           columns={columnCount}

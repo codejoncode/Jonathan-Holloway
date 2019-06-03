@@ -43,13 +43,14 @@ class LandingPage extends Component {
     return (
       <Container>
         <HomePageHeader />
-        <Row>
-          <Col>
+        {/* <Row>
+          <Col> */}
           {/* <ResponsiveImage onClick = {this.continueToHomePage()}/>
             <ResponsiveButton className = "button button-block, button-secondary" onClick = {this.continueToHomePage()}>Click To Continue</ResponsiveButton> */}
-          </Col>
+          {/* </Col>
            
-        </Row>
+        </Row> */}
+       
         
         
       </Container>
