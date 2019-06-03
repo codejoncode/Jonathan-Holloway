@@ -83,7 +83,6 @@ class App extends Component {
       <div className="main">
         <div>
         <NavBar />
-        <HomePageHeader />
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/home" component={HomePage} />

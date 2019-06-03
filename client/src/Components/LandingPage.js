@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 
 import styled from "styled-components";
 import landingPage from "../Images/landing1.jpg";
+import HomePageHeader from "./Header/HomePageHeader";
 
 const ResponsiveImage = styled.img.attrs({
   src: landingPage
@@ -41,10 +42,11 @@ class LandingPage extends Component {
   render() {
     return (
       <Container>
+        <HomePageHeader />
         <Row>
           <Col>
-          <ResponsiveImage onClick = {this.continueToHomePage()}/>
-            <ResponsiveButton className = "button button-block, button-secondary" onClick = {this.continueToHomePage()}>Click To Continue</ResponsiveButton>
+          {/* <ResponsiveImage onClick = {this.continueToHomePage()}/>
+            <ResponsiveButton className = "button button-block, button-secondary" onClick = {this.continueToHomePage()}>Click To Continue</ResponsiveButton> */}
           </Col>
            
         </Row>

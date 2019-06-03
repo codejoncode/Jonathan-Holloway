@@ -10,9 +10,6 @@ class Projects extends Component {
     const { handleOpen, handleClose, modalOpen, currentModal, projectsDisplay, activeItem, columnCount, handleItemClick, goToProjectPage } = this.props;
     return (
       <div style={{ margin: "20px" }}>
-        <Header style={{ margin: "20px", textAlign: "center" }}>
-          Click a tab to filter the projects list.
-        </Header>
         <Menu pagination fluid stackable id ="navTagsBlue" style = {{background: "#0B0C10"}}>
           {technologies.map((tech, index) => (
             <Menu.Item
@@ -23,6 +20,9 @@ class Projects extends Component {
             />
           ))}
         </Menu>
+        <Header style={{ margin: "20px", textAlign: "center" }}>
+          Click a tab to filter the projects list.
+        </Header>
         <Header style={{ textAlign: "center", margin: "20px" }}>
           Click a project for more information.
         </Header>

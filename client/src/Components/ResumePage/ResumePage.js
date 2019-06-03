@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PDFExport } from "@progress/kendo-react-pdf";
+import HomePageHeader from "../Header/HomePageHeader";
 
 class ResumePage extends Component {
   state = {
@@ -40,6 +41,9 @@ class ResumePage extends Component {
       );
     }
     return (
+      <div>
+        <HomePageHeader />
+      
       <div className = "resume">
         <div className="pdfButtonDiv">
           <h1>Resume</h1>
@@ -222,6 +226,7 @@ class ResumePage extends Component {
             download
           </button>
         </div>
+      </div>
       </div>
     );
   }
