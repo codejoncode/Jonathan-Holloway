@@ -20,7 +20,7 @@ class App extends Component {
   state = {
     modalOpen: false,
     currentModal: null,
-    columnCount: 3,
+    columnCount: 5,
     activeItem: "ALL",
     projectsDisplay: []
   };
@@ -44,7 +44,7 @@ class App extends Component {
             tech.includes(this.state.activeItem) === true
           ) {
             setOfColumns.push(projectData[projectCount]);
-            if (setOfColumns.length === 3) {
+            if (setOfColumns.length === this.state.columnCount) {
               projectCount += 1;
               break;
             }
@@ -79,6 +79,7 @@ class App extends Component {
 
   render() {
     const {modalOpen, currentModal, columnCount, activeItem, projectsDisplay} = this.state;
+    console.log(projectsDisplay)
     return (
       <div className="main">
         

@@ -67,6 +67,7 @@ class Projects extends Component {
         >
 
           {projectsDisplay.map((projects, index) => (
+            
             <ProjectSection
               key={index}
               projects={projects}
