@@ -6,8 +6,11 @@ import ProjectSection from "./ProjectSection";
 const timeoutLength = 5000; 
 
 class Projects extends Component {
-  state = { isOpen : true, open: true}
+  state = { isOpen : true, open: true, popUpStyle: {backgroundColor: "#0B0C10", color: "#66FCF1"}}
 
+  componentDidMount () {
+    this.handleOpen();
+  }
   handleOpen = () => {
     this.setState({ isOpen: true })
 
@@ -26,6 +29,7 @@ class Projects extends Component {
   render() {
     const technologies = ["ALL", ...technologiesData];
     const { handleOpen, handleClose, modalOpen, currentModal, projectsDisplay, activeItem, columnCount, handleItemClick, goToProjectPage } = this.props;
+    const { isOpen, open, popUpStyle} = this.state; 
     return (
       <div style={{ margin: "20px" }}>
         <Menu pagination fluid stackable id ="navTagsBlue" style = {{background: "#0B0C10"}}>
@@ -43,11 +47,12 @@ class Projects extends Component {
           Click a tab to filter the projects list. */}
           <Popup 
         content = "Click a tab to filter the projects list, or click a project for more information."
-        open = {this.state.isOpen}
+        open = {isOpen}
         onClose = {this.handleClose}
         onOpen= {this.handleOpen}
         position = 'top center'
         trigger={<div></div>}
+        style = {popUpStyle}
         />
         {/* <Confirm
           open={this.state.open}
