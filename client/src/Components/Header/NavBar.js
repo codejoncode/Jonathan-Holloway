@@ -45,12 +45,13 @@ class NavBar extends Component {
         </Menu.Item>
 
         <Menu.Item
-          // as = {Link}
-          name='upcomingEvents'
+          as = {Link}
+          to = "/contact"
+          name='contact'
           active={activeItem === 'upcomingEvents'}
           onClick={this.handleItemClick}
         >
-          Upcoming Events
+          Contact
         </Menu.Item>
       </Menu>
     );

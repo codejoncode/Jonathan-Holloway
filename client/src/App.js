@@ -16,6 +16,7 @@ import { projectData } from "./Helpers/projectData";
 import HomePageHeader from "./Components/Header/HomePageHeader";
 import {darkBlack,lightBlack,grey,lighterBlue,anotherBlue } from "./Helpers/Colors/colors"
 import Footer from "./Components/Footer/Footer";
+import Contact from "./Components/Contact";
 
 
 class App extends Component {
@@ -91,6 +92,7 @@ class App extends Component {
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
           <Route path="/lectures" component={Lectures} />
+          <Route path = "/contact" component={Contact} />
           <Route
             path="/projects"
             component={() => (
