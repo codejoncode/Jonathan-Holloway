@@ -106,7 +106,7 @@ export const projectData = [
     githubUrl: "https://github.com/codejoncode/User-Interface-Project-Week",
     description:
       "Followed a design and implemented the application. Using Less CSS and HTML.",
-    technologies: "LESS",
+    technologies: "LESS JavaScript Design",
     image: uiDesign
   },
   {

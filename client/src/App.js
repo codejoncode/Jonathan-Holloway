@@ -15,6 +15,7 @@ import ProjectDetails from "./Components/Projects/ProjectDetails";
 import { projectData } from "./Helpers/projectData";
 import HomePageHeader from "./Components/Header/HomePageHeader";
 import {darkBlack,lightBlack,grey,lighterBlue,anotherBlue } from "./Helpers/Colors/colors"
+import Footer from "./Components/Footer/Footer";
 
 
 class App extends Component {
@@ -115,6 +116,7 @@ class App extends Component {
           />
           <Route path = "/project/:id" component = {() => <ProjectDetails projectsDisplay = {projectData}/>} />
         </Switch>
+        <Footer />
       </div>
       
     );
