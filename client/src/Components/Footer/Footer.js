@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Container, Image, List, Header, Icon, Grid, Button} from "semantic-ui-react";
 import {
   darkBlack,
@@ -10,14 +11,19 @@ import {
 import footerPicture from "../../Images/footer picture.PNG";
 import engineerLogo from "../../Images/White background engineer.PNG";
 class Footer extends Component {
+
+  goToContactPage = () => () => {
+    this.props.history.push("/contact")
+  }
+
   render() {
     return (
       <Container fluid style={{ backgroundColor: lighterBlue, marginTop: "25px" }}>
         <Grid centered columns= {2}>
         <Grid.Row>
             <Grid.Column>
-        <Image avatar size="small" centered src={footerPicture} />
-        <Image avatar size = "medium" centered src ={engineerLogo} />
+        <Image  size="small" centered src={footerPicture} />
+        <Image  size = "medium" centered src ={engineerLogo} />
             </Grid.Column>
           <Grid.Column>
 
@@ -61,7 +67,7 @@ class Footer extends Component {
             </List.Content>
         </List>
         <br/>
-        <Button>Contact Form</Button>
+        <Button onClick = {this.goToContactPage()}>Contact</Button>
           </Grid.Column>
         </Grid.Row>
         </Grid>

@@ -25,11 +25,34 @@ class App extends Component {
     currentModal: null,
     columnCount: 5,
     activeItem: "ALL",
-    projectsDisplay: []
+    projectsDisplay: [], 
+    list : [], 
+    name: '', 
+    email: '', 
+    company: '', 
+    text : '',
+    submittedName: '', 
+    submittedEmail: '',
+    submittedText: '',
+    submittedCompany: '', 
+
   };
 
   componentDidMount() {
     this.filterData("ALL");
+  } 
+  //
+  handleChange = (e) => {
+    console.log(e.target.name, e.target.value)
+    // this.setState({ [name] : value});
+    this.setState({[e.target.name]: e.target.value})
+  }
+
+  handleSubmit = () => {
+    const {name, email, text, company } = this.state; 
+    console.log(name, email, text, company)
+
+    this.setState({ submittedName: name, submittedEmail: email, submittedText: text, submittedCompany: company});
   }
 
   filterData = async name => {
@@ -81,8 +104,7 @@ class App extends Component {
   }
 
   render() {
-    const {modalOpen, currentModal, columnCount, activeItem, projectsDisplay} = this.state;
-    console.log(projectsDisplay)
+    const {modalOpen, currentModal, columnCount, activeItem, projectsDisplay, name, email, company, text} = this.state;
     return (
       <div className="main">
         
@@ -98,6 +120,13 @@ class App extends Component {
            grey = {grey}
            lighterBlue = {lighterBlue} 
            anotherBlue = {anotherBlue}
+           handleChange = {this.handleChange}
+           handleSubmit = {this.handleSubmit}
+           name = {name}
+           email = {email}
+           company = {company}
+           text = {text}
+
           />} />
           <Route
             path="/projects"
@@ -124,7 +153,7 @@ class App extends Component {
           />
           <Route path = "/project/:id" component = {() => <ProjectDetails projectsDisplay = {projectData}/>} />
         </Switch>
-        <Footer />
+        <Footer history ={this.props.history}/>
       </div>
       
     );
