@@ -92,7 +92,13 @@ class App extends Component {
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
           <Route path="/lectures" component={Lectures} />
-          <Route path = "/contact" component={Contact} />
+          <Route path = "/contact" component={() => <Contact
+           darkBlack = {darkBlack}
+           lightBlack = {lightBlack} 
+           grey = {grey}
+           lighterBlue = {lighterBlue} 
+           anotherBlue = {anotherBlue}
+          />} />
           <Route
             path="/projects"
             component={() => (
