@@ -11,10 +11,12 @@ import ProjectFeatureList from "./ProjectFeatureList";
 import GithubLinks from "./GithubLinks";
 import PlanLinks from "./PlanLinks";
 import DeploymentLinks from "./DeploymentLinks";
+import {darkBlack,lightBlack,grey,lighterBlue,anotherBlue } from "../../Helpers/Colors/colors";
 
 class ProjectDetails extends Component {
   state = {
-    project: null
+    project: null,
+   
   };
   componentWillMount() {
     const { id } = this.props.match.params;
@@ -27,29 +29,30 @@ class ProjectDetails extends Component {
     const { project } = this.state;
     return (
     <div>
-    <Segment textAlign="center">
+    <Segment textAlign="center"style = {{backgroundColor:darkBlack}}>
       <Item>
-          <Header>{project.title}</Header>
-          <Item.Description>{project.description}</Item.Description>
+          <Header style = {{color: lighterBlue}}>{project.title}</Header>
+          <Item.Description style = {{color: lighterBlue}}>{project.description}</Item.Description>
           <Image size="big" src={project.image} centered />
       </Item>
         </Segment>
 
           <Grid columns={2} stackable>
-            {/* <Divider vertical></Divider> */}
             <Grid.Row>
               <Grid.Column>
-        <Segment padded = 'very'>
-                <Header>Features Implemented</Header>
-                <ProjectFeatureList features={project.features} />
+        <Segment padded = 'very' style = {{backgroundColor:darkBlack}}>
+                <Header style = {{color: lighterBlue}}>Features Implemented</Header>
+                <ProjectFeatureList features={project.features} lighterBlue ={lighterBlue}/>
         </Segment>
               </Grid.Column>
               <Grid.Column>
-        <Segment padded = 'very'>
-                  
-                <GithubLinks links={project.githubUrl} />
-                <PlanLinks links={project.plan}/>
-                <DeploymentLinks links = {project.deployUrl}/>
+        <Segment padded = 'very' style = {{backgroundColor:darkBlack}}>
+                <div >
+                <GithubLinks links={project.githubUrl} lighterBlue ={lighterBlue}/>
+                <PlanLinks links={project.plan} lighterBlue ={lighterBlue}/>
+                <DeploymentLinks links = {project.deployUrl} lighterBlue ={lighterBlue}/>
+
+                </div>
 
         </Segment>
               </Grid.Column>

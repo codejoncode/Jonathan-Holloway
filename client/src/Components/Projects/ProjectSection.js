@@ -7,6 +7,8 @@ class ProjectSection extends Component {
       borderRadius: 0,
       opacity: 0.7,
       padding: '2em',
+      color: "#66FCF1",
+      background: "#0B0C10"
     }
   }
   render() {
@@ -19,15 +21,8 @@ class ProjectSection extends Component {
           projects.map((project, index) => (
             <Grid.Column key={index}>
               <Container>
-              {/* <Popup 
-               
-              // trigger = {}
-              // content = {project.description}
-              // style = {style}
-              // inverted
-              // position = "top center"
-              // /> */}
-              <Card onClick={() => goToProjectPage(project.id)} style = {{background: "#C5C6C7"}}>
+              
+              <Card onClick={() => goToProjectPage(project.id)} style = {{background: "#0B0C10"}}>
                 <Reveal animated= 'move down'>
                   <Reveal.Content visible>
                 <Image src={project.image} fluid style={{ height: "220px" }} />                  

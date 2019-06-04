@@ -1,14 +1,14 @@
 import React from 'react'
 // import { Link } from "react-router-dom";
 import { Item, Header, List} from "semantic-ui-react";
-const DeploymentLinks = ({links}) => {
+const DeploymentLinks = ({links, lighterBlue}) => {
     let urls = []; 
     if(links){
       urls  = links.split(",")
     }
     return (
         <Item style = {{marginBottom: "20px"}}>
-            <Header>Deployment</Header>
+            <Header style = {{color: lighterBlue}}>Deployment</Header>
             <List>
             {urls.map((url, index) => <List.Item key = {index}><a href ={url} target="_blank" rel="noopener noreferrer">{url}</a></List.Item>)}
             </List>

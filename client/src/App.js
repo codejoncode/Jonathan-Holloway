@@ -14,6 +14,7 @@ import Projects from "./Components/Projects/Projects";
 import ProjectDetails from "./Components/Projects/ProjectDetails";
 import { projectData } from "./Helpers/projectData";
 import HomePageHeader from "./Components/Header/HomePageHeader";
+import {darkBlack,lightBlack,grey,lighterBlue,anotherBlue } from "./Helpers/Colors/colors"
 
 
 class App extends Component {
@@ -103,6 +104,11 @@ class App extends Component {
                 filterData = {this.filterData}
                 handleItemClick = {this.handleItemClick}
                 goToProjectPage = {this.goToProjectPage}
+                darkBlack = {darkBlack}
+                lightBlack = {lightBlack} 
+                grey = {grey}
+                lighterBlue = {lighterBlue} 
+                anotherBlue = {anotherBlue}
 
               />
             )}

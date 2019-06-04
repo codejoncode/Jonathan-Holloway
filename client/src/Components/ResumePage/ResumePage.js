@@ -223,7 +223,7 @@ class ResumePage extends Component {
         </div>
         <div className="pdfButtonDiv">
           <button className="pdfButton" onClick={this.exportPDF}>
-            download
+            Download
           </button>
         </div>
       </div>

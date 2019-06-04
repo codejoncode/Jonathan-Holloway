@@ -28,11 +28,11 @@ class Projects extends Component {
 
   render() {
     const technologies = ["ALL", ...technologiesData];
-    const { handleOpen, handleClose, modalOpen, currentModal, projectsDisplay, activeItem, columnCount, handleItemClick, goToProjectPage } = this.props;
+    const { handleOpen, handleClose, modalOpen, currentModal, projectsDisplay, activeItem, columnCount, handleItemClick, goToProjectPage,darkBlack,lightBlack,grey,lighterBlue,anotherBlue } = this.props;
     const { isOpen, open, popUpStyle} = this.state; 
     return (
       <div style={{ margin: "20px" }}>
-        <Menu pagination fluid stackable id ="navTagsBlue" style = {{background: "#0B0C10"}}>
+        <Menu pagination fluid stackable id ="navTagsBlue" style = {{background: darkBlack}}>
           {technologies.map((tech, index) => (
             <Menu.Item
               key={index}
@@ -43,8 +43,6 @@ class Projects extends Component {
           ))}
         </Menu>
         
-        {/* <Header style={{ margin: "20px", textAlign: "center" }}>
-          Click a tab to filter the projects list. */}
           <Popup 
         content = "Click a tab to filter the projects list, or click a project for more information."
         open = {isOpen}
@@ -54,16 +52,7 @@ class Projects extends Component {
         trigger={<div></div>}
         style = {popUpStyle}
         />
-        {/* <Confirm
-          open={this.state.open}
-          content='This is a custom message'
-          onCancel={this.handleCancel}
-          onConfirm={this.handleConfirm}
-        /> */}
-        {/* </Header> */}
-        {/* <Header style={{ textAlign: "center", margin: "20px" }}>
-          Click a project for more information.
-        </Header> */}
+        
         <Grid
           style={{ margin: "20px" }}
           columns={columnCount}
@@ -81,6 +70,11 @@ class Projects extends Component {
               modalOpen={modalOpen}
               currentModal={currentModal}
               goToProjectPage = {goToProjectPage}
+              darkBlack = {darkBlack}
+              lightBlack = {lightBlack} 
+              grey = {grey}
+              lighterBlue = {lighterBlue} 
+              anotherBlue = {anotherBlue}
             />
           ))}
         </Grid>
