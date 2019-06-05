@@ -13,13 +13,39 @@ import {
   Input,
   Label,
   Form, 
-  Message
+  Message,
+  TextArea
 } from "semantic-ui-react";
 import contactImage from "../Images/footer picture.PNG";
 
 class Contact extends Component {
+  state = { 
+    list : [], 
+    name: '', 
+    email: '', 
+    company: '', 
+    text : '',
+    submittedName: '', 
+    submittedEmail: '',
+    submittedText: '',
+    submittedCompany: '',
+  }
+  handleChange = (e) => {
+    e.preventDefault()
+    this.setState({[e.target.name]: e.target.value})
+  }
+
+  handleSubmit = () => {
+    const {name, email, text, company } = this.state; 
+    console.log(name, email, text, company)
+
+    this.setState({ submittedName: name, submittedEmail: email, submittedText: text, submittedCompany: company});
+  }
+
   render() {
-    const { lighterBlue, grey, company, name, email, text, handleSubmit, handleChange } = this.props;
+    const { lighterBlue, grey,  } = this.props;
+    const {company, name, email, text, list} = this.state;
+    
     return (
       <Container>
         <Image centered size="medium" src={contactImage} />
@@ -35,43 +61,43 @@ class Contact extends Component {
           <Grid.Row>
             <br />
             <Grid.Column>
-              <Form inverted size="huge" onSubmit ={handleSubmit}>
+              <Form inverted size="huge" onSubmit ={this.handleSubmit}>
                 <Form.Group widths="equal">
                   <Form.Field
                     required
                     placeholder="name"
                     label="Name"
-                    value = {name}
                     name = 'name'
-                    control="input"
-                    onChange = {handleChange}
+                    value = {name}
+                    onChange = {this.handleChange}
+                    control={Input}
                   />
-                  <Form.Field
+                  <Form.Input
                     required
                     placeholder="company"
-                    value = {company}
                     name = 'company'
                     label="Company"
-                    control="input"
-                    onChange = {handleChange}
+                    control={Input}
+                    value = {company}
+                    onChange = {this.handleChange}
                   />
-                  <Form.Field
+                  <Form.Input
                     required
                     placeholder="Email"
-                    value = {email}
                     name = 'email'
                     label="Email"
-                    control="input"
-                    onChange = {handleChange}
+                    control={Input}
+                    value = {email}
+                    onChange = {this.handleChange}
                   />
                 </Form.Group>
                 <Form.Field
                   required
                   placeholder="Enter your message"
-                  value = {text}
                   name = 'text'
-                  control="textarea"
-                  onChange = {handleChange}
+                  control={TextArea}
+                  value = {text}
+                  onChange = {this.handleChange}
                 />
                 <Message 
                 warning

@@ -26,34 +26,14 @@ class App extends Component {
     columnCount: 5,
     activeItem: "ALL",
     projectsDisplay: [], 
-    list : [], 
-    name: '', 
-    email: '', 
-    company: '', 
-    text : '',
-    submittedName: '', 
-    submittedEmail: '',
-    submittedText: '',
-    submittedCompany: '', 
 
   };
 
   componentDidMount() {
     this.filterData("ALL");
   } 
-  //
-  handleChange = (e) => {
-    console.log(e.target.name, e.target.value)
-    // this.setState({ [name] : value});
-    this.setState({[e.target.name]: e.target.value})
-  }
+  
 
-  handleSubmit = () => {
-    const {name, email, text, company } = this.state; 
-    console.log(name, email, text, company)
-
-    this.setState({ submittedName: name, submittedEmail: email, submittedText: text, submittedCompany: company});
-  }
 
   filterData = async name => {
     const rowCount = Math.ceil(projectData.length / this.state.columnCount);
@@ -104,7 +84,7 @@ class App extends Component {
   }
 
   render() {
-    const {modalOpen, currentModal, columnCount, activeItem, projectsDisplay, name, email, company, text} = this.state;
+    const {modalOpen, currentModal, columnCount, activeItem, projectsDisplay} = this.state;
     return (
       <div className="main">
         
@@ -120,12 +100,6 @@ class App extends Component {
            grey = {grey}
            lighterBlue = {lighterBlue} 
            anotherBlue = {anotherBlue}
-           handleChange = {this.handleChange}
-           handleSubmit = {this.handleSubmit}
-           name = {name}
-           email = {email}
-           company = {company}
-           text = {text}
 
           />} />
           <Route
