@@ -17,7 +17,7 @@ import HomePageHeader from "./Components/Header/HomePageHeader";
 import {darkBlack,lightBlack,grey,lighterBlue,anotherBlue } from "./Helpers/Colors/colors"
 import Footer from "./Components/Footer/Footer";
 import Contact from "./Components/Contact";
-
+import SignIn from "./Components/Admin/SignIn";
 
 class App extends Component {
   state = {
@@ -91,6 +91,8 @@ class App extends Component {
         <NavBar />
         <Switch>
           <Route exact path="/" component={LandingPage} />
+          <Route path="/admin/Login" component = {SignIn} />
+          
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
           <Route path="/lectures" component={Lectures} />
