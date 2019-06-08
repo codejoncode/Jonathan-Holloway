@@ -18,9 +18,16 @@ class SignIn extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = () => {
+  handleSubmit = async () => {
     /*this is where I call an action  */
     const { username, password } = this.state;
+    if (username.length > 11 && password.length > 8 ){
+      /* requriements are met okay to proceed */
+      const body = { username, password}
+      await this.props.login(body); 
+      this.props.history.push("/admin/blogs")
+
+    }
   };
 
   render() {
@@ -30,7 +37,7 @@ class SignIn extends Component {
         <Grid columns={1}>
           <Grid.Row style= {{marginTop: "20%", marginBottom: "20%"}}>
             <Grid.Column>
-              <Form inverted>
+              <Form inverted onSubmit ={this.handleSubmit}>
                <Header as={"h1"} style = {{color: "white"}} textAlign = "center">Admin Login</Header>
                 <Form.Field
                     required

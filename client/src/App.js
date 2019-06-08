@@ -18,6 +18,7 @@ import {darkBlack,lightBlack,grey,lighterBlue,anotherBlue } from "./Helpers/Colo
 import Footer from "./Components/Footer/Footer";
 import Contact from "./Components/Contact";
 import SignIn from "./Components/Admin/SignIn";
+import DisplayBlogs from "./Components/Admin/DisplayBlogs";
 
 class App extends Component {
   state = {
@@ -92,7 +93,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={LandingPage} />
           <Route path="/admin/login" component = {SignIn} />
-          
+          <Route path="/admin/blogs" component = {DisplayBlogs} />
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
           <Route path="/lectures" component={Lectures} />

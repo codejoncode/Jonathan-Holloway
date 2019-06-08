@@ -12,8 +12,12 @@ export const login = (body) => {
         dispatch({type: LOGIN_ATTEMPTED})
         promise
          . then(results => {
-             const { token } = results; 
+             dispatch({type: LOGIN_SUCCESSFUL})
+             const { token } = results.data; 
+             console.log(token);
+             console.log(results);
              localStorage.setItem('holloway-portfolio-token', token);
+             localStorage.setItem('username', body.username);
          })
          .catch(err => {
              dispatch({type: LOGIN_FAILED, error: err})
