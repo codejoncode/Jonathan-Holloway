@@ -23,16 +23,23 @@ const store = createStore(
 
 ReactDOM.render(
 <Provider store={store}>
+<div>
 <BrowserRouter>
   <ScrollToTop>
+    
     <ReduxToastr
+      preventDuplicates
+      newestOnTop = {true}
       position="bottom-right"
       transitionIn="fadeIn"
       transitionOut="fadeOut"
+      closeOnToastrClick = {true}
     />
     <App />
   </ScrollToTop>
 </BrowserRouter>
+
+</div>
 </Provider>
 , document.getElementById('root'));
 

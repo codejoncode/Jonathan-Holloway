@@ -9,16 +9,18 @@ export const sendEmail = (body) => {
       Once this area is reached everything should be good so checks need to take place before this call. 
     */
    const endPoint = "/send";
-   const backendUrl = emailUrl + endpoint;
-   const promise = axios.post(backendUrl)
-   dispatch({EMAIL_SEND_PENDING});
-   promise
-     .then(response => {
-         dispatch({type: EMAIL_SENT_SUCCESS, payload: response.data});
-         toastr.success("Success!", "You successfully sent your email");
-     })
-     .catch(error => {
-         dispatch({type: EMAIL_SENT_FAILURE, error});
-     })
+   const backendUrl = emailUrl + endPoint;
+   const promise = axios.post(backendUrl, body)
+   return dispatch => {
+       dispatch({type: EMAIL_SEND_PENDING});
+       promise
+         .then(response => {
+             dispatch({type: EMAIL_SENT_SUCCESS, payload: response.data});
+             toastr.success("Success!", "You successfully sent your email");
+         })
+         .catch(error => {
+             dispatch({type: EMAIL_SENT_FAILURE, error});
+         })
+   }
     
 }

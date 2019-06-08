@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { toastr} from "react-redux-toastr";
 import { Link } from "react-router-dom";
 import {
   Grid,
@@ -15,14 +16,17 @@ import {
   Label,
   Form, 
   Message,
-  TextArea
+  TextArea,
+  Popup
 } from "semantic-ui-react";
 import contactImage from "../Images/footer picture.PNG";
-
+import { sendEmail} from "../Store/Actions/emailActions";
+import { tsConstructSignatureDeclaration } from "@babel/types";
 
 const actions = {
-
+  sendEmail,
 }
+const timeoutLength = 2500; 
 
 class Contact extends Component {
   state = { 
@@ -30,28 +34,56 @@ class Contact extends Component {
     name: '', 
     email: '', 
     company: '', 
-    text : '',
+    message : '',
     submittedName: '', 
     submittedEmail: '',
     submittedText: '',
     submittedCompany: '',
+    error : ""
   }
+  
+
+  validateEmail = (email) => {
+    const lowerCase = email.toLowerCase(); 
+    var re = /^[a-z][a-zA-Z0-9_.]*(\.[a-zA-Z][a-zA-Z0-9_.]*)?@[a-z][a-zA-Z-0-9]*\.[a-z]+(\.[a-z]+)?$/;
+    return re.test(lowerCase);
+  }
+
   handleChange = (e) => {
     e.preventDefault()
     this.setState({[e.target.name]: e.target.value})
   }
 
   handleSubmit = () => {
-    const {name, email, text, company } = this.state; 
-    console.log(name, email, text, company)
+    const {name, email, message, company } = this.state; 
+    console.log(name, email, message, company)
+    if (name.length < 3) {
+      // toastr.error("Oops", "Please enter a valid name")
+      this.setState({error: "Please enter a valid name"}, this.handleOpen())
+    } else if (message.length < 15 ) {
+      // toastr.error("Oops!", "You do not have a message." )
+      this.setState({error: "Your message seems a bit slim."}, this.handleOpen())
+    } else if ((company.length < 4)){
+      // toastr.error("Oops!", "Please enter your company name")
+      this.setState({error: "Please enter your company name"}, this.handleOpen())
+    } else if (!(this.validateEmail(email))) {
+      // toastr.error("Oops!", "Please enter a valid email.")
+      this.setState({error: "Please enter a valid email."}, this.handleOpen())
+    } else {
+        const body = {
+          name, email, message, company
+        }
 
-    this.setState({ submittedName: name, submittedEmail: email, submittedText: text, submittedCompany: company});
+        this.props.sendEmail(body); 
+        this.setState({ submittedName: name, submittedEmail: email, submittedText: message, submittedCompany: company});
+
+    }
   }
 
   render() {
     const { lighterBlue, grey,  } = this.props;
-    const {company, name, email, text, list} = this.state;
-    
+    const {company, name, email, message, list} = this.state;
+    console.log(company, name, email, message)
     return (
       <Container>
         <Image centered size="medium" src={contactImage} />
@@ -67,6 +99,7 @@ class Contact extends Component {
           <Grid.Row>
             <br />
             <Grid.Column>
+
               <Form inverted size="huge" onSubmit ={this.handleSubmit}>
                 <Form.Group widths="equal">
                   <Form.Field
@@ -100,25 +133,15 @@ class Contact extends Component {
                 <Form.Field
                   required
                   placeholder="Enter your message"
-                  name = 'text'
+                  name = 'message'
                   control={TextArea}
-                  value = {text}
+                  value = {message}
                   onChange = {this.handleChange}
                 />
-                <Message 
-                warning
-                header="Could you check something!"
-                list = {[
-                    'That email has akfjas;dfjkadksfj'
-                ]}
-                />
-                <Message 
-                success 
-                header="Email Sent" 
-                content = "Your email has been sent to Jonathan. Thank you!"
-                />
+                <label>{this.state.error}</label>
                 <Form.Button content = 'Submit' />
               </Form>
+              
             </Grid.Column>
           </Grid.Row>
         </Grid>
