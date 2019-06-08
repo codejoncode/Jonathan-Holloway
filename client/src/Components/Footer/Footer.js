@@ -12,8 +12,9 @@ import footerPicture from "../../Images/footer picture.PNG";
 import engineerLogo from "../../Images/White background engineer.PNG";
 class Footer extends Component {
 
-  goToContactPage = () => () => {
-    this.props.history.push("/contact")
+
+  changePages = (page) => () => {
+    this.props.history.push(page)
   }
 
   render() {
@@ -67,7 +68,10 @@ class Footer extends Component {
             </List.Content>
         </List>
         <br/>
-        <Button onClick = {this.goToContactPage()}>Contact</Button>
+        <Button onClick = {this.changePages("/contact")}>Contact</Button>
+        <br/>
+        <br/>
+        <Button onClick = {this.changePages("/admin/login")}>Admin Login</Button>
           </Grid.Column>
         </Grid.Row>
         </Grid>
