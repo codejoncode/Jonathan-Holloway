@@ -14,8 +14,7 @@ export const login = (body) => {
          . then(results => {
              dispatch({type: LOGIN_SUCCESSFUL})
              const { token } = results.data; 
-             console.log(token);
-             console.log(results);
+             
              localStorage.setItem('holloway-portfolio-token', token);
              localStorage.setItem('username', body.username);
          })
