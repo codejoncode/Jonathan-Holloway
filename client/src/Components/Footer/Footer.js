@@ -24,6 +24,7 @@ class Footer extends Component {
         <Grid.Row>
             <Grid.Column>
         <Image  size="small" centered src={footerPicture} />
+        <br/>
         <Image  size = "medium" centered src ={engineerLogo} />
             </Grid.Column>
           <Grid.Column>
@@ -34,14 +35,9 @@ class Footer extends Component {
 
             <List.Content>
               {/* <List.Header>I have the training and expereience for the following roles: </List.Header> */}
-              <List.Item>
-                <Icon name="mail" />
-                {/* Software Engineer */}
-                jonathanjamelholloway at gmail
-              </List.Item>
 
               <List.Item>
-                <Icon name="github" />
+                <Icon name="github" size = "big" />
                 {/* Full Stack Web Developer */}
                 <a
                   style={{color: darkBlack, marginBottom: "10px"}}
@@ -52,9 +48,9 @@ class Footer extends Component {
                   Github
                 </a>
               </List.Item>
-
+              <br/>
               <List.Item>
-                <Icon name="linkedin" />
+                <Icon name="linkedin" size = "big"/>
                 {/* Front-end Developer */}
                 <a
                   style={{color: darkBlack, marginBottom: "10px"}}
@@ -65,13 +61,21 @@ class Footer extends Component {
                   LinkedIn
                 </a>
               </List.Item>
+              
+              <List.Item>
+                <br/>
+                <Button onClick = {this.changePages("/contact")}>
+                <Icon name = "mail" />
+                Contact</Button>
+                <br/>
+                <br/>
+                <Button onClick = {this.changePages("/admin/login")}>
+                <Icon name = "user secret" />
+                Admin Login</Button>
+
+              </List.Item>
             </List.Content>
         </List>
-        <br/>
-        <Button onClick = {this.changePages("/contact")}>Contact</Button>
-        <br/>
-        <br/>
-        <Button onClick = {this.changePages("/admin/login")}>Admin Login</Button>
           </Grid.Column>
         </Grid.Row>
         </Grid>

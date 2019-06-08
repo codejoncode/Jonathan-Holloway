@@ -1,6 +1,11 @@
 import React, { Component } from "react";
-import { Form, Button, Grid, Container, Input } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { Form, Button, Grid, Container, Input, Header } from "semantic-ui-react";
+import { login } from '../../Store/Actions/loginActions';
 
+const actions = {
+  login, 
+}
 class SignIn extends Component {
   state = {
     username: "",
@@ -23,9 +28,10 @@ class SignIn extends Component {
     return (
       <Container>
         <Grid columns={1}>
-          <Grid.Row>
+          <Grid.Row style= {{marginTop: "20%", marginBottom: "20%"}}>
             <Grid.Column>
               <Form inverted>
+               <Header as={"h1"} style = {{color: "white"}} textAlign = "center">Admin Login</Header>
                 <Form.Field
                     required
                     placeholder="Enter username"
@@ -47,7 +53,6 @@ class SignIn extends Component {
                     control={Input}
                   />
 
-                <Button type="submit">Register</Button>
                 <Button type="submit">Login</Button>
               </Form>
             </Grid.Column>
@@ -57,4 +62,4 @@ class SignIn extends Component {
     );
   }
 }
-export default SignIn;
+export default connect(null, actions)(SignIn);
