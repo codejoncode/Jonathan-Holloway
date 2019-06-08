@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   Grid,
@@ -17,6 +18,11 @@ import {
   TextArea
 } from "semantic-ui-react";
 import contactImage from "../Images/footer picture.PNG";
+
+
+const actions = {
+
+}
 
 class Contact extends Component {
   state = { 
@@ -120,4 +126,4 @@ class Contact extends Component {
     );
   }
 }
-export default Contact;
+export default connect(null, actions)(Contact);
