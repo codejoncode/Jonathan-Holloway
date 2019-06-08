@@ -7,21 +7,33 @@ class SignIn extends Component {
     password: "",
     isAuthenticated: false,
   };
+
+  handleChange = (e) => {
+    e.preventDefault()
+    this.setState({[e.target.name]: e.target.value})
+  };
+
+  handleSubmit = () => {
+    /*this is where I call an action  */
+    const { username, password} = this.state; 
+  }
+
   render() {
     return (
-     <Form>
+     <Form inverted>
        <Form.Field>
         <label>Username</label>
-        <input placeholder = "username" />
+        <input placeholder = "username" onChange = {this.handleChange}/>
        </Form.Field>
 
        <Form.Field>
-         <lable>Password</lable>
-         <input type="password" />
+         <label>Password</label>
+         <input type="password" onChange = {this.handleChange}/>
 
        </Form.Field>
 
-       <Button type='submit'>Submit</Button>
+       <Button type='submit'>Register</Button>
+       <Button type ='submit'>Login</Button>
      </Form>
     );
   }

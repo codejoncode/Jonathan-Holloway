@@ -1,19 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom"; 
+import { Provider } from "react-redux";
+import { createStore, compose, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
+import ReduxToastr from "react-redux-toastr";
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "../node_modules/semantic-ui-css/semantic.min.css";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ScrollToTop from './Components/common/util/ScrollToTop';
+import rootReducer from './Store/Reducers/rootReducer';
+
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(
+  rootReducer,
+  composeEnhancer(applyMiddleware(thunk, logger))
+)
 
 ReactDOM.render(
+<Provider store={store}>
 <BrowserRouter>
   <ScrollToTop>
+    <ReduxToastr
+      position="bottom-right"
+      transitionIn="fadeIn"
+      transitionOut="fadeOut"
+    />
     <App />
   </ScrollToTop>
 </BrowserRouter>
+</Provider>
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

@@ -91,7 +91,7 @@ class App extends Component {
         <NavBar />
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/admin/Login" component = {SignIn} />
+          <Route path="/admin/login" component = {SignIn} />
           
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
