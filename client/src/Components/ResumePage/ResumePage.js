@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { PDFExport } from "@progress/kendo-react-pdf";
 import HomePageHeader from "../Header/HomePageHeader";
+import {
+  darkBlack,
+  lightBlack,
+  grey,
+  lighterBlue,
+  anotherBlue
+} from "../../Helpers/Colors/colors"
 
 class ResumePage extends Component {
   state = {
@@ -31,11 +38,11 @@ class ResumePage extends Component {
       return (
         <div className="pdfButtonDiv" style = {{flexDirection: "column"}}>
           <div>
-            <h1>Resume</h1>
+            <h1 style = {{color: lighterBlue}}>Resume</h1>
           </div>
           <br/>
-          <button className="pdfButton" style = {{width: "20%"}} onClick={this.exportPDF}>
-            download resume
+          <button className="pdfButton" style = {{width: "40%", backgroundColor: darkBlack, color: anotherBlue}} onClick={this.exportPDF}>
+            Download Resume
           </button>
         </div>
       );
@@ -222,7 +229,7 @@ class ResumePage extends Component {
           </PDFExport>
         </div>
         <div className="pdfButtonDiv">
-          <button className="pdfButton" onClick={this.exportPDF}>
+          <button className="pdfButton" onClick={this.exportPDF} style = {{backgroundColor: darkBlack, color: anotherBlue}}>
             Download
           </button>
         </div>
