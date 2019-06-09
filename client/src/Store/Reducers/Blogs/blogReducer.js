@@ -11,7 +11,10 @@ import {
   DELETE_BLOG_SUCCESS,
   POST_BLOG_ATTEMPT,
   POST_BLOG_FAILED,
-  POST_BLOG_SUCCESS
+  POST_BLOG_SUCCESS, 
+  FETCH_ONE_BLOG_ATTEMPT,
+  FETCH_ONE_BLOG_FAILED,
+  FETCH_ONE_BLOG_SUCCESS,
 } from "./blogConstants";
 
 const initialState = []; 
@@ -26,4 +29,5 @@ export default createReducer(initialState, {
     [EDIT_BLOG_SUCCESS] : getBlogs,
     [DELETE_BLOG_SUCCESS] : getBlogs, 
     [POST_BLOG_SUCCESS] : getBlogs,
+    [FETCH_ONE_BLOG_SUCCESS] : getBlogs,
 })

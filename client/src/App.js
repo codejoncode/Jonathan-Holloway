@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import { connect } from 'react-redux'
 import { withRouter } from "react-router";
 // import { Grid } from "semantic-ui-react";
 // import { Container } from "reactstrap";
@@ -20,6 +21,16 @@ import Contact from "./Components/Contact";
 import SignIn from "./Components/Admin/SignIn";
 import DisplayBlogs from "./Components/Admin/DisplayBlogs";
 import BlogPage from "./Components/Admin/BlogPage";
+import { fetchBlogs  } from './Store/Actions/blogActions'
+
+
+const actions = {
+  fetchBlogs,
+}
+
+const mapState = state => ({
+  blogs : state.blogReducer,
+})
 
 class App extends Component {
   state = {
@@ -33,6 +44,7 @@ class App extends Component {
 
   componentDidMount() {
     this.filterData("ALL");
+    // this.props.fetchBlogs(); 
   } 
   
 
@@ -96,6 +108,8 @@ class App extends Component {
           <Route path="/admin/login" component = {SignIn} />
           <Route path="/admin/blogs" component = {DisplayBlogs} />
           <Route path ="/admin/blog/:id" component = {BlogPage} />
+          <Route path = "/create" component = {BlogPage} />
+          {/* <Route path ="/admin/blog/:id" component = { () => <BlogPage  blogs = {this.props.blogs}/>} /> */}
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
           <Route path="/lectures" component={Lectures} />
@@ -139,4 +153,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default connect(mapState, actions)(App);

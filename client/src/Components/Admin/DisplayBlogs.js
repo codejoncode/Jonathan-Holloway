@@ -35,9 +35,6 @@ class DisplayBlogs extends Component {
     }
   }
 
-  goToBlogPage = id => () => {
-      this.props.history.push(`/admin/blogs/${id}`)
-  };
 
   render() {
     const { blogs } = this.props;
@@ -53,7 +50,7 @@ class DisplayBlogs extends Component {
               >
                 Blogs will be displayed here only after successful login
               </Header>
-              <Button style={{ background: lighterBlue, color: darkBlack }}>
+              <Button as={Link} to= "/create" style={{ background: lighterBlue, color: darkBlack }}>
                 Add New Blog
               </Button>
               <Divider style={{ backgroundColor: anotherBlue }} />
@@ -65,7 +62,6 @@ class DisplayBlogs extends Component {
                       to = {`/admin/blog/${blog.id}`}
                       key={blog.id}
                       style={{ color: lighterBlue, cursor: "pointer" }}
-                    //   onClick={this.goToBlogPage(blog.id)}
                     >
                       <List.Icon name="write square" />
                       <List.Content style={{ color: lighterBlue }}>
