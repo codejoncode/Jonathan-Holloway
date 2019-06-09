@@ -1,11 +1,18 @@
 import React, {Component} from "react";
-import { withRouter } from "react-router"; 
+import { connect } from "react-redux";
+import { fetchBlogs } from '../../Store/Actions/blogActions'
+
+const actions = {
+    fetchBlogs,
+}
 
 class DisplayBlogs extends Component {
     componentDidMount () {
         const token = localStorage.getItem("holloway-portfolio-token")
         if (!token) {
             this.props.history.push("/admin/login");
+        } else {
+            this.props.fetchBlogs(token); 
         }
     }
     render () {
@@ -17,4 +24,4 @@ class DisplayBlogs extends Component {
     }
 }
 
-export default withRouter(DisplayBlogs);
+export default connect(null, actions)(DisplayBlogs);

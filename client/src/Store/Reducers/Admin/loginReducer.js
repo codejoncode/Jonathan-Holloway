@@ -8,5 +8,5 @@ const loginAdmin = (state, payload) => {
 }
 
 export default createReducer(initialState, {
-    [LOGIN_ATTEMPTED] : loginAdmin,
+    [LOGIN_SUCCESSFUL] : loginAdmin,
 })

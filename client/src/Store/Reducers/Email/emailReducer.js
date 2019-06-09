@@ -9,5 +9,5 @@ export const sendEmail = (state, payload) => {
 }
 
 export default createReducer(initialState, {
-    [EMAIL_SEND_PENDING] : sendEmail,
+    [EMAIL_SENT_SUCCESS] : sendEmail,
 })
