@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import {
   Form,
   Button,
@@ -10,24 +10,30 @@ import {
   Header,
   List,
   Divider,
-  TextArea
+  TextArea,
+  Confirm
 } from "semantic-ui-react";
 import {
   lighterBlue,
   darkBlack,
   anotherBlue
 } from "../../Helpers/Colors/colors";
-import {fetchOneBlog, editBlog, deleteBlog,postBlog} from "../../Store/Actions/blogActions";
+import {
+  fetchOneBlog,
+  editBlog,
+  deleteBlog,
+  postBlog
+} from "../../Store/Actions/blogActions";
 
 const actions = {
-    fetchOneBlog,
-    editBlog,
-    deleteBlog,
-    postBlog
+  fetchOneBlog,
+  editBlog,
+  deleteBlog,
+  postBlog
 };
 
 const mapState = state => ({
-    blog: state.blogReducer,
+  blog: state.blogReducer
 });
 class BlogPage extends Component {
   state = {
@@ -35,83 +41,120 @@ class BlogPage extends Component {
     message: "",
     blogSelected: false,
     grabbed: false,
+    open: false
   };
 
   componentDidMount() {
-      console.log(this.props);
-      if (this.props.match.params.id !== undefined && this.props.match.path !== '/create'){
-          this.blogSelected();  
-      }
-
-  }
-
-  componentDidUpdate (prevProps) {
-    if(prevProps.match.params.id !== this.props.match.params.id && this.props.match.params.id && this.props.match.path !== '/create'){
-        this.blogSelected() 
-    }
-    
-    if( this.state.grabbed === false && this.props.blog && this.props.blog.length){
-        const {title, message} = this.props.blog[0];
-        this.setState({title, message, grabbed: true})
-
+    console.log(this.props);
+    if (
+      this.props.match.params.id !== undefined &&
+      this.props.match.path !== "/create"
+    ) {
+      this.blogSelected();
     }
   }
 
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.match.params.id !== this.props.match.params.id &&
+      this.props.match.params.id &&
+      this.props.match.path !== "/create"
+    ) {
+      this.blogSelected();
+    }
+
+    if (
+      this.state.grabbed === false &&
+      this.props.blog &&
+      this.props.blog.length
+    ) {
+      const { title, message } = this.props.blog[0];
+      this.setState({ title, message, grabbed: true });
+    }
+  }
 
   blogSelected = async () => {
     await this.props.fetchOneBlog(this.props.match.params.id);
     console.log(this.props);
-    // const {title, message} = this.p; 
-    this.setState({blogSelected: true});
-  }
+    // const {title, message} = this.p;
+    this.setState({ blogSelected: true });
+  };
 
   handleChange = e => {
     e.preventDefault();
     this.setState({ [e.target.name]: e.target.value });
   };
 
- 
   createNewPost = async () => {
-      const {title, message} = this.state;
-      const token = localStorage.getItem("holloway-portfolio-token"); 
-      const body = { title, message};
-      await this.props.postBlog(token, body);
-      this.props.history.push("/admin/blogs")
-
-
-  }
+    const { title, message } = this.state;
+    const token = localStorage.getItem("holloway-portfolio-token");
+    const body = { title, message };
+    await this.props.postBlog(token, body);
+    this.props.history.push("/admin/blogs");
+  };
 
   editBlogPost = async () => {
-    const {title, message} = this.state; 
+    const { title, message } = this.state;
     const token = localStorage.getItem("holloway-portfolio-token");
-    const {id} = this.props.match.params; 
+    const { id } = this.props.match.params;
 
-    //original message 
+    //original message
     const blog = this.props.blog[0];
-    //make sure they are different than wahts already on the blog and // make sure token is a thing 
-    if(((blog.title !== title) || (blog.message !== message)) && token){
-        const body = {title, message};
-        await this.props.editBlog(id, token, body);
-        this.props.history.push("/admin/blogs");
+    //make sure they are different than wahts already on the blog and // make sure token is a thing
+    if ((blog.title !== title || blog.message !== message) && token) {
+      const body = { title, message };
+      await this.props.editBlog(id, token, body);
+      this.props.history.push("/admin/blogs");
     }
-  }
+  };
 
   deleteBlogPost = async () => {
     const token = localStorage.getItem("holloway-portfolio-token");
-    const {id} = this.props.match.params; 
-    await this.props.deleteBlog(token, id); 
-  }
+    const { id } = this.props.match.params;
+    await this.props.deleteBlog(token, id);
+    this.props.history.push("/admin/blogs");
+  };
+
+  show = () => this.setState({ open: true });
+  handleConfirm = () => this.setState({ open: false }, this.deleteBlogPost());
+  handleCancel = () => this.setState({ open: false });
 
   render() {
-    const { title, message, blogSelected } = this.state;
+    const { title, message, blogSelected, open } = this.state;
     return (
       <Container>
         <Grid columns={1}>
           <Grid.Row>
             <Grid.Column>
-                {/* so if blogSelected is true then editing the post if it is false then it is a new post */}
-                <Button style={{ background: lighterBlue, color: darkBlack }} as={Link} to="/admin/blogs">Go Back to list of blogs</Button>
-              <Form inverted onSubmit = {blogSelected ? this.editBlogPost : this.createNewPost}>
+              {/* so if blogSelected is true then editing the post if it is false then it is a new post */}
+              <Button
+                style={{ background: lighterBlue, color: darkBlack }}
+                as={Link}
+                to="/admin/blogs"
+              >
+                Go Back to list of blogs
+              </Button>
+              <br />
+              <br />
+              <Button
+                style={{ background: lighterBlue, color: darkBlack }}
+                onClick={this.show}
+              >
+                Delete Blog
+              </Button>
+              <br />
+              <br />
+              <Confirm
+                open={open}
+                cancelButton="Changed Mind"
+                confirmButton="Delete (cannot be undone)"
+                onCancel={this.handleCancel}
+                onConfirm={this.handleConfirm}
+              />
+              <Form
+                inverted
+                onSubmit={blogSelected ? this.editBlogPost : this.createNewPost}
+              >
                 <Form.Field
                   required
                   placeholder="Title"
@@ -122,7 +165,7 @@ class BlogPage extends Component {
                   control={Input}
                 />
                 <Form.Field
-                  style = {{height: "60%"}}
+                  style={{ height: "60%" }}
                   required
                   placeholder="Enter your body here..."
                   label="Content"
@@ -132,10 +175,21 @@ class BlogPage extends Component {
                   control={TextArea}
                 />
                 {/* so if blogSelected is true then editing the post if it is false then it is a new post */}
-                { blogSelected ? <Button style={{ background: lighterBlue, color: darkBlack }} type = 'submit'>Edit Blog Post</Button> : <Button style={{ background: lighterBlue, color: darkBlack }} type = 'submit'>Create Blog Post</Button> }
-                
-                
-
+                {blogSelected ? (
+                  <Button
+                    style={{ background: lighterBlue, color: darkBlack }}
+                    type="submit"
+                  >
+                    Edit Blog Post
+                  </Button>
+                ) : (
+                  <Button
+                    style={{ background: lighterBlue, color: darkBlack }}
+                    type="submit"
+                  >
+                    Create Blog Post
+                  </Button>
+                )}
               </Form>
             </Grid.Column>
           </Grid.Row>
