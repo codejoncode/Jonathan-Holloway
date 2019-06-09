@@ -24,13 +24,7 @@ import BlogPage from "./Components/Admin/BlogPage";
 import { fetchBlogs  } from './Store/Actions/blogActions'
 
 
-const actions = {
-  fetchBlogs,
-}
 
-const mapState = state => ({
-  blogs : state.blogReducer,
-})
 
 class App extends Component {
   state = {
@@ -44,7 +38,7 @@ class App extends Component {
 
   componentDidMount() {
     this.filterData("ALL");
-    // this.props.fetchBlogs(); 
+
   } 
   
 
@@ -153,4 +147,4 @@ class App extends Component {
   }
 }
 
-export default connect(mapState, actions)(App);
+export default withRouter(App);
