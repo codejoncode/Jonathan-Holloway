@@ -17,10 +17,13 @@ import {
   darkBlack,
   anotherBlue
 } from "../../Helpers/Colors/colors";
-import {fetchOneBlog} from "../../Store/Actions/blogActions";
+import {fetchOneBlog, editBlog, deleteBlog,postBlog} from "../../Store/Actions/blogActions";
 
 const actions = {
     fetchOneBlog,
+    editBlog,
+    deleteBlog,
+    postBlog
 };
 
 const mapState = state => ({
@@ -35,14 +38,15 @@ class BlogPage extends Component {
   };
 
   componentDidMount() {
-      if (this.props.match.params.id !== undefined){
+      console.log(this.props);
+      if (this.props.match.params.id !== undefined && this.props.match.path !== '/create'){
           this.blogSelected();  
       }
 
   }
 
   componentDidUpdate (prevProps) {
-    if(prevProps.match.params.id !== this.props.match.params.id){
+    if(prevProps.match.params.id !== this.props.match.params.id && this.props.match.params.id && this.props.match.path !== '/create'){
         this.blogSelected() 
     }
     
@@ -67,28 +71,46 @@ class BlogPage extends Component {
   };
 
  
-  createNewPost = () => {
+  createNewPost = async () => {
+      const {title, message} = this.state;
+      const token = localStorage.getItem("holloway-portfolio-token"); 
+      const body = { title, message};
+      await this.props.postBlog(token, body);
+      this.props.history.push("/admin/blogs")
+
 
   }
 
-  editBlogPost = () => {
+  editBlogPost = async () => {
+    const {title, message} = this.state; 
+    const token = localStorage.getItem("holloway-portfolio-token");
+    const {id} = this.props.match.params; 
 
+    //original message 
+    const blog = this.props.blog[0];
+    //make sure they are different than wahts already on the blog and // make sure token is a thing 
+    if(((blog.title !== title) || (blog.message !== message)) && token){
+        const body = {title, message};
+        await this.props.editBlog(id, token, body);
+        this.props.history.push("/admin/blogs");
+    }
   }
 
-  deleteBlogPost = () => {
-     
+  deleteBlogPost = async () => {
+    const token = localStorage.getItem("holloway-portfolio-token");
+    const {id} = this.props.match.params; 
+    await this.props.deleteBlog(token, id); 
   }
 
   render() {
     const { title, message, blogSelected } = this.state;
-    console.log(this.props)
     return (
       <Container>
         <Grid columns={1}>
           <Grid.Row>
             <Grid.Column>
                 {/* so if blogSelected is true then editing the post if it is false then it is a new post */}
-                <Button as={Link} to="/admin/blogs">Go Back to list of blogs</Button>
+                <Button style={{ background: lighterBlue, color: darkBlack }} as={Link} to="/admin/blogs">Go Back to list of blogs</Button>
               <Form inverted onSubmit = {blogSelected ? this.editBlogPost : this.createNewPost}>
                 <Form.Field
                   required
@@ -110,7 +132,7 @@ class BlogPage extends Component {
                   control={TextArea}
                 />
                 {/* so if blogSelected is true then editing the post if it is false then it is a new post */}
-                { blogSelected ? <Button>Edit Blog Post</Button> : <Button>Create Blog Post</Button> }
+                { blogSelected ? <Button style={{ background: lighterBlue, color: darkBlack }} type = 'submit'>Edit Blog Post</Button> : <Button style={{ background: lighterBlue, color: darkBlack }} type = 'submit'>Create Blog Post</Button> }
                 
                 
 

@@ -20,7 +20,6 @@ import {
 const url = "https://jonathan-holloway.herokuapp.com/blogs"
 
 export const fetchBlogs = (token) => {
-    const headers = { headers: { Authorization: token }};
     const promise = axios.get(url);
     return dispatch => {
         dispatch({type: FETCH_BLOGS_ATTEMPT})
@@ -48,5 +47,51 @@ export const fetchOneBlog = (id) => {
             dispatch({type: FETCH_ONE_BLOG_FAILED, error: `Unable to fetch blog with id ${id}, ${err}`})
         })
     }
+};
+
+export const editBlog = (id, token, body) => {
+    const headers = { headers: { Authorization: token }};
+    const newUrl = url + `/${id}`
+    const promise = axios.put(newUrl, body, headers);
+    return dispatch => {
+        dispatch({type: EDIT_BLOG_ATTEMPT})
+        promise
+        .then(results => {
+            dispatch({type: EDIT_BLOG_SUCCESS, payload: results.data})
+        })
+        .catch(err => {
+            dispatch({type: EDIT_BLOG_FAILED, error: `Unable to edit the post with id ${id} ${err}`})
+        })
+    }
 }
 
+export const postBlog = (token, body) => {
+    const headers = { headers: { Authorization: token }};
+    const promise = axios.post(url, body, headers);
+    return dispatch => {
+        dispatch({type: POST_BLOG_ATTEMPT})
+        promise
+        .then(results => {
+          dispatch({type: POST_BLOG_SUCCESS, payload: results.data})
+        })
+        .catch(err => {
+          dispatch({type: POST_BLOG_FAILED, error: `Unable to post the blog ${err}`})
+        })
+    }
+}
+
+export const deleteBlog = (token, id) => {
+    const headers = { headers: { Authorization: token }};
+    const newUrl = url + `/${id}`
+    const promise = axios.delete(newUrl, headers);
+    return dispatch => {
+      dispatch({type: DELETE_BLOG_ATTEMPT})
+      promise
+      .then(results => {
+          dispatch({type: DELETE_BLOG_SUCCESS, payload: results.data})
+      })
+      .catch(err => {
+          dispatch({type: DELETE_BLOG_FAILED, error: `Unable to delete the blog with id ${id} ${err}`})
+      })
+    }
+}
