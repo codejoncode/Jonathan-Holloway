@@ -37,7 +37,6 @@ class Footer extends Component {
               {/* <List.Header>I have the training and expereience for the following roles: </List.Header> */}
 
               <List.Item>
-                <Icon name="github" size = "big" />
                 {/* Full Stack Web Developer */}
                 <a
                   style={{color: darkBlack, marginBottom: "10px"}}
@@ -45,12 +44,12 @@ class Footer extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Github
+                 <Icon name="github" size = "big" /> Github
                 </a>
               </List.Item>
               <br/>
               <List.Item>
-                <Icon name="linkedin" size = "big"/>
+               
                 {/* Front-end Developer */}
                 <a
                   style={{color: darkBlack, marginBottom: "10px"}}
@@ -58,18 +57,18 @@ class Footer extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  LinkedIn
+                   <Icon name="linkedin" size = "big"/> LinkedIn
                 </a>
               </List.Item>
               
               <List.Item>
                 <br/>
-                <Button onClick = {this.changePages("/contact")}>
+                <Button style = {{backgroundColor: darkBlack, color: anotherBlue}} onClick = {this.changePages("/contact")}>
                 <Icon name = "mail" />
                 Contact</Button>
                 <br/>
                 <br/>
-                <Button onClick = {this.changePages("/admin/login")}>
+                <Button style = {{backgroundColor: darkBlack, color: anotherBlue}} onClick = {this.changePages("/admin/login")}>
                 <Icon name = "user secret" />
                 Admin Login</Button>
 
