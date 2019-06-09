@@ -35,10 +35,6 @@ class Contact extends Component {
     email: '', 
     company: '', 
     message : '',
-    submittedName: '', 
-    submittedEmail: '',
-    submittedText: '',
-    submittedCompany: '',
     error : ""
   }
   
@@ -75,15 +71,13 @@ class Contact extends Component {
         }
 
         this.props.sendEmail(body); 
-        this.setState({ submittedName: name, submittedEmail: email, submittedText: message, submittedCompany: company});
+        this.setState({ name: "", email: "",  message: "", company: "",});
 
     }
   }
 
   render() {
-    const { lighterBlue, grey,  } = this.props;
-    const {company, name, email, message, list} = this.state;
-    console.log(company, name, email, message)
+    const {company, name, email, message} = this.state;
     return (
       <Container>
         <Image centered size="medium" src={contactImage} />
