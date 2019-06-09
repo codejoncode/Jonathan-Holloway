@@ -50,7 +50,7 @@ class HomePageHeader extends Component {
                 </a>
 
                 <a
-                  href="https://twitter.com/Jonathanjamelh1"
+                  href="https://www.linkedin.com/in/jonathanjholloway/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -58,7 +58,7 @@ class HomePageHeader extends Component {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/jonathanjholloway/"
+                  href="https://twitter.com/Jonathanjamelh1"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

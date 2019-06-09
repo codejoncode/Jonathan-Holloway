@@ -40,9 +40,12 @@ class ProjectDetails extends Component {
         <Segment textAlign="center" style={{ backgroundColor: darkBlack }}>
           <Item>
             <Header style={{ color: lighterBlue }}>{project.title}</Header>
-            <Item.Description style={{ color: lighterBlue }}>
+            {/* <div style = {{display : "flex", justifyContent: "center"}}>
+            <p style={{ color: lighterBlue, width : "65%", textAlign: "center"}}>
               {project.description}
-            </Item.Description>
+            </p>
+
+            </div> */}
             <Image size="big" src={project.image} centered />
           </Item>
         </Segment>

@@ -3,10 +3,10 @@ import { Grid, Menu, Header, Button, Popup, Confirm } from "semantic-ui-react";
 import { technologiesData } from "../../Helpers/projectData";
 import ProjectSection from "./ProjectSection";
 
-const timeoutLength = 5000; 
+const timeoutLength = 10000; 
 
 class Projects extends Component {
-  state = { isOpen : true, open: true, popUpStyle: {backgroundColor: "#0B0C10", color: "#66FCF1"}}
+  state = { isOpen : true, open: true, popUpStyle: {backgroundColor: "#66FCF1", color: "#0B0C10", fontWeight: "900"}}
 
   componentDidMount () {
     this.handleOpen();
@@ -44,7 +44,7 @@ class Projects extends Component {
         </Menu>
         
           <Popup 
-        content = "Click a tab to filter the projects list, or click a project for more information."
+        content = {"Hover over a Project for a description. \n\n Click a tab to filter the projects list. \n\n Click a project for more information."}
         open = {isOpen}
         onClose = {this.handleClose}
         onOpen= {this.handleOpen}

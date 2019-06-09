@@ -27,7 +27,7 @@ class NavBar extends Component {
         <Menu borderless fluid stackable  style = {{background: "#0B0C10"}} >
         <Menu.Item as = {Link} to = "/" ><Image avatar src={iconImage} alt="logo" /></Menu.Item>
         
-       <Menu.Item id = "lighterBlue">Jonathan J. Holloway</Menu.Item>
+       <Menu.Item id = "lighterBlue" as = {Link} to = "/">Jonathan J. Holloway</Menu.Item>
 
         </Menu>
         <Menu.Item
