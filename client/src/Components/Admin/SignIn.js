@@ -47,6 +47,8 @@ class SignIn extends Component {
                     value = {username}
                     onChange = {this.handleChange}
                     control={Input}
+                    icon = 'user'
+                    iconPosition = 'left'
                   />
 
                   <Form.Field
@@ -58,6 +60,8 @@ class SignIn extends Component {
                     onChange = {this.handleChange}
                     type= "password"
                     control={Input}
+                    icon = 'user'
+                    iconPosition = 'left'
                   />
 
                 <Button type="submit">Login</Button>
