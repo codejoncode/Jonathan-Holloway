@@ -94,7 +94,7 @@ technologiesData.sort();
 
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name }, () =>
-      this.filterData(name.toUpperCase())
+      this.filterData(this.props.projects, name.toUpperCase())
     );
   };
 
