@@ -21,6 +21,7 @@ import Contact from "./Components/Contact";
 import SignIn from "./Components/Admin/SignIn";
 import DisplayBlogs from "./Components/Admin/DisplayBlogs";
 import BlogPage from "./Components/Admin/BlogPage";
+import Blog from "./Components/Blog";
 
 class App extends Component {
   state = {
@@ -59,6 +60,7 @@ class App extends Component {
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
           <Route path="/lectures" component={Lectures} />
+          <Route path="/blog" component ={Blog} />
           <Route
             path="/contact"
             component={() => (
