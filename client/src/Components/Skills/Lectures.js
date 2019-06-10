@@ -1,24 +1,36 @@
 import React, { Component } from "react";
+import { connect } from "react-redux"; 
 import {
   Container,
   Label
 } from "semantic-ui-react";
 import ReactPlayer from "react-player";
-import { lectures } from "../../Helpers/skillsData";
+import { fetchLectures } from "../../Store/Actions/lecturesActions";
 
+const mapState = state => ({
+  lectures: state.lecturesReducer,
+})
 
+const actions = {
+  fetchLectures,
+}
 
 class Lectures extends Component {
   state = {
     url: "https://www.youtube.com/embed/lxuyCxw_sg4",
     title: "Web Server Guided Project I"
   };
+  componentDidMount () {
+    this.props.fetchLectures();
+  }
 
   changeURL = (url, title) => () => {
     this.setState({ url, title });
   };
   render() {
     const { url, title } = this.state;
+    console.log(this.props.lectures)
+    const lectures = this.props.lectures ? this.props.lectures : []
     return (
       <Container>
         <div className="lectures">
@@ -59,4 +71,4 @@ class Lectures extends Component {
     );
   }
 }
-export default Lectures;
+export default connect(mapState, actions)(Lectures);
