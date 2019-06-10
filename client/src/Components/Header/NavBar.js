@@ -37,6 +37,7 @@ class NavBar extends Component {
         <Menu.Item as = {Link} to = "/projects" name='Projects' active={activeItem === 'Projects'} onClick={this.handleItemClick}>
           Projects
         </Menu.Item>
+        <Menu.Item as = {Link} to = "/lectures" name='Lectures' active={activeItem === 'Lectures'} onClick={this.handleItemClick}>Lectures</Menu.Item>
 
         <Menu.Item
           as = {Link}

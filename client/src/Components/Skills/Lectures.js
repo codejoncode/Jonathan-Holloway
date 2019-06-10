@@ -5,6 +5,9 @@ import {
 } from "semantic-ui-react";
 import ReactPlayer from "react-player";
 import { lectures } from "../../Helpers/skillsData";
+
+
+
 class Lectures extends Component {
   state = {
     url: "https://www.youtube.com/embed/lxuyCxw_sg4",

@@ -4,6 +4,7 @@ import emailReducer from "./Email/emailReducer";
 import loginReducer from "./Admin/loginReducer";
 import blogReducer from "./Blogs/blogReducer";
 import projectReducer from "./Projects/projectReducer";
+import lecturesReducer from "./Lectures/lecturesReducer";
 
 /*every reducer is brought in to here */
 const rootReducer = combineReducers({
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
     loginReducer,
     blogReducer,
     projectReducer,
+    lecturesReducer,
 
 });
 
