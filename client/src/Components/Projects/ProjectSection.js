@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
 import { Grid, Image, Card,  Container, Reveal, Header} from "semantic-ui-react";
 
 class ProjectSection extends Component {
@@ -23,7 +25,8 @@ class ProjectSection extends Component {
             <Grid.Column key={index}>
               <Container>
               
-              <Card onClick={() => goToProjectPage(project.id)} style = {{background: lighterBlue}}>
+              {/* <Card onClick={() => goToProjectPage(project.id)} style = {{background: lighterBlue}}> */}
+              <Card as = {Link} to ={{pathname : `/project/${project.id}`, state: {project : project}}} style = {{background: lighterBlue}}>
                 <Reveal animated= 'move down'>
                   <Reveal.Content visible>
                 <Image src={project.image} fluid style={{ height: "300px" }} />                  
@@ -42,4 +45,4 @@ class ProjectSection extends Component {
   }
 }
 
-export default ProjectSection;
+export default withRouter(ProjectSection);
