@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Grid, Menu,  Popup} from "semantic-ui-react";
+import { Grid, Menu,  Popup, Dimmer, Loader, Image, Segment} from "semantic-ui-react";
 import ProjectSection from "./ProjectSection";
 import {
   fetchOneProject,
@@ -39,8 +39,7 @@ class Projects extends Component {
   }
 
   componentWillUpdate() {
-    if (this.state.intialized === false && this.props.projects.length > 0) {
-      console.log(this.props.projects);
+    if (this.state.intialized === false && this.props.projects.length > 1) {
       this.filterData(this.props.projects, "ALL");
     }
   }
@@ -90,6 +89,7 @@ class Projects extends Component {
     }
 
     technologiesData.sort();
+    console.log(projectsDisplay)
     this.setState({
       projectsDisplay,
       activeItem: name,
@@ -120,17 +120,14 @@ class Projects extends Component {
   handleCancel = () => this.setState({ open: false });
 
   render() {
-    // const technologies = ["ALL", ...technologiesData];
     const technologies = ["ALL", ...this.state.technologies];
     const {
       handleOpen,
       handleClose,
       modalOpen,
       currentModal,
-      // projectsDisplay,
       activeItem,
       columnCount,
-      // handleItemClick,
       goToProjectPage,
       darkBlack,
       lightBlack,
@@ -139,7 +136,20 @@ class Projects extends Component {
       anotherBlue
     } = this.props;
     const { isOpen,  popUpStyle, projectsDisplay } = this.state;
-    console.log(this.state.projectsDisplay);
+    
+    if (!this.state.intialized){
+      return (
+        <div>
+          <Segment>
+            <Dimmer active>
+              <Loader indeterminate>Loading Projects</Loader>
+            </Dimmer>
+
+          </Segment>
+        </div>
+      )
+    }
+
     return (
       <div style={{ margin: "20px" }}>
         <Menu
