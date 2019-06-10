@@ -32,33 +32,18 @@ const actions = {
 }
 
 class ProjectDetails extends Component {
-  state = {
-    project: null
-  };
   componentWillMount() {
-    const { id } = this.props.match.params;
-    // const project = this.props.projectsDisplay.filter(
-    //   pj => pj.id === Number(id)
-    // )[0];
-    //START HERE LEFT OFF HERE 
-    // this.props.fetchOneProject(id);
-    // this.props.fetchProjects();
-    // this.setState({ project });
     this.goGetProject(); 
 
   }
 
   goGetProject = async (id) => {
-    // await this.props.fetchOneProject(id);
     await this.props.fetchProjects(); 
     
   }
 
   render() {
-    console.log(this.props)
     const { project } = this.props.location.state; 
-    // const project = this.props.project ? this.props.project[0] : null;
-    console.log(project)
     if (project ) {
       return (
          <div>
@@ -102,4 +87,3 @@ class ProjectDetails extends Component {
   }
 }
 export default withRouter(connect(mapState, actions)(ProjectDetails));
-// export default connect(mapState, actions)(ProjectDetails);

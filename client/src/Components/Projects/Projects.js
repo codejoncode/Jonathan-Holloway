@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Grid, Menu,  Popup, Dimmer, Loader, Image, Segment} from "semantic-ui-react";
+import { Grid, Menu,  Popup, Dimmer, Loader, Segment} from "semantic-ui-react";
 import ProjectSection from "./ProjectSection";
 import {
   fetchOneProject,
@@ -89,7 +89,6 @@ class Projects extends Component {
     }
 
     technologiesData.sort();
-    console.log(projectsDisplay)
     this.setState({
       projectsDisplay,
       activeItem: name,

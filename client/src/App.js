@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import "./App.css";
 import LandingPage from "./Components/LandingPage";
@@ -22,17 +21,7 @@ import Contact from "./Components/Contact";
 import SignIn from "./Components/Admin/SignIn";
 import DisplayBlogs from "./Components/Admin/DisplayBlogs";
 import BlogPage from "./Components/Admin/BlogPage";
-// import {fetchOneProject, fetchProjects } from "./Store/Actions/projectActions";
 
-
-// const mapState = state => ({
-//   projects: state.projectReducer, 
-// })
-
-// const actions = {
-//   fetchOneProject,
-//   fetchProjects,
-// }
 class App extends Component {
   state = {
     modalOpen: false,
@@ -52,7 +41,6 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.props)
     const {
       modalOpen,
       currentModal,
