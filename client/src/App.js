@@ -37,27 +37,27 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.filterData("ALL");
+    this.filterData(projectData, "ALL");
 
   } 
   
 
 
-  filterData = async name => {
-    const rowCount = Math.ceil(projectData.length / this.state.columnCount);
+  filterData = async (projects, name) => {
+    const rowCount = Math.ceil(projects.length / this.state.columnCount);
     const projectsDisplay = [];
     let projectCount = 0;
 
     for (let i = 0; i < rowCount; i++) {
       let setOfColumns = [];
-      while (projectCount < projectData.length) {
-        if (projectData[projectCount]) {
-          const tech = projectData[projectCount].technologies.toUpperCase();
+      while (projectCount < projects.length) {
+        if (projects[projectCount]) {
+          const tech = projects[projectCount].technologies.toUpperCase();
           if (
             this.state.activeItem === "ALL" ||
             tech.includes(this.state.activeItem) === true
           ) {
-            setOfColumns.push(projectData[projectCount]);
+            setOfColumns.push(projects[projectCount]);
             if (setOfColumns.length === this.state.columnCount) {
               projectCount += 1;
               break;
@@ -69,11 +69,12 @@ class App extends Component {
       if (setOfColumns.length > 0) {
         projectsDisplay.push(setOfColumns);
       }
-      if (projectCount >= projectData.length) {
+      if (projectCount >= projects.length) {
         break;
       }
     }
     this.setState({ projectsDisplay, activeItem: name });
+    return projectsDisplay; 
   };
 
   handleItemClick = (e, { name }) => {

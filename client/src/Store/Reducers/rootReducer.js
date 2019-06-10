@@ -3,6 +3,7 @@ import { reducer as toastrReducer} from 'react-redux-toastr';
 import emailReducer from "./Email/emailReducer";
 import loginReducer from "./Admin/loginReducer";
 import blogReducer from "./Blogs/blogReducer";
+import projectReducer from "./Projects/projectReducer";
 
 /*every reducer is brought in to here */
 const rootReducer = combineReducers({
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
     emailReducer,
     loginReducer,
     blogReducer,
+    projectReducer,
 
 });
 
