@@ -7,8 +7,6 @@ import {
   Item,
   Segment,
   Grid,
-  Card,
-  Container, 
   Message
 } from "semantic-ui-react";
 import ProjectFeatureList from "./ProjectFeatureList";
@@ -17,10 +15,8 @@ import PlanLinks from "./PlanLinks";
 import DeploymentLinks from "./DeploymentLinks";
 import {
   darkBlack,
-  lightBlack,
-  grey,
   lighterBlue,
-  anotherBlue
+ 
 } from "../../Helpers/Colors/colors";
 
 import { fetchOneProject } from "../../Store/Actions/projectActions";

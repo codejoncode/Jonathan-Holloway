@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { Container, Image, List, Header, Icon, Grid, Button} from "semantic-ui-react";
 import {
   darkBlack,
-  lightBlack,
-  grey,
   lighterBlue,
   anotherBlue
 } from "../../Helpers/Colors/colors";

@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import { connect } from 'react-redux'
 import { withRouter } from "react-router";
-// import { Grid } from "semantic-ui-react";
-// import { Container } from "reactstrap";
 import "./App.css";
-
 import LandingPage from "./Components/LandingPage";
 import HomePage from "./Components/HomePage";
 import NavBar from "./Components/Header/NavBar";
@@ -13,18 +9,18 @@ import Lectures from "./Components/Skills/Lectures";
 import ResumePage from "./Components/ResumePage/ResumePage";
 import Projects from "./Components/Projects/Projects";
 import ProjectDetails from "./Components/Projects/ProjectDetails";
-import { projectData } from "./Helpers/projectData";
-import HomePageHeader from "./Components/Header/HomePageHeader";
-import {darkBlack,lightBlack,grey,lighterBlue,anotherBlue } from "./Helpers/Colors/colors"
+import {
+  darkBlack,
+  lightBlack,
+  grey,
+  lighterBlue,
+  anotherBlue
+} from "./Helpers/Colors/colors";
 import Footer from "./Components/Footer/Footer";
 import Contact from "./Components/Contact";
 import SignIn from "./Components/Admin/SignIn";
 import DisplayBlogs from "./Components/Admin/DisplayBlogs";
 import BlogPage from "./Components/Admin/BlogPage";
-import { fetchBlogs  } from './Store/Actions/blogActions'
-
-
-
 
 class App extends Component {
   state = {
@@ -32,55 +28,7 @@ class App extends Component {
     currentModal: null,
     columnCount: 5,
     activeItem: "ALL",
-    projectsDisplay: [], 
-
-  };
-
-  componentDidMount() {
-    this.filterData(projectData, "ALL");
-
-  } 
-  
-
-
-  filterData = async (projects, name) => {
-    const rowCount = Math.ceil(projects.length / this.state.columnCount);
-    const projectsDisplay = [];
-    let projectCount = 0;
-
-    for (let i = 0; i < rowCount; i++) {
-      let setOfColumns = [];
-      while (projectCount < projects.length) {
-        if (projects[projectCount]) {
-          const tech = projects[projectCount].technologies.toUpperCase();
-          if (
-            this.state.activeItem === "ALL" ||
-            tech.includes(this.state.activeItem) === true
-          ) {
-            setOfColumns.push(projects[projectCount]);
-            if (setOfColumns.length === this.state.columnCount) {
-              projectCount += 1;
-              break;
-            }
-          }
-        }
-        projectCount += 1;
-      }
-      if (setOfColumns.length > 0) {
-        projectsDisplay.push(setOfColumns);
-      }
-      if (projectCount >= projects.length) {
-        break;
-      }
-    }
-    this.setState({ projectsDisplay, activeItem: name });
-    return projectsDisplay; 
-  };
-
-  handleItemClick = (e, { name }) => {
-    this.setState({ activeItem: name }, () =>
-      this.filterData(name.toUpperCase())
-    );
+    projectsDisplay: []
   };
 
   handleOpen = currentModal => this.setState({ modalOpen: true, currentModal });
@@ -88,34 +36,41 @@ class App extends Component {
   handleClose = currentModal =>
     this.setState({ modalOpen: false, currentModal });
 
-  goToProjectPage = (id) => {
-    this.props.history.push(`/project/${id}`)
-  }
+  goToProjectPage = id => {
+    this.props.history.push(`/project/${id}`);
+  };
 
   render() {
-    const {modalOpen, currentModal, columnCount, activeItem, projectsDisplay} = this.state;
+    const {
+      modalOpen,
+      currentModal,
+      columnCount,
+    } = this.state;
     return (
       <div className="main">
-        
         <NavBar />
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/admin/login" component = {SignIn} />
-          <Route path="/admin/blogs" component = {DisplayBlogs} />
-          <Route path ="/admin/blog/:id" component = {BlogPage} />
-          <Route path = "/create" component = {BlogPage} />
+          <Route path="/admin/login" component={SignIn} />
+          <Route path="/admin/blogs" component={DisplayBlogs} />
+          <Route path="/admin/blog/:id" component={BlogPage} />
+          <Route path="/create" component={BlogPage} />
           {/* <Route path ="/admin/blog/:id" component = { () => <BlogPage  blogs = {this.props.blogs}/>} /> */}
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
           <Route path="/lectures" component={Lectures} />
-          <Route path = "/contact" component={() => <Contact
-           darkBlack = {darkBlack}
-           lightBlack = {lightBlack} 
-           grey = {grey}
-           lighterBlue = {lighterBlue} 
-           anotherBlue = {anotherBlue}
-
-          />} />
+          <Route
+            path="/contact"
+            component={() => (
+              <Contact
+                darkBlack={darkBlack}
+                lightBlack={lightBlack}
+                grey={grey}
+                lighterBlue={lighterBlue}
+                anotherBlue={anotherBlue}
+              />
+            )}
+          />
           <Route
             path="/projects"
             component={() => (
@@ -124,26 +79,20 @@ class App extends Component {
                 handleClose={this.handleClose}
                 handleOpen={this.handleOpen}
                 currentModal={currentModal}
-                columnCount = {columnCount}
-                activeItem = {activeItem}
-                projectsDisplay = {projectsDisplay}
-                filterData = {this.filterData}
-                handleItemClick = {this.handleItemClick}
-                goToProjectPage = {this.goToProjectPage}
-                darkBlack = {darkBlack}
-                lightBlack = {lightBlack} 
-                grey = {grey}
-                lighterBlue = {lighterBlue} 
-                anotherBlue = {anotherBlue}
-
+                columnCount={columnCount}
+                goToProjectPage={this.goToProjectPage}
+                darkBlack={darkBlack}
+                lightBlack={lightBlack}
+                grey={grey}
+                lighterBlue={lighterBlue}
+                anotherBlue={anotherBlue}
               />
             )}
           />
-          <Route path = "/project/:id" component = {() => <ProjectDetails projectsDisplay = {projectData}/>} />
+          <Route path="/project/:id" component={() => <ProjectDetails />} />
         </Switch>
-        <Footer history ={this.props.history}/>
+        <Footer history={this.props.history} />
       </div>
-      
     );
   }
 }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Grid, Menu, Header, Button, Popup, Confirm } from "semantic-ui-react";
-import { technologiesData } from "../../Helpers/projectData";
+import { Grid, Menu,  Popup} from "semantic-ui-react";
 import ProjectSection from "./ProjectSection";
 import {
   fetchOneProject,
@@ -30,8 +29,8 @@ class Projects extends Component {
     intialized: false,
     columnCount: 5,
     activeItem: "ALL",
-    projectsDisplay: [], 
-    technologies : [],
+    projectsDisplay: [],
+    technologies: []
   };
 
   componentDidMount() {
@@ -42,7 +41,7 @@ class Projects extends Component {
   componentWillUpdate() {
     if (this.state.intialized === false && this.props.projects.length > 0) {
       console.log(this.props.projects);
-      this.filterData(this.props.projects, "ALL")
+      this.filterData(this.props.projects, "ALL");
     }
   }
 
@@ -81,15 +80,22 @@ class Projects extends Component {
     for (let project of projects) {
       const tech = project.technologies.split(" ");
       for (let t of tech) {
-        if (technologiesData.includes(t.toUpperCase()) === false && t.length > 0) {
+        if (
+          technologiesData.includes(t.toUpperCase()) === false &&
+          t.length > 0
+        ) {
           technologiesData.push(t.toUpperCase());
         }
       }
-}
+    }
 
-technologiesData.sort();
-    this.setState({ projectsDisplay, activeItem: name, intialized: true, technologies: technologiesData });
-     
+    technologiesData.sort();
+    this.setState({
+      projectsDisplay,
+      activeItem: name,
+      intialized: true,
+      technologies: technologiesData
+    });
   };
 
   handleItemClick = (e, { name }) => {
@@ -115,7 +121,7 @@ technologiesData.sort();
 
   render() {
     // const technologies = ["ALL", ...technologiesData];
-    const technologies = ["ALL", ...this.state.technologies]
+    const technologies = ["ALL", ...this.state.technologies];
     const {
       handleOpen,
       handleClose,
@@ -132,7 +138,7 @@ technologiesData.sort();
       lighterBlue,
       anotherBlue
     } = this.props;
-    const { isOpen, open, popUpStyle, projectsDisplay } = this.state;
+    const { isOpen,  popUpStyle, projectsDisplay } = this.state;
     console.log(this.state.projectsDisplay);
     return (
       <div style={{ margin: "20px" }}>

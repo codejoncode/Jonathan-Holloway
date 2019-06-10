@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import {
   Grid,
   Header,
@@ -12,9 +11,8 @@ import {
   Image,
 } from "semantic-ui-react";
 import profilePic from ".././../Images/profile pic.PNG";
-import IntroductionSkills from "../Skills/IntroductionSkills";
 
-import { lighterBlue, darkBlack } from "../../Helpers/Colors/colors";
+import {  darkBlack } from "../../Helpers/Colors/colors";
 
 class HomePageHeader extends Component {
   render() {

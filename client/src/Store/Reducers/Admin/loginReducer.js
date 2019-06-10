@@ -1,5 +1,5 @@
 import { createReducer } from "../../reducerUtil";
-import {  LOGIN_ATTEMPTED, LOGIN_FAILED, LOGIN_SUCCESSFUL} from './loginConstants';
+import { LOGIN_SUCCESSFUL} from './loginConstants';
 
 const initialState = [];
 

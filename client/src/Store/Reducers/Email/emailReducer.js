@@ -1,6 +1,6 @@
 import { createReducer } from '../../reducerUtil';
 
-import { EMAIL_SEND_PENDING, EMAIL_SENT_SUCCESS, EMAIL_SENT_FAILURE } from './emailConstants'
+import {  EMAIL_SENT_SUCCESS, } from './emailConstants'
 
 const initialState = []
 

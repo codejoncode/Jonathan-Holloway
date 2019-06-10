@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Image, Button, Card, Popup, Container, Reveal, Header} from "semantic-ui-react";
+import { Grid, Image, Card,  Container, Reveal, Header} from "semantic-ui-react";
 
 class ProjectSection extends Component {
   state = {

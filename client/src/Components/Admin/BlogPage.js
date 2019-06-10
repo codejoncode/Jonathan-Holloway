@@ -7,16 +7,12 @@ import {
   Grid,
   Container,
   Input,
-  Header,
-  List,
-  Divider,
   TextArea,
   Confirm
 } from "semantic-ui-react";
 import {
   lighterBlue,
   darkBlack,
-  anotherBlue
 } from "../../Helpers/Colors/colors";
 import {
   fetchOneBlog,

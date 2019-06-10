@@ -3,16 +3,10 @@ import { Link } from "react-router-dom";
 import { Image, Menu } from "semantic-ui-react";
 import iconImage from "../../Images/Icon.PNG";
 
-import {darkBlack} from "../../Helpers/Colors/colors"
-
 class NavBar extends Component {
   state = {
     isOpen: false
   };
-
-  componentWillMount () {
-    
-  }
 
   toggle = () => {
     this.setState({
