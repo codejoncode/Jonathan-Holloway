@@ -13,7 +13,21 @@ import sudoku from "../Images/sudoku.PNG";
 import lambdaMud from "../Images/lambdaMud.PNG";
 import symposium from "../Images/Symposium.PNG";
 import simpleTodoList from "../Images/simpleTodList.PNG";
-
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 export const projectData = [
   {
     id: 14,
@@ -27,7 +41,8 @@ export const projectData = [
     description:
       "Symposium is a 5-week project where I worked with 4 other developers on an existing codebase to add functionality and features.",
     technologies: "React Redux PostgreSql FullStack, sql Express",
-    image: symposium,
+    // image: symposium,
+    image: "https://i.ibb.co/SBzsBzw/Symposium.png",
     gif : "https://gfycat.com/zealousdecentandeancat"
   },
   {
@@ -41,7 +56,8 @@ export const projectData = [
       "https://github.com/codejoncode/front-end-project-week, https://github.com/codejoncode/back-end-project-week",
     description: "Four-day frontend project designed to test the React and Redux skills learned at Lambda. The backend was later implemented after 4 weeks of studies with Lambda with another 4 days of work after assignment. This was my first full stack application.  Many features added on top of the original requirement. I had a lot of fun and perhaps realized this is the career I wanted during the creation of this project. ",
     technologies: "JavaScript Express Redux FullStack sql",
-    image: noteTakingApp,
+    // image: noteTakingApp,
+    image: "https://i.ibb.co/HgHYCyb/note-Taking-App.png",
     gif: "https://gfycat.com/hilariousanyarabianoryx"
   },
   {
@@ -54,7 +70,8 @@ export const projectData = [
       "https://github.com/codejoncode/LambdaMUD-Project, https://github.com/codejoncode/LambdaMUD-Client",
     description: "Another four-day project to test my knowledge of Python and Django at Lambda School. This is a full stack project with Django on the backend and React on the frontend.",
     technologies: "python django JavaScript React FullStack sql ",
-    image: lambdaMud,
+    // image: lambdaMud,
+    image: "https://i.ibb.co/d2Np2cJ/lambda-Mud.png",
     gif: "https://gfycat.com/gloomyportlyincatern"
   },
   {
@@ -66,7 +83,8 @@ export const projectData = [
     description:
       "Lambda Treasure Hunt is a project with Django on the backend, and React on the frontend that illustrates graph traversal. Implemented the ability to travel to any given room using breadth-first search. Automated exploration to traverse the world and build a map. Map building Generate a graphical representation of the world map",
     technologies: "React JavaScript bootstrap sigma Algorithms",
-    image: LambdaTreasureHunt,
+    // image: LambdaTreasureHunt,
+    image: "https://i.ibb.co/5xv5cHX/Lambda-Treasure-Hunt.png",
     gif : "https://gfycat.com/singleweepyasp",
   },
   {
@@ -78,7 +96,8 @@ export const projectData = [
     description:
       "Application to go over React router and displaying components in React.",
     technologies: "React  JavaScript Algorithms",
-    image: basketBallLeague,
+    // image: basketBallLeague,
+    image: "https://i.ibb.co/W03FZs5/basketball-League.png",
     gif : "https://gfycat.com/rewardingrepulsivegermanpinscher",
   },
   {
@@ -89,7 +108,8 @@ export const projectData = [
     githubUrl: "https://github.com/codejoncode/Sudoku",
     description: "an application of the classic game of Sudoku",
     technologies: "JavaScript React Algorithms",
-    image: sudoku,
+    // image: sudoku,
+    image: "https://i.ibb.co/fCXdBYV/sudoku.png",
     gif: "https://gfycat.com/welldocumentedkindisabellineshrike"
   },
   {
@@ -101,7 +121,8 @@ export const projectData = [
     githubUrl: "https://github.com/codejoncode/Conways-Life",
     description: "application in which users will be able to run different 'Game of Life' scenarios",
     technologies: "React JavaScript algorithms",
-    image: conwaysGame,
+    // image: conwaysGame,
+    image: "https://i.ibb.co/y4DPTyv/conways-Game.png",
     gif : "https://gfycat.com/bouncygargantuanhammerkop"
   },
   {
@@ -114,7 +135,8 @@ export const projectData = [
     description:
       "Followed a design and implemented the application. Using Less CSS and HTML.",
     technologies: "LESS JavaScript Design",
-    image: uiDesign, 
+    // image: uiDesign, 
+    image: "https://i.ibb.co/k3zDSFG/ui-design.png",
     gif: "https://gfycat.com/orangedeafeninggodwit"
   },
   {
@@ -124,7 +146,8 @@ export const projectData = [
     githubUrl: "https://github.com/codejoncode/forex_page",
     description: "An attempt to mimic design located at  https://dribbble.com/shots/3860958-Forex-Trading-Landing using nothing but my eyes and skills.",
     technologies: "Design React",
-    image: forexLandingPage,
+    // image: forexLandingPage,
+    image: "https://i.ibb.co/qL68JvX/forex-Landing-Page.png",
     gif: "https://gfycat.com/palewelloffamericanwigeon",
   },
   {
@@ -136,7 +159,8 @@ export const projectData = [
       "https://github.com/codejoncode/Sprint-Challenge-Lambda-Times-React",
     description: "Lambda School 3 hour Sprint challenge to convert vanilla Javascript into a React application and pass data through props.",
     technologies: "React JavaScript",
-    image: lambdaTimes,
+    // image: lambdaTimes,
+    image: "https://i.ibb.co/0FDhKqF/lambda-Times.png",
     gif: "https://gfycat.com/cheerynecessarycrownofthornsstarfish"
   },
   {
@@ -148,7 +172,8 @@ export const projectData = [
     description:
       "A simple calendar application to practice skills learned in week 7 of Lambda School. This was not school related but practice to gain mastery in the topics. The application will allow one to move the year or the month and get the creat dates aligned on the application. I honestly didn't finish this application as I had desires to add tasks to certain date.",
     technologies: "moment  React JavaScript",
-    image: simpleCalendarApp,
+    // image: simpleCalendarApp,
+    image: "https://i.ibb.co/bP65FGf/simple-Calendar-App.png",
     gif: "https://gfycat.com/mildcelebratedkomododragon"
   },
   {
@@ -160,7 +185,8 @@ export const projectData = [
     githubUrl: "https://github.com/codejoncode/React-Todo",
     description: "A simple to do list",
     technologies: "JavaScript React",
-    image: simpleTodoList,
+    // image: simpleTodoList,
+    image: "https://i.ibb.co/Kw4cykZ/simple-Tod-List.png",
     gif: "https://gfycat.com/dimpledimperturbablehawk"
   },
   {
@@ -172,7 +198,8 @@ export const projectData = [
     description:
       "This was a Sprint Challenge in which I had three hours to implement a solution to the problem. Please see the repo link. Fetching data and displaying as we saw fit.",
     technologies: "React JavaScript",
-    image: ReactWars,
+    // image: ReactWars,
+    image: "https://i.ibb.co/rmzQ6rm/react-Wars.png",
     gif: "https://gfycat.com/lonelyunselfishdobermanpinscher"
     // gif : <div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe src="https://giphy.com/embed/3bc77x0eyNK146hiKv" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/3bc77x0eyNK146hiKv">via GIPHY</a></p>
   },
@@ -185,7 +212,8 @@ export const projectData = [
     description:
       "A simple calculator application used at the beginning of learning how to use React to build components. This is from the React UI Components section of Lambda School.",
     technologies: "React JavaScript",
-    image: calculatorComponents,
+    // image: calculatorComponents,
+    image: "https://i.ibb.co/sgxBz5d/calculator-Components.png",
     gif: "https://gfycat.com/wholetartiberianchiffchaff"
     // gif: <div style="width:100%;height:0;padding-bottom:93%;position:relative;"><iframe src="https://giphy.com/embed/jU25hmr2NN5IIiHs3I" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/jU25hmr2NN5IIiHs3I">via GIPHY</a></p>
   },
@@ -198,7 +226,8 @@ export const projectData = [
     description:
       "A social card used at the beginning of learning how to use React to build components. This is from the React UI Components section of Lambda School.",
     technologies: "React JavaScript",
-    image: socialCard,
+    // image: socialCard,
+    image: "https://i.ibb.co/T4TdMd5/social-Card.png",
     gif : "https://gfycat.com/weirdtatteredflatcoatretriever"
     // gif: "<iframe src="https://giphy.com/embed/woBWv3IocOeomG6EZi" width="480" height="268" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/woBWv3IocOeomG6EZi">via GIPHY</a></p>"
   }
