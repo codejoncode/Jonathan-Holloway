@@ -5,7 +5,6 @@ import ReactPlayer from "react-player";
 import { fetchLectures } from "../../Store/Actions/lecturesActions";
 import {
   lighterBlue,
-  grey,
   anotherBlue,
   darkBlack
 } from "../../Helpers/Colors/colors";

@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { Header, Image, Item, Segment, Grid, Message } from "semantic-ui-react";
-import GifPlayer from "react-gif-player";
-
+import { Header,  Item, Segment, Grid, Message } from "semantic-ui-react";
 import ProjectFeatureList from "./ProjectFeatureList";
 import GithubLinks from "./GithubLinks";
 import PlanLinks from "./PlanLinks";
@@ -48,6 +46,7 @@ class ProjectDetails extends Component {
                 }}
               >
                 <iframe
+                  title = {project.title}
                   src={project.gifPlay}
                   frameBorder="0"
                   scrolling="no"
@@ -56,7 +55,6 @@ class ProjectDetails extends Component {
                   style={{ position: "absolute", top: "20%", left: "25%" }}
                 />
               </div>
-              {/* <Image size="big" src={project.image} centered /> */}
             </Item>
           </Segment>
 
