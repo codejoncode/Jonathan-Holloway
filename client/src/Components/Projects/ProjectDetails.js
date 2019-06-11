@@ -48,9 +48,10 @@ class ProjectDetails extends Component {
                   src={project.gifPlay}
                   frameBorder="0"
                   scrolling="no"
-                  width="50%"
-                  height="50%"
-                  style={{ position: "absolute", top: "20%", left: "25%" }}
+                  width="100%"
+                  height="100%"
+                  // style={{ position: "absolute", top: "20%", left: "25%" }}
+                  style = {{position: "absolute", left: "0"}}
                 />
               </div>
             </Item>
