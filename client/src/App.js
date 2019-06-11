@@ -23,6 +23,9 @@ import DisplayBlogs from "./Components/Admin/DisplayBlogs";
 import BlogPage from "./Components/Admin/BlogPage";
 import Blog from "./Components/Blog";
 
+
+
+
 class App extends Component {
   state = {
     modalOpen: false,
@@ -91,8 +94,9 @@ class App extends Component {
           />
           <Route
             path="/project/:id"
-            component={() => (
+            component={(props) => (
               <ProjectDetails
+                {...props}
                 match={this.props.match}
                 history={this.props.history}
               />
@@ -105,4 +109,5 @@ class App extends Component {
     );
   }
 }
+// export default compose(withRouter, connect(mapState, actions))(App);
 export default withRouter(App);

@@ -17,7 +17,7 @@ class NavBar extends Component {
   render() {
     const { activeItem } = this.state
     return (
-      <Menu  fluid stackable  id ="navTagsBlue" style = {{background: "#0B0C10", marginBottom: "20px"}}>
+      <Menu  fluid stackable  id ="navTagsBlue" style = {{background: "#0B0C10", marginBottom: "20px", border: `1px solid #45A29E`}}>
         <Menu borderless fluid stackable  style = {{background: "#0B0C10"}} >
         <Menu.Item as = {Link} to = "/" ><Image avatar src={iconImage} alt="logo" /></Menu.Item>
         

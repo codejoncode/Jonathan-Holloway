@@ -156,7 +156,7 @@ class Projects extends Component {
           fluid
           stackable
           id="navTagsBlue"
-          style={{ background: darkBlack }}
+          style={{ background: darkBlack, border: `2px solid ${anotherBlue}`}}
         >
           {technologies.map((tech, index) => (
             <Menu.Item

@@ -9,7 +9,6 @@ import DeploymentLinks from "./DeploymentLinks";
 import { darkBlack, lighterBlue } from "../../Helpers/Colors/colors";
 
 import {
-  fetchOneProject,
   fetchProjects
 } from "../../Store/Actions/projectActions";
 
@@ -18,7 +17,6 @@ const mapState = state => ({
 });
 
 const actions = {
-  fetchOneProject,
   fetchProjects
 };
 
