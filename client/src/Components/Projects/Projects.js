@@ -34,7 +34,6 @@ class Projects extends Component {
   };
 
   componentDidMount() {
-    this.handleOpen();
     this.props.fetchProjects();
   }
 
@@ -94,7 +93,7 @@ class Projects extends Component {
       activeItem: name,
       intialized: true,
       technologies: technologiesData
-    });
+    }, this.handleOpen());
   };
 
   handleItemClick = (e, { name }) => {
