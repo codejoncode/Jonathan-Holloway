@@ -10,7 +10,7 @@ const HeaderCard = ({ title, group }) => {
             <Icon name="desktop" size="huge" style={{ color: "#66FCF1" }} />
           </div>
           <Card.Content>
-            <Card.Header>FRONTEND</Card.Header>
+            <Card.Header>{title}</Card.Header>
             <Card.Description>
               <List>
                 {group.map((item, index) => (
