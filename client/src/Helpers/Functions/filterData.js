@@ -1,4 +1,4 @@
-const filterData = async (projects, name, columnCount, activeItem) => {
+const filterData =  (projects, columnCount, activeItem) => {
     const rowCount = Math.ceil(projects.length / columnCount);
     const projectsDisplay = [];
     let projectCount = 0;
@@ -43,12 +43,8 @@ const filterData = async (projects, name, columnCount, activeItem) => {
     }
 
     technologiesData.sort();
-    // this.setState({
-    //   projectsDisplay,
-    //   activeItem: name,
-    //   intialized: true,
-    //   technologies: technologiesData
-    // });
-
-    return [projectsDisplay, activeItem, true, technologiesData]
+    const data = [projectsDisplay, technologiesData]
+    return data;
 }
+
+export default filterData; 

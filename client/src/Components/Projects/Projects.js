@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Grid, Menu,  Popup, Dimmer, Loader, Segment} from "semantic-ui-react";
+import { Grid, Menu,  Popup} from "semantic-ui-react";
 import ProjectSection from "./ProjectSection";
 import {
   fetchOneProject,
   fetchProjects
 } from "../../Store/Actions/projectActions";
+import filterData from "../../Helpers/Functions/filterData";
+
 const timeoutLength = 10000;
 
 const mapState = state => ({
@@ -36,71 +38,10 @@ class Projects extends Component {
   componentDidMount() {
     this.props.fetchProjects();
   }
-
-  componentWillUpdate() {
-    if (this.state.intialized === false && this.props.projects.length > 1) {
-      this.filterData(this.props.projects, "ALL");
-    }
-  }
-
-  filterData = async (projects, name) => {
-    const rowCount = Math.ceil(projects.length / this.state.columnCount);
-    const projectsDisplay = [];
-    let projectCount = 0;
-
-    for (let i = 0; i < rowCount; i++) {
-      let setOfColumns = [];
-      while (projectCount < projects.length) {
-        if (projects[projectCount]) {
-          const tech = projects[projectCount].technologies.toUpperCase();
-          if (
-            this.state.activeItem === "ALL" ||
-            tech.includes(this.state.activeItem) === true
-          ) {
-            setOfColumns.push(projects[projectCount]);
-            if (setOfColumns.length === this.state.columnCount) {
-              projectCount += 1;
-              break;
-            }
-          }
-        }
-        projectCount += 1;
-      }
-      if (setOfColumns.length > 0) {
-        projectsDisplay.push(setOfColumns);
-      }
-      if (projectCount >= projects.length) {
-        break;
-      }
-    }
-
-    const technologiesData = [];
-    for (let project of projects) {
-      const tech = project.technologies.split(" ");
-      for (let t of tech) {
-        if (
-          technologiesData.includes(t.toUpperCase()) === false &&
-          t.length > 0
-        ) {
-          technologiesData.push(t.toUpperCase());
-        }
-      }
-    }
-
-    technologiesData.sort();
-    this.setState({
-      projectsDisplay,
-      activeItem: name,
-      intialized: true,
-      technologies: technologiesData
-    }, this.handleOpen());
-  };
-
+  
   handleItemClick = (e, { name }) => {
-    this.setState({ activeItem: name }, () =>
-      this.filterData(this.props.projects, name.toUpperCase())
-    );
-  };
+    this.setState({ activeItem: name.toUpperCase()});
+  }
 
   handleOpen = () => {
     this.setState({ isOpen: true });
@@ -118,36 +59,17 @@ class Projects extends Component {
   handleCancel = () => this.setState({ open: false });
 
   render() {
-    const technologies = ["ALL", ...this.state.technologies];
     const {
-      handleOpen,
-      handleClose,
-      modalOpen,
-      currentModal,
-      activeItem,
-      columnCount,
-      goToProjectPage,
       darkBlack,
       lightBlack,
       grey,
       lighterBlue,
       anotherBlue
     } = this.props;
-    const { isOpen,  popUpStyle, projectsDisplay } = this.state;
-    
-    if (!this.state.intialized){
-      return (
-        <div>
-          <Segment>
-            <Dimmer active>
-              <Loader indeterminate>Loading Projects</Loader>
-            </Dimmer>
-
-          </Segment>
-        </div>
-      )
-    }
-
+    const { isOpen,  popUpStyle, activeItem, columnCount} = this.state;
+    const data = filterData(this.props.projects,columnCount, activeItem);
+    const projectsDisplay = data[0];
+    const technologies = ["ALL", ...data[1]]
     return (
       <div style={{ margin: "20px" }}>
         <Menu
@@ -189,11 +111,6 @@ class Projects extends Component {
             <ProjectSection
               key={index}
               projects={projects}
-              handleOpen={handleOpen}
-              handleClose={handleClose}
-              modalOpen={modalOpen}
-              currentModal={currentModal}
-              goToProjectPage={goToProjectPage}
               darkBlack={darkBlack}
               lightBlack={lightBlack}
               grey={grey}

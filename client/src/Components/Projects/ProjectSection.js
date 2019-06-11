@@ -44,7 +44,7 @@ class ProjectSection extends Component {
                       <Image
                         src={project.image}
                         fluid
-                        style={{ height: "300px" }}
+                        style={{ height: "400px" }}
                       />
                     </Reveal.Content>
                     <Reveal.Content hidden>
