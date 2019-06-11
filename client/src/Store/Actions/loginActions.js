@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { toastr } from "react-redux-toastr";
 import { LOGIN_ATTEMPTED, LOGIN_FAILED, LOGIN_SUCCESSFUL } from '../Reducers/Admin/loginConstants';
 
 const emailUrl = "https://jonathan-holloway.herokuapp.com"
@@ -20,6 +20,7 @@ export const login = (body) => {
          })
          .catch(err => {
              dispatch({type: LOGIN_FAILED, error: err})
+             toastr.error("Admin only", "Logging is only for the admin to add blogs")
          })
     }
 }

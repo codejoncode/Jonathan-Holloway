@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { toastr } from "react-redux-toastr";
 import { Form, Button, Grid, Container, Input, Header } from "semantic-ui-react";
 import { login } from '../../Store/Actions/loginActions';
 
@@ -27,6 +28,8 @@ class SignIn extends Component {
       await this.props.login(body); 
       this.props.history.push("/admin/blogs")
 
+    } else {
+      toastr.error("Admin only", "Logging is only for the admin to add blogs")
     }
   };
 

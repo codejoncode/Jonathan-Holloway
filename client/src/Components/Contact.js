@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { toastr } from "react-redux-toastr";
 import {
   Grid,
   Header,
@@ -42,22 +43,23 @@ class Contact extends Component {
     const { name, email, message, company } = this.state;
     console.log(name, email, message, company);
     if (name.length < 3) {
-      this.setState({ error: "Please enter a valid name" }, this.handleOpen());
-    } else if (message.length < 15) {
-      this.setState(
-        { error: "Your message seems a bit slim." },
-        this.handleOpen()
+      this.setState({ error: "Please enter a valid name" });
+      toastr.error(
+        "Name Length",
+        "Please enter a valid name first and last please"
       );
+    } else if (message.length < 15) {
+      this.setState({ error: "Your message seems a bit slim." });
+      toastr.error("Message Length", "Your message seems a bit slim.");
     } else if (company.length < 4) {
-      this.setState(
-        { error: "Please enter your company name" },
-        this.handleOpen()
+      this.setState({ error: "Please enter your company name" });
+      toastr.error(
+        "Company Length seems weird",
+        "Please enter your company name"
       );
     } else if (!this.validateEmail(email)) {
-      this.setState(
-        { error: "Please enter a valid email." },
-        this.handleOpen()
-      );
+      this.setState({ error: "Please enter a valid email." });
+      toastr.error("Email appears fake", "Please enter a valid email.");
     } else {
       const body = {
         name,
