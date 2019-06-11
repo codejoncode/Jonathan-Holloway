@@ -5,8 +5,7 @@ import {
   Segment,
   Item,
   Icon,
-  Card,
-  List,
+ 
   Container,
   Image
 } from "semantic-ui-react";
@@ -33,7 +32,6 @@ class HomePageHeader extends Component {
     ]
   };
   render() {
-    const { frontend, backend, others } = this.state;
     const groups = ["FRONTEND", "BACKEND", "OTHERS"];
     return (
       <Container>
@@ -94,7 +92,7 @@ class HomePageHeader extends Component {
           <Grid columns={3} stackable>
             <Grid.Row style={{ margin: "10px" }}>
               {groups.map((groupList, index) => (
-                <HeaderCard title={groupList} group={this.state[groupList]} />
+                <HeaderCard title={groupList} group={this.state[groupList]} key = {index} />
               ))}
             </Grid.Row>
           </Grid>

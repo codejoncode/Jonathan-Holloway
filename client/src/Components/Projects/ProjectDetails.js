@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { Header,  Item, Segment, Grid, Message } from "semantic-ui-react";
+import { Header, Item, Segment, Grid, Message } from "semantic-ui-react";
 import ProjectFeatureList from "./ProjectFeatureList";
 import GithubLinks from "./GithubLinks";
 import PlanLinks from "./PlanLinks";
@@ -46,7 +46,7 @@ class ProjectDetails extends Component {
                 }}
               >
                 <iframe
-                  title = {project.title}
+                  title={project.title}
                   src={project.gifPlay}
                   frameBorder="0"
                   scrolling="no"

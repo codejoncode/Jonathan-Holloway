@@ -1,6 +1,6 @@
 import React from "react";
 import HeaderItem from "./HeaderItem";
-import { Grid, Header, Icon, Card, List } from "semantic-ui-react";
+import { Grid, Icon, Card, List } from "semantic-ui-react";
 const HeaderCard = ({ title, group }) => {
   if (title && group) {
     return (

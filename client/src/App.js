@@ -42,11 +42,7 @@ class App extends Component {
   };
 
   render() {
-    const {
-      modalOpen,
-      currentModal,
-      columnCount,
-    } = this.state;
+    const { modalOpen, currentModal, columnCount } = this.state;
     return (
       <div className="main">
         <NavBar />
@@ -60,7 +56,7 @@ class App extends Component {
           <Route path="/home" component={HomePage} />
           <Route path="/resume" component={ResumePage} />
           <Route path="/lectures" component={Lectures} />
-          <Route path="/blog" component ={Blog} />
+          <Route path="/blog" component={Blog} />
           <Route
             path="/contact"
             component={() => (
@@ -88,12 +84,21 @@ class App extends Component {
                 grey={grey}
                 lighterBlue={lighterBlue}
                 anotherBlue={anotherBlue}
-                match = {this.props.match}
-                history = {this.props.history}
+                match={this.props.match}
+                history={this.props.history}
               />
             )}
           />
-          <Route path="/project/:id" component={() => <ProjectDetails  match = {this.props.match} history = {this.props.history}/>} />
+          <Route
+            path="/project/:id"
+            component={() => (
+              <ProjectDetails
+                match={this.props.match}
+                history={this.props.history}
+              />
+            )}
+          />
+          <Route component = {LandingPage} />
         </Switch>
         <Footer history={this.props.history} />
       </div>
@@ -101,4 +106,3 @@ class App extends Component {
   }
 }
 export default withRouter(App);
-
