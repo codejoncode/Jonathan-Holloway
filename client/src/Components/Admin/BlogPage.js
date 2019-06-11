@@ -42,12 +42,20 @@ class BlogPage extends Component {
 
   componentDidMount() {
     console.log(this.props);
-    if (
-      this.props.match.params.id !== undefined &&
-      this.props.match.path !== "/create"
-    ) {
-      this.blogSelected();
+    const token = localStorage.getItem("holloway-portfolio-token");
+    if (!token) {
+      this.props.history.push("/admin/login");
+    } else {
+      if (
+        this.props.match.params.id !== undefined &&
+        this.props.match.path !== "/create"
+      ) {
+        this.blogSelected();
+      }
+      
     }
+
+
   }
 
   componentDidUpdate(prevProps) {
