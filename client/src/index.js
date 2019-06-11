@@ -9,6 +9,7 @@ import ReduxToastr from "react-redux-toastr";
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import "../node_modules/semantic-ui-css/semantic.min.css";
+import "../node_modules/react-redux-toastr/lib/css/react-redux-toastr.min.css";
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import ScrollToTop from './Components/common/util/ScrollToTop';
@@ -28,12 +29,9 @@ ReactDOM.render(
   <ScrollToTop>
     
     <ReduxToastr
-      preventDuplicates
-      newestOnTop = {true}
       position="bottom-right"
       transitionIn="fadeIn"
       transitionOut="fadeOut"
-      closeOnToastrClick = {true}
     />
     <App />
   </ScrollToTop>
