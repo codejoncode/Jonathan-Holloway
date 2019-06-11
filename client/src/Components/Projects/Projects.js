@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Grid, Menu,  Popup} from "semantic-ui-react";
+import { Grid, Menu, Popup } from "semantic-ui-react";
 import ProjectSection from "./ProjectSection";
 import {
   fetchOneProject,
@@ -38,10 +38,10 @@ class Projects extends Component {
   componentDidMount() {
     this.props.fetchProjects();
   }
-  
+
   handleItemClick = (e, { name }) => {
-    this.setState({ activeItem: name.toUpperCase()});
-  }
+    this.setState({ activeItem: name.toUpperCase() });
+  };
 
   handleOpen = () => {
     this.setState({ isOpen: true });
@@ -66,10 +66,10 @@ class Projects extends Component {
       lighterBlue,
       anotherBlue
     } = this.props;
-    const { isOpen,  popUpStyle, activeItem, columnCount} = this.state;
-    const data = filterData(this.props.projects,columnCount, activeItem);
+    const { isOpen, popUpStyle, activeItem, columnCount } = this.state;
+    const data = filterData(this.props.projects, columnCount, activeItem);
     const projectsDisplay = data[0];
-    const technologies = ["ALL", ...data[1]]
+    const technologies = ["ALL", ...data[1]];
     return (
       <div style={{ margin: "20px" }}>
         <Menu
@@ -77,7 +77,7 @@ class Projects extends Component {
           fluid
           stackable
           id="navTagsBlue"
-          style={{ background: darkBlack, border: `2px solid ${anotherBlue}`}}
+          style={{ background: darkBlack, border: `2px solid ${anotherBlue}` }}
         >
           {technologies.map((tech, index) => (
             <Menu.Item

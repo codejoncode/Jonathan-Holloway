@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { Header, Item, Segment, Grid, Message } from "semantic-ui-react";
+import { Header, Item, Segment, Grid, Message, Container } from "semantic-ui-react";
 import ProjectFeatureList from "./ProjectFeatureList";
 import GithubLinks from "./GithubLinks";
 import PlanLinks from "./PlanLinks";
@@ -91,6 +91,22 @@ class ProjectDetails extends Component {
                   lighterBlue={lighterBlue}
                 />
               </Message>
+
+              <Message
+                style={{
+                  backgroundColor: darkBlack,
+                  padding: "40px",
+                  boxShadow: "none"
+                }}
+              >
+              <Container>
+                <Header style={{ color: lighterBlue }}>
+                  Description
+                </Header>
+                <Message.Content style={{ color: lighterBlue }}>{project.description}</Message.Content>
+              </Container>
+              </Message>
+
             </Grid.Row>
           </Grid>
         </div>
