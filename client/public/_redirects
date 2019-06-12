@@ -1,4 +1,4 @@
 /*  /index.html  200
 
-/project id=:id 
-/admin/blog/ id=:id
+/project id=:id /index.html
+/admin/blog/ id=:id  /index.html
