@@ -40,9 +40,9 @@ class ProjectDetails extends Component {
   };
 
   render() {
-    let  { project } = this.props.location.state;
+    // let  { project } = this.props.location.state;
     const id = this.props.match.params.id; 
-    project = project ?  project :  this.props.projects[id -1] || this.props.project;
+    let project = this.props.projects[id -1] || this.props.project;
     if (project) {
       return (
         <div>
