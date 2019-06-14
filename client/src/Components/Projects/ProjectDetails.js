@@ -30,9 +30,7 @@ const actions = {
 
 class ProjectDetails extends Component {
   componentWillMount() {
-
     const id = this.props.match.params.id; 
-
     this.goGetProject(id);
   }
 
