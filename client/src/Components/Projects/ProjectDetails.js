@@ -9,28 +9,42 @@ import DeploymentLinks from "./DeploymentLinks";
 import { darkBlack, lighterBlue } from "../../Helpers/Colors/colors";
 
 import {
-  fetchProjects
+  fetchProjects,
+  fetchOneProject
+  
 } from "../../Store/Actions/projectActions";
 
-const mapState = state => ({
-  project: state.projectReducer
-});
+const mapState = (state) => {
+  console.log(state)
+ return {
+  project: state.projectReducer.soloProject,
+  projects: state.projectReducer.projects
+};
+}
+
 
 const actions = {
-  fetchProjects
+  fetchProjects,
+  fetchOneProject,
 };
 
 class ProjectDetails extends Component {
   componentWillMount() {
-    this.goGetProject();
+
+    const id = this.props.match.params.id; 
+
+    this.goGetProject(id);
   }
 
   goGetProject = async id => {
+    await this.props.fetchOneProject(id);
     await this.props.fetchProjects();
   };
 
   render() {
-    const { project } = this.props.location.state;
+    let  { project } = this.props.location.state;
+    const id = this.props.match.params.id; 
+    project = project ?  project :  this.props.projects[id -1] || this.props.project;
     if (project) {
       return (
         <div>

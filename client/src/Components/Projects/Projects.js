@@ -10,9 +10,12 @@ import filterData from "../../Helpers/Functions/filterData";
 
 const timeoutLength = 10000;
 
-const mapState = state => ({
-  projects: state.projectReducer
-});
+const mapState = state => {
+  console.log(state)
+  return {
+  projects: state.projectReducer.projects
+  }
+}
 
 const actions = {
   fetchOneProject,
