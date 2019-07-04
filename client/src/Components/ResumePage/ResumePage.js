@@ -87,11 +87,19 @@ class ResumePage extends Component {
                   <h2>Softwarer Engineer</h2>
                   <h3>Contact</h3>
                   <a
+                    href="https://www.jonathanjholloway.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Profolio Web App
+                  </a>
+                  <br />
+                  <a
                     href="https://www.linkedin.com/in/jonathanjholloway/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    https://www.linkedin.com/in/jonathanjholloway/
+                    <strong>LinkedIn</strong>
                   </a>
                   <br />
                   <a
@@ -99,17 +107,10 @@ class ResumePage extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    https://github.com/codejoncode
+                    <strong>Github</strong>
                   </a>
                   <br />
-                  <a
-                    href="https://www.jonathanjholloway.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    www.jonathanjholloway.com
-                  </a>
-                  <br />
+
                   <p>jonathanjamelholloway@gmail.com</p>
                   <p>Crown Point, IN, USA</p>
                   <h3>TECHNICAL SKILLS</h3>
@@ -130,11 +131,18 @@ class ResumePage extends Component {
                     <li>FIREBASE</li>
                     <li>GOOGLE CLOUD FUNCTIONS</li>
                     <li>SEMANTIC UI</li>
+                    <li>Git based source control</li>
+                    <li>Mocha</li>
                   </ul>
                   <h3>EDUCATION</h3>
                   <h5>
-                    Lambda School Academy of Computer Science and Web
-                    Development June 2018 to April 2019.
+                    <a
+                      href="https://www.youracclaim.com/earner/earned/badge/df5c64f6-82d2-4553-bb12-f9b7e3878d3c"
+                      target="_blank"
+                    >
+                      Lambda School Academy of Computer Science and Web
+                      Development June 2018 to April 2019 click to view more.
+                    </a>
                   </h5>
                   <p>
                     Computer Science & Software Engineering academy providing
@@ -153,47 +161,68 @@ class ResumePage extends Component {
                 </div>
                 {/* Second column  */}
                 <div className="column2">
-                  <h3>SUMMARY</h3>
-                  <p>
-                    Team player software engineer with a can-do attitude,
-                    phenomenal time management skills and a strong user focus.
-                    An Experienced developer working with others on one part of
-                    an application and another team working on a different part
-                    of an application.{" "}
-                  </p>
                   <h3>PROJECTS</h3>
-                  <h4>
-                    Symposium -{" "}
-                    <a
-                      href="https://socialapp2.netlify.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      https://socialapp2.netlify.com/
-                    </a>
-                  </h4>
                   <p>
-                    Symposium is a reddit/slack like forum where likeminded
-                    users can share ideas.{" "}
+                    <span style={{ textDecoration: "underline" }}>
+                      <strong style={{ fontWeight: "bold" }}>
+                        {" "}
+                        <a
+                          href="https://the-events-app.firebaseapp.com/"
+                          target="_blank"
+                        >
+                          Events App
+                        </a>{" "}
+                      </strong>
+                    </span>{" "}
+                    <span>-</span>
+                    <span style={{ textDecoration: "underline" }}>
+                      Plan board
+                    </span>
+                    {"  "}
+                    Technologies: React | Redux | Redux Forms | Semantic UI |
+                    Firebase | Google Cloud Functions (
+                    <span style={{ fontWeight: "bold" }}>solo work</span>)
                   </p>
-                  <h4>Lambda Treasure Hunt - </h4> <span />
-                  <p>
-                    A treasure hunt game showcasing the ability to find the
-                    shortest path using breadth first search.
-                  </p>
-                  <h4>Note App - </h4> <span />
-                  <p>
-                    A tool for creating notes, saving notes and inspiring
-                    creativity.{" "}
-                  </p>
-                  <h4>Conway's Life</h4> <span />
-                  <p>Conway’s game of life – cellular automation.</p>
-                  <h3>EXPERIENCE</h3>
-                  <h4>Symposium- March 2019 - April 2019</h4>
                   <ul>
                     <li>
-                      5-week project where I worked with 4 other developers on
-                      an existing codebase to add functionalty and features.
+                      Social Media type application allow users to create or
+                      join events.
+                    </li>
+                    <li>
+                      Features a serverless backend(firebase) React/Redux
+                      frontend{" "}
+                    </li>
+                    <li>Google maps / Google places</li>
+                    <li>
+                      Google cloud functions to implement CRUD base operations
+                      on events.{" "}
+                    </li>
+                    <li>Semantic UI for product UI UX </li>
+                  </ul>
+                  <p>
+                    <span style={{ textDecoration: "underline" }}>
+                      <strong style={{ fontWeight: "bold" }}>
+                        {" "}
+                        <a
+                          href="https://socialapp2.netlify.com"
+                          target="_blank"
+                        >
+                          Symposium
+                        </a>{" "}
+                      </strong>
+                    </span>{" "}
+                    <span>
+                      Plan board <span>(private)</span>
+                    </span>{" "}
+                    Technologies: React | Redux | Redux Forms | Pusher JS |
+                    PostgreSQL | Node | Express | sign in = (jonathan,
+                    jonathan))
+                  </p>
+                  <ul>
+                    <li>
+                      5-week project where I worked with{" "}
+                      <strong>4 other developers</strong> on an existing
+                      codebase to add functionalty and features.
                     </li>
                     <li>
                       Continuous deployment, test driven development and git
@@ -208,6 +237,40 @@ class ResumePage extends Component {
                       editing a profile.{" "}
                     </li>
                   </ul>
+                  <p>
+                    <span style={{ textDecoration: "underline" }}>
+                      <strong style={{ fontWeight: "bold" }}>
+                        {" "}
+                        <a
+                          href="https://notetakingapp.netlify.com/"
+                          target="_blank"
+                        >
+                          Note App
+                        </a>{" "}
+                      </strong>
+                    </span>{" "}
+                    <span>-</span>
+                    <span style={{ textDecoration: "underline" }}>
+                      <a
+                        href="https://trello.com/b/PZTzDkkd/lambda-notes-jonathan-jamel-holloway"
+                        target="_blank"
+                      >
+                        Plan Board FE
+                      </a>{" "}
+                      <span>-</span>
+                      <a
+                        href="https://trello.com/b/bXgHQV3W/lambda-notesbackend-jonathan-jamel-holloway"
+                        target="_blank"
+                      >
+                        Plan Board BE
+                      </a>
+                    </span>
+                    {"  "}
+                    Technologies: React | Redux | Node JS | Express | CSS 3D (
+                    <span style={{ fontWeight: "bold" }}>solo work</span>)
+                  </p>
+
+                  <h3>EXPERIENCE</h3>
                   <h3 as="h3">
                     Lambda School of Computer Science January 2019 to March 2019
                     - Teaching Assistant
@@ -230,8 +293,11 @@ class ResumePage extends Component {
                       </a>{" "}
                       is a react application I built to help discus hash tables.{" "}
                     </li>
+                    <li>Accepted a role as Team Lead April 2019 to current.</li>
                     <li>
-                      Accepted a role as Project Manager April 2019 to current.
+                      Involves assisting teams of up to 8 developers assisting
+                      with merges conducting meetings and analyzing PR’s align
+                      with the project objectives and all deadlines are met.
                     </li>
                   </ul>
                 </div>
