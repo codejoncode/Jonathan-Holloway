@@ -6,7 +6,7 @@ import {
   EMAIL_SENT_FAILURE
 } from "../Reducers/Email/emailConstants";
 
-const emailUrl = "https://jonathan-holloway.herokuapp.com/emails";
+const emailUrl = "https://jonathan-holloway-be.onrender.com/emails";
 
 export const sendEmail = body => {
   /*Checks for if message, email and company and name are included in the body should be done on the component level

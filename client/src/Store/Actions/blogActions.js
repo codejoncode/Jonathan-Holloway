@@ -17,7 +17,7 @@ import {
   FETCH_ONE_BLOG_SUCCESS
 } from "../Reducers/Blogs/blogConstants";
 
-const url = "https://jonathan-holloway.herokuapp.com/blogs";
+const url = "https://jonathan-holloway-be.onrender.com/blogs";
 
 export const fetchBlogs = token => {
   const promise = axios.get(url);

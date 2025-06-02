@@ -8,7 +8,7 @@ import {
   FETCH_PROJECT_SUCCESSFUL
 } from "../Reducers/Projects/projectConstants";
 
-const url = "https://jonathan-holloway.herokuapp.com/projects";
+const url = "https://jonathan-holloway-be.onrender.com/projects";
 export const fetchProjects = () => {
   const promise = axios.get(url);
   return dispatch => {
