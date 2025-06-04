@@ -17,6 +17,15 @@ const actions = {
   fetchLectures
 };
 
+const lecturesHardCoded = [
+    { url: "https://www.youtube.com/embed/lxuyCxw_sg4", title : "Web Server Guided Project I" },
+    { url: "https://www.youtube.com/embed/KWKR4tXLqW8", title: "Web Server Guided Project II" },
+    { url: "https://www.youtube.com/embed/otxoIXgr6Tk", title: "Web Server Guided Project III" },
+    { url: "https://www.youtube.com/embed/UH6QHhxB3TQ", title: "Web Server Guided Project IV" },
+    { url: "https://youtube.com/embed/0hxTxisL6oo", title: "CS14 After Hours Algorithms"},
+  ];
+
+
 class Lectures extends Component {
   state = {
     url: null,
@@ -40,7 +49,7 @@ class Lectures extends Component {
     this.setState({ url, title });
   };
   render() {
-    const lectures = this.props.lectures.length ? this.props.lectures : [];
+    const lectures = this.props.lectures.length ? this.props.lectures : lecturesHardCoded;
     const { url, title } = this.state;
 
     return (
