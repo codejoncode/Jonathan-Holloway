@@ -29,7 +29,7 @@ class ProjectSection extends Component {
         <br />
         {projects &&
           projects.map((project, index) => (
-            <Grid.Column key={index}>
+            <Grid.Column key={project.id}>
               <Container>
                 <Card
                   as={Link}

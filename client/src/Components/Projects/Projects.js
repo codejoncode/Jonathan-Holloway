@@ -27,9 +27,8 @@ const projectsHardCoded = [
     technologies: "firebase Semantic-UI React Redux FullStack",
     title: "Fleek Session",
     description: "An events app that allows users to sign up and post events. Other uses can chat about the event follow a user or join an event.",
-    features: "Auth 0 login,  Simple login/register, ability to create an event, ability to edit event, ability to cancel an event, ability for a user to join an event, Google places for choosing where an event is,  Google maps for viewing where an event is, Follow a user or unfollow, Edit Profile information, Upload photos, Redux Forms, Google Cloud functions, and more",
     deployUrl: "https://the-events-app.firebaseapp.com/",
-    features : "Google Firebase  serverless backend, Google Cloud functions, Ability to review recent activity, Ability to follow / unfollow a user, Crud operations on events,  View Google Maps for location of event, Google places used when setting the location of an event,  Chat in real time regarding an event, Login via Auth0  Google and Facebook or as non-social media account, Redux Forms, Redux toastr notifications",
+    features : "Google Firebase  serverless backend, Google Cloud functions, Ability to review recent activity, Ability to follow / unfollow a user, Crud operations on events,  View Google Maps for location of event, Google places used when setting the location of an event,  Chat in real time regarding an event, Login via Auth0  Google and Facebook or as non-social media account, Redux Forms, Redux toastr notifications, Auth 0 login,  Simple login/register, ability to create an event, ability to edit event, ability to cancel an event, ability for a user to join an event, Google places for choosing where an event is,  Google maps for viewing where an event is, Follow a user or unfollow, Edit Profile information, Upload photos, Redux Forms, Google Cloud functions, and more",
     gif : "https://gfycat.com/frenchlividblackbear",
     gifPlay: "https://gfycat.com/ifr/FrenchLividBlackbear"
   },

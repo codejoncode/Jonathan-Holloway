@@ -139,6 +139,7 @@ class ResumePage extends Component {
                     <a
                       href="https://www.youracclaim.com/earner/earned/badge/df5c64f6-82d2-4553-bb12-f9b7e3878d3c"
                       target="_blank"
+                      rel="noopener noreferrer"
                     >
                       Lambda School Academy of Computer Science and Web
                       Development June 2018 to April 2019 click to view more.
@@ -169,6 +170,7 @@ class ResumePage extends Component {
                         <a
                           href="https://the-events-app.firebaseapp.com/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Events App
                         </a>{" "}
@@ -206,6 +208,7 @@ class ResumePage extends Component {
                         <a
                           href="https://socialapp2.netlify.com"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Symposium
                         </a>{" "}
@@ -244,6 +247,7 @@ class ResumePage extends Component {
                         <a
                           href="https://notetakingapp.netlify.com/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           Note App
                         </a>{" "}
@@ -254,6 +258,7 @@ class ResumePage extends Component {
                       <a
                         href="https://trello.com/b/PZTzDkkd/lambda-notes-jonathan-jamel-holloway"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         Plan Board FE
                       </a>{" "}
@@ -261,6 +266,7 @@ class ResumePage extends Component {
                       <a
                         href="https://trello.com/b/bXgHQV3W/lambda-notesbackend-jonathan-jamel-holloway"
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         Plan Board BE
                       </a>
