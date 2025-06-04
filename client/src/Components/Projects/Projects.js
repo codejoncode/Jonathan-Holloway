@@ -163,7 +163,7 @@ const projectsHardCoded = [
     gif: "https://gfycat.com/palewelloffamericanwigeon",
     gifPlay: "https://gfycat.com/ifr/PaleWelloffAmericanwigeon",
   },
-  {
+  { 
     features:
       "Carousel Component,  Styled Components, Filter the cards using the tabs",
     title: "Lambda Times",
@@ -178,7 +178,7 @@ const projectsHardCoded = [
     gifPlay : "https://gfycat.com/ifr/CheeryNecessaryCrownofthornsstarfish",
   },
 
-  {
+  { 
     features:
       "Ability to navigate through different months, Ability to navigate through different years, Carousel",
     title: "Simple Calendar",
@@ -219,7 +219,7 @@ const projectsHardCoded = [
     gifPlay: "https://gfycat.com/ifr/LonelyUnselfishDobermanpinscher"
   },
 
-  {
+  { 
     features:
       "Ability, do simple math, Ability continue doing math on the previous answer",
     title: "Simple Calculator",
@@ -246,6 +246,33 @@ const projectsHardCoded = [
     gifPlay : "https://gfycat.com/ifr/WeirdTatteredFlatcoatretriever"
   }
 ];
+const ids = [
+  "a1b2c3d4e5f6g7h8",
+  "x9y8z7w6v5u4t3s2",
+  "m1n2o3p4q5r6s7t8",
+  "u9v8w7x6y5z4a3b2",
+  "c1d2e3f4g5h6i7j8",
+  "k9l8m7n6o5p4q3r2",
+  "s1t2u3v4w5x6y7z8",
+  "b9a8z7y6x5w4v3u2",
+  "p1q2r3s4t5u6v7w8",
+  "f9g8h7i6j5k4l3m2",
+  "n1o2p3q4r5s6t7u8",
+  "v9w8x7y6z5a4b3c2",
+  "e1f2g3h4i5j6k7l8",
+  "q9r8s7t6u5v4w3x2",
+  "y1z2a3b4c5d6e7f8",
+  "o9p8q7r6s5t4u3v2",
+  "z3y4x5w6v7u8t9s1",
+  "d2e3f4g5h6i7j8k9",
+  "m4n5o6p7q8r9s1t2",
+  "b7a6z5y4x3w2v1u9",
+  "q1r2s3t4u5v6w7x8"
+]
+projectsHardCoded.forEach( (x,index) => {
+  x.id = ids[index];
+});
+
 
 const mapState = state => {
   console.log(state)
@@ -307,7 +334,8 @@ class Projects extends Component {
       anotherBlue
     } = this.props;
     const { isOpen, popUpStyle, activeItem, columnCount } = this.state;
-    const data = filterData(this.props.projects, columnCount, activeItem);
+    const projectsToFilter = this.props.projects.length ? this.props.projects.length : projectsHardCoded;
+    const data = filterData(projectsToFilter, columnCount, activeItem);
     const projectsDisplay = data[0];
     const technologies = ["ALL", ...data[1]];
     return (

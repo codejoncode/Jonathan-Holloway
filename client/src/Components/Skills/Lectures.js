@@ -18,11 +18,11 @@ const actions = {
 };
 
 const lecturesHardCoded = [
-    { url: "https://www.youtube.com/embed/lxuyCxw_sg4", title : "Web Server Guided Project I" },
-    { url: "https://www.youtube.com/embed/KWKR4tXLqW8", title: "Web Server Guided Project II" },
-    { url: "https://www.youtube.com/embed/otxoIXgr6Tk", title: "Web Server Guided Project III" },
-    { url: "https://www.youtube.com/embed/UH6QHhxB3TQ", title: "Web Server Guided Project IV" },
-    { url: "https://youtube.com/embed/0hxTxisL6oo", title: "CS14 After Hours Algorithms"},
+    { id: "2o3p4q5", url: "https://www.youtube.com/embed/lxuyCxw_sg4", title : "Web Server Guided Project I" },
+    { id: "w6v5u4t3s", url: "https://www.youtube.com/embed/KWKR4tXLqW8", title: "Web Server Guided Project II" },
+    { id: "v8w7x6y5", url: "https://www.youtube.com/embed/otxoIXgr6Tk", title: "Web Server Guided Project III" },
+    { id: "1t2u3v4w5", url: "https://www.youtube.com/embed/UH6QHhxB3TQ", title: "Web Server Guided Project IV" },
+    { id: "f9g8h7i6j5k4", url: "https://youtube.com/embed/0hxTxisL6oo", title: "CS14 After Hours Algorithms"},
   ];
 
 
@@ -76,7 +76,7 @@ class Lectures extends Component {
                 <li
                   style={{ cursor: "pointer", marginBottom: "20px" }}
                   onClick={this.changeURL(lecture.url, lecture.title)}
-                  key={index}
+                  key={lecture.id}
                 >
                   <h3>{lecture.title}</h3>
                 </li>
