@@ -35,7 +35,7 @@ class ResumePage extends Component {
       return (
         <div className="pdfButtonDiv" style={{ flexDirection: "column" }}>
           <div>
-            <h1 style={{ color: lighterBlue }}>Resume</h1>
+            <h1 style={{ color: lighterBlue }}>Resume (Before Professional Coding experience)</h1>
           </div>
           <br />
           <button
@@ -87,7 +87,7 @@ class ResumePage extends Component {
                   <h2>Softwarer Engineer</h2>
                   <h3>Contact</h3>
                   <a
-                    href="https://www.jonathanjholloway.com"
+                    href="https://jonathanjholloway.netlify.app/resume"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
